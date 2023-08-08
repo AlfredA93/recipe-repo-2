@@ -1,5 +1,5 @@
 ---
-name: 'Issue: User Story'
+name: User Story
 about: User Story Template
 title: 'USER STORY: <TITLE>'
 labels: ''
