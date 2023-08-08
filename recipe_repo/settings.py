@@ -30,8 +30,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["recipe-repo-1-8a81911b137c.herokuapp.com",
-                 "127.0.0.1"]
+ALLOWED_HOSTS = ['recipe-repo-2-e23f0ecfdc52.herokuapp.com',
+                 '127.0.0.1']
 
 
 # Application definition
