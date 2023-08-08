@@ -28,8 +28,8 @@ class Recipe(models.Model):
         User, related_name="recipe_like", blank=True)
 
     class Meta:
-        "Organise recipes posts by likes in desc order"
-        ordering = ['published_on']
+        "Organise recipes posts by published in desc order"
+        ordering = ['-published_on']
 
     def __str__(self):
         return self.title
@@ -37,3 +37,34 @@ class Recipe(models.Model):
     def number_of_likes(self):
         "Count number of likes per post"
         return self.likes.count()
+
+
+class Comment(models.Model):
+    "Comments Database Model"
+    recipe = models.ForeignKey(
+        Recipe, on_delete=models.CASCADE, related_name='comments')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    content = models.TextField(max_length=500)
+    published = models.DateField(auto_now_add=True)
+
+    class Meta:
+        "Order by published in desc order"
+        ordering = ['-published']
+
+    def __str__(self):
+        return f"Comment {self.content} by {self.user}"
+
+
+class Bookmark(models.Model):
+    "Bookmarks database Model"
+    recipe = models.ForeignKey(
+        Recipe, on_delete=models.CASCADE, related_name='bookmarks')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    bookmark_created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        "order by"
+        ordering = ['-bookmark_created']
+
+    def __str__(self):
+        return f"{self.user} bookmarked {self.recipe}"
