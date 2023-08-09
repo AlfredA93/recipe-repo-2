@@ -18,7 +18,7 @@
     <script src="https://kit.fontawesome.com/7a833399cb.js" crossorigin="anonymous"></script>
 
     <!-- Favicon Script -->
-    <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon/favicon.svg' %}" />
+    <link rel="icon" type="image/svg+xml" href="{% static 'favicon/favicon.svg' %}" />
 
     <!-- CSS Styles Link -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -29,7 +29,7 @@
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url 'home' }}"><img src="{% static 'images/logo1-nav2.webp' %}" height="90" width="240"></a>
+            <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'images/logo1-nav2.webp' %}" height="90" width="240"></a>
             <button 
                 class="navbar-toggler" 
                 type="button" 
