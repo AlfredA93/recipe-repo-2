@@ -67,23 +67,26 @@
     <div class="col-12 md-4">
         <div class="row">
             {% for recipe in recipe_list %}
-            <div class="col-md-4">
+            <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card">
                     <a href="#" class="recipe-link">
                     {% if 'default' in recipe.image.url %}
-                    <img src="{% static 'images/logo1.webp' %}" class="card-img-top" alt="Recipe Repo logo. Recipes plus storage.">
+                    <img src="{% static 'images/logo1.webp' %}" class="card-img-top " alt="Recipe Repo logo. Recipes plus storage.">
                     {% else %}
-                    <img src="{{ recipe.image.url }}" class="card-img-top" alt="{{recipe.image_alt}}">
+                    <!-- <div class="image-background" style="background-image: url('{{ recipe.image.url }}') fill;"> -->
+                    <div class="image">
+                    <img src="{{ recipe.image.url }}" class="img card-img-top" alt="{{recipe.image_alt}}">
+                    </div>
                     {% endif %}
                     <div class="card-body">
-                            <h5 class="card-title">{{recipe.title}}</h5>
+                        <h5 class="card-title">{{recipe.title}}</h5>
                         </a>
                         <h6 class="card-subtitle mb-2 text-body-secondary">Created by {{recipe.author}}</h6>
                         <!-- {% for tag in tags %}
                             <a href="#">#{{ tag.name }}</a>
                         {% endfor %} -->
-                            <p class="card-text">{{ recipe.summary }}</p>
-                            <hr>
+                        <p class="card-text">{{ recipe.summary }}</p>
+                        <hr>
                         <div class="icons-container">
                             <span><i class="far fa-heart fa-xl"></i> {{ recipe.number_of_likes }}</span>
                             <span><i class="fa-regular fa-bookmark fa-xl"></i></span>
