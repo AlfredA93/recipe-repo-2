@@ -69,7 +69,11 @@
             {% for recipe in recipe_list %}
             <div class="col-md-4">
                 <div class="card">
+                    {% if 'default' in recipe.image.url %}
+                    <img src="{% static 'images/logo1.webp' %}" class="card-img-top" alt="Recipe Repo logo. Recipes plus storage.">
+                    {% else %}
                     <img src="{{ recipe.image.url }}" class="card-img-top" alt="{{recipe.image_alt}}">
+                    {% endif %}
                     <div class="card-body">
                         <a href="#">
                             <h5 class="card-title">{{recipe.title}}</h5>
@@ -82,10 +86,14 @@
                             <p class="card-text">{{ recipe.summary }}</p>
                         </a>
                         <span class="card-text text-muted h6">{{recipe.published_on}}</span>
-                        <span><i class="far fa-heart right"></i>{{ post.number_of_likes }}</span>
+                        <span><i class="far fa-heart right"></i>{{ recipe.number_of_likes }}</span>
                     </div>
                 </div>
             </div>
+            {% if forloop.counter|divisbleby:3 %}
+            </div>
+            <div class="row">
+            {% endif %}
             {% endfor %}
         </div>
     </div>
