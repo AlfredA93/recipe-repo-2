@@ -14,3 +14,23 @@ footer {
     display: inline-block;
     text-align: left;
 }
+
+.icons-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+p.card-text {
+    margin: 0;
+}
+
+.recipe-link {
+    text-decoration: none;
+    color: black;
+}
+
+.recipe-link:hover {
+    color: gray;
+}
