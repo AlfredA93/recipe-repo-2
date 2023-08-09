@@ -1,10 +1,15 @@
 /* CSS Custom Styles */
 
+
+/* Base html styles */
+
 footer {
     background-color: #e9ecef;
     width:100vw;
     padding: 10px;
 }
+
+/* Index > Accordion Styles */
 
 .ul-container {
     text-align: center;
@@ -14,6 +19,22 @@ footer {
     display: inline-block;
     text-align: left;
 }
+
+.accordion-button {
+    background-color: #e9ecef;
+}
+
+.accordion-button:not(.collapsed) {
+    color:black;
+    background-color: #e9ecef;
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+/* Index > Recipe Section */
 
 .icons-container {
     display: flex;
