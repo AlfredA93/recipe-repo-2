@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Repo</title>
+
+    <!-- Bootstrap Link/Scripts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    </script>
+
+    <!-- FontAwesome Script -->
+    <script src="https://kit.fontawesome.com/7a833399cb.js" crossorigin="anonymous"></script>
+
+    <!-- Favicon Script -->
+    <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon/favicon.svg' %}" />
+
+    <!-- CSS Styles Link -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+</head>
+<body>
+    <!-- Navigation -->
+
+    {% block content %}
+        <!-- Content Goes here -->
+    {% endblock content %}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="text-center"> Insert Footer Text Here </div>
+    </footer>
+</body>
+</html>
