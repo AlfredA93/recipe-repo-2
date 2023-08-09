@@ -1,1 +1,16 @@
 /* CSS Custom Styles */
+
+footer {
+    background-color: #e9ecef;
+    width:100vw;
+    padding: 10px;
+}
+
+.ul-container {
+    text-align: center;
+}
+
+.feature-list {
+    display: inline-block;
+    text-align: left;
+}
