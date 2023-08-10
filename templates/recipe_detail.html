@@ -1,6 +1,39 @@
 <!-- Single Recipe display -->
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
 
+<div class="container">
+    <div class="row">
+            {% if 'default' in recipe.image.url %}
+            <img src="{% static 'images/logo1.webp' %}" class="col-md-6 rounded card detail-img" alt="Recipe Repo logo. Recipes plus storage.">
+            {% else %}
+            <img src="{{ recipe.image.url }}" class="col-md-6 rounded card detail-img" alt="{{ recipe.image_alt }}">
+            {% endif %}
+        <div class="col-md-6 card">
+            <div class="card-body">
+                <div class="h3"> {{ recipe.title }} </div>
+                <h6 class="card-subtitle mb-4 text-body-secondary">Created by {{recipe.author}}</h6>
+                <div class="h5"> {{ recipe.summary }} </div>
+                <p> {{recipe.published_on }} </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 card">
+            <div class="card-body">
+                <div class="h5">Ingredients</div>
+                <p> {{ recipe.ingredients.html | safe }} </p>
+            </div>
+        </div>
+        <div class="col-md-6 card">
+            <div class="card-body">
+                <div class="h5"> Instructions </div>
+                <p> {{ recipe.instructions.html | safe }} </p>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
