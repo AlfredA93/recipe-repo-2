@@ -44,7 +44,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5 fw-semibold">
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -63,14 +63,14 @@
                     <a class="nav-link" href="#">Bookmarks</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
+                    <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Join Our Community</a>
+                    <a class="nav-link" href="{% url 'account_signup' %}">Join Our Community</a>
                 </li>
                 {% endif %}
             </ul>
