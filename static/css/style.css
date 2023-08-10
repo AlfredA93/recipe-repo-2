@@ -72,3 +72,9 @@ p.card-text {
     min-width: 200px;
     background-image: url('{{ recipe.image.url }}') fill;
 } */
+
+/* Recipe Detail Styling */
+
+.detail-img {
+    padding: 0;
+}
