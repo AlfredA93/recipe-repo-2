@@ -71,7 +71,7 @@
                 <div class="card">
                     <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link">
                     {% if 'default' in recipe.image.url %}
-                    <img src="{% static 'images/logo1.webp' %}" class="card-img-top " alt="Recipe Repo logo. Recipes plus storage.">
+                    <img src="{% static 'images/logo1.webp' %}" class="card-img-top" alt="Recipe Repo logo. Recipes plus storage.">
                     {% else %}
                     <!-- <div class="image-background" style="background-image: url('{{ recipe.image.url }}') fill;"> -->
                     <div class="image">
