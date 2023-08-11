@@ -96,6 +96,7 @@ p.card-text {
     background: url('/static/images/lemons.webp');
     background-size: cover;
     padding: 5%;
+    height: 85vh;
 }
 
 .btn-login {
@@ -124,10 +125,12 @@ p.card-text {
     background: url('/static/images/oranges.webp');
     background-size: cover;
     padding: 20% 5% 20% 5%;
+    height: 85vh;
 }
 
 .logout-img {
     background: url('/static/images/apples.webp');
     background-size: cover;
     padding: 20%;
+    height: 85vh;
 }
