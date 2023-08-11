@@ -1,6 +1,5 @@
 /* CSS Custom Styles */
 
-
 /* Base html styles */
 
 footer {
@@ -85,5 +84,15 @@ p.card-text {
 /* Account Pages */
 
 .bdr {
-    border: solid 3px black;
+    border: solid #e9ecef;
+    border-radius: 2.5%;
+}
+
+.bckgrnd {
+    background-color: #e9ecef;
+}
+
+.login-img {
+    background: url('/static/images/lemons.webp') 100%;
+    padding: 5%;
 }
