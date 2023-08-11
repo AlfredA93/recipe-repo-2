@@ -6,21 +6,25 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-
-<div class="container">
+<div class="container col-md-6 bdr">
+<div class="container d-flex justify-content-center mt-4">
   <div class="row">
-    <div class="col-md-8 mt-3 off-md-2">
+    <div class="">
       <h3>{% trans "Sign In" %}</h3>
-      <p>{% blocktrans %}Welcome back to RecipeRepo! We hope to see you in the 
-        comments section very soon. If you haven't created an account yet and
-        you would like to get involved with our community, please 
-        <a href="{{ signup_url }}">sign up</a>, its free, easy and everyone is 
-        welcome.{% endblocktrans %}</p>
+      <p>{% blocktrans %}Welcome back to <em>RecipeRepo!</em></p>
+      <p>
+        We hope to see you in the comments section very soon. If you haven't 
+        created an account yet and you would like to get involved with our 
+        community, by commenting, liking and bookmarking recipes please 
+        <a href="{{ signup_url }}">sign up</a>.
+      </p> 
+      <p><em>It's free, easy and everyone is welcome.{% endblocktrans %}</em></p>
     </div>
   </div>
-
+</div>
+<div class="container d-flex mb-4">
   <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
+    <div class="">
       <form class="login" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
         {{ form.as_p }}
@@ -32,5 +36,6 @@
     </div>
   </div>
 </div>
+</div> 
 
 {% endblock %}
