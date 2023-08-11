@@ -3,14 +3,14 @@
 {% load i18n %}
 {% load account socialaccount %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block head_title %}{% trans "Log In" %}{% endblock %}
 
 {% block content %}
 <div class="login-img">
   <div class="container col-md-6 bdr bckgrnd">
     <div class="container d-flex justify-content-center mt-4">
       <div class="row">
-          <h3>{% trans "Sign In" %}</h3>
+          <h3>{% trans "Log In" %}</h3>
           <p>{% blocktrans %}Welcome back to <b>RecipeRepo!</b></p>
           <p>
             We hope to see you in the comments section very soon. If you haven't 
@@ -29,7 +29,7 @@
             {% if redirect_field_value %}
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
             {% endif %}
-            <button class="btn btn-login" type="submit">{% trans "Sign In" %}</button>
+            <button class="btn btn-login" type="submit">{% trans "Log In" %}</button>
           </form>
       </div>
     </div>
