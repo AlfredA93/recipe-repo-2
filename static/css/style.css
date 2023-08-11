@@ -93,27 +93,41 @@ p.card-text {
 }
 
 .login-img {
-    background: url('/static/images/lemons.webp') 100%;
+    background: url('/static/images/lemons.webp');
+    background-size: cover;
     padding: 5%;
 }
 
 .btn-login {
-    background-color: rgb(203, 146, 0);
+    background-color: rgb(193, 139, 0);
     font-weight: 700;
 }
 
 .btn-login:hover {
     background-color: rgb(55, 55, 55);
-    color:rgb(203, 146, 0);
+    color:rgb(193, 139, 0);
 
 }
 
 .account-text {
     text-decoration: none;
     font-weight: bold;
-    color: rgb(203, 146, 0);
+    color: rgb(193, 139, 0);
+    text-shadow: 1%;
 }
 
 .account-text:hover {
     color: rgb(55, 55, 55);
+}
+
+.joinus-img {
+    background: url('/static/images/oranges.webp');
+    background-size: cover;
+    padding: 20% 5% 20% 5%;
+}
+
+.logout-img {
+    background: url('/static/images/apples.webp');
+    background-size: cover;
+    padding: 20%;
 }
