@@ -5,6 +5,8 @@
 
 {% block content %}
 
+{% load crispy_forms_tags %}
+
 <div class="container">
     <div class="row">
             {% if 'default' in recipe.image.url %}
@@ -42,7 +44,18 @@
     <span><i class="fa-regular fa-bookmark fa-xl"></i></span>
 </div>
 <!-- Comments -->
-<div>Comment Entry</div>
+<h3>Comments:</h3>
+{% if user.is_authenticated %}
+    <div>
+        <h4>Leave a comment:</h4>
+        <p>Commenting as {{ user.username }}</p>
+        <form method="post">
+            {{comment_form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-login">Submit</button>
+        </form>
+    </div>
+{% endif %}
 <div>Comments Displayed</div>
 
 {% endblock %}
