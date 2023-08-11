@@ -96,3 +96,24 @@ p.card-text {
     background: url('/static/images/lemons.webp') 100%;
     padding: 5%;
 }
+
+.btn-login {
+    background-color: rgb(203, 146, 0);
+    font-weight: 700;
+}
+
+.btn-login:hover {
+    background-color: rgb(55, 55, 55);
+    color:rgb(203, 146, 0);
+
+}
+
+.account-text {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(203, 146, 0);
+}
+
+.account-text:hover {
+    color: rgb(55, 55, 55);
+}
