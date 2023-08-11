@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django_quill',
     'taggit',
-    'crispy_forms'
+    'crispy_forms',
     'blog',
     'django.contrib.staticfiles',
     'cloudinary',
@@ -60,9 +60,9 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
