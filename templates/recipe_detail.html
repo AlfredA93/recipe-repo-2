@@ -48,7 +48,7 @@
 {% if user.is_authenticated %}
     <div>
         <h4>Leave a comment:</h4>
-        <p>Commenting as {{ user.username }}</p>
+        <p>Commenting as: {{ user.username }}</p>
         <form method="post">
             {{comment_form | crispy }}
             {% csrf_token %}
@@ -56,6 +56,14 @@
         </form>
     </div>
 {% endif %}
-<div>Comments Displayed</div>
+<div>
+    {% for comment in comments %}
+    <div>
+        <p>{{ comment.user }}:</p>
+        <span>{{ comment.published }}</span>
+        <p>{{ comment.content | linebreaks }}</p>
+    </div>
+    {% endfor %}
+</div>
 
 {% endblock %}
