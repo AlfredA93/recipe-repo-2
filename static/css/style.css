@@ -81,6 +81,43 @@ p.card-text {
     padding-bottom: 16px;
 }
 
+.hr-break {
+    width: 80%;
+}
+
+/* Comment Section */
+
+.comment-box {
+    border: rgba(187, 214, 234, 0.783) 3px solid;
+    border-radius: .375rem;
+
+}
+
+.comment-name {
+    background-color: rgba(147, 214, 234, 0.783);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    
+}
+
+.comment-user {
+    font-size: large;
+}
+
+.comment-date {
+    font-size: medium;
+    font-weight: 500;
+    color: rgb(65, 65, 65);
+}
+
+.comment-content {
+    background-color: rgba(219, 238, 253, 0.783);
+    border-top: rgba(187, 214, 234, 0.783) 2px solid;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    font-weight: 450;
+}
+
 /* Account Pages */
 
 .bdr {

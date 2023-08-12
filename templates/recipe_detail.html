@@ -44,26 +44,32 @@
     <span><i class="fa-regular fa-bookmark fa-xl"></i></span>
 </div>
 <!-- Comments -->
-<h3>Comments:</h3>
-{% if user.is_authenticated %}
-    <div>
-        <h4>Leave a comment:</h4>
-        <p>Commenting as: {{ user.username }}</p>
-        <form method="post">
-            {{comment_form | crispy }}
-            {% csrf_token %}
-            <button type="submit" class="btn btn-login">Submit</button>
-        </form>
-    </div>
-{% endif %}
-<div>
+<div class="col-12 d-flex flex-column align-items-center">
+    <hr class="m-0 col-10 center">
+    <h3 class="p-4 m-0">Comments:</h3>
+</div>
+<div class="col-12 d-flex flex-column align-items-center">
     {% for comment in comments %}
-    <div>
-        <p>{{ comment.user }}:</p>
-        <span>{{ comment.published }}</span>
-        <p>{{ comment.content | linebreaks }}</p>
+    <div class="col-10 mb-4 comment-box">
+        <p class="col-12 comment-name m-0">
+            <span class="comment-user"><b>{{ comment.user }}</b></span>
+            <span class="comment-date">{{ comment.published }}</span>
+        </p>
+        <p class="comment-content m-0">{{ comment.content }}</p>
     </div>
     {% endfor %}
 </div>
-
+{% if user.is_authenticated %}
+    <div class="col-12 d-flex flex-column align-items-center">
+        <h4 class="col-4">Leave a comment:</h4>
+        <p class="col-4">Commenting as: {{ user.username }}</p>
+        <form method="post" class="col-6">
+            {{comment_form | crispy }}
+            {% csrf_token %}
+            <div class="d-flex justify-content-end">
+                <button type="submit m-1" class="btn btn-login m-2 col-3">Submit</button>
+            </div>
+        </form>
+    </div>
+{% endif %}
 {% endblock %}
