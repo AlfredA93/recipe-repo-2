@@ -2,6 +2,7 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.views.generic.edit import UpdateView
 from .models import Recipe, Comment
 from .forms import CommentForm
 
@@ -140,3 +141,8 @@ class EditComment(View):
             "form": form,
             "updated": updated
             })
+
+class EditComment2(UpdateView):
+    model = Comment
+    fields = ["content",]
+    success_url = "/"
