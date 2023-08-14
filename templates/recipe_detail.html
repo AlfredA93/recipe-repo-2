@@ -19,6 +19,11 @@
                 <div class="h3"> {{ recipe.title }} </div>
                 <h6 class="card-subtitle mb-4 text-body-secondary">Created by {{recipe.author}}</h6>
                 <div class="h5"> {{ recipe.summary }} </div>
+                <div class="d-flex flex-wrap mt-4">
+                    {% for tag in recipe.tags.all %}
+                    <a href="#" class="tag-btn">#{{ tag }}</a>
+                    {% endfor %}
+                </div>
                 <p class="mt-auto"> {{recipe.published_on }} </p>
             </div>
         </div>
