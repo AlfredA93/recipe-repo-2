@@ -58,13 +58,26 @@
                 {{ recipe.number_of_likes }}
             </span>
             {% endif %}
-        </form> 
-        <span><i class="fa-regular fa-bookmark fa-xl"></i></span> 
+        </form>
+        <form action="{% url 'recipe_bookmark' recipe.slug %}" method="POST">
+            {% csrf_token %}
+            {% if bookmarked %}
+            <span>
+                <button class="btn-like" type="submit" name="recipe_id" value="{{recipe.slug}}">
+                    <i class="fa-solid fa-bookmark fa-xl"></i>
+                </button>
+            </span>
+            {% else %}
+            <span>
+                <button class="btn-like" type="submit" name="recipe_id" value="{{recipe.slug}}">
+                    <span><i class="fa-regular fa-bookmark fa-xl"></i></span> 
+                </button>
+            </span>
+            {% endif %}
+        </form>
     {% else %}
         <span><i class="far fa-heart fa-xl"></i> {{ recipe.number_of_likes }}</span>
     {% endif %}
-    
-    
 </div>
 <!-- Comments -->
 <div class="col-12 d-flex flex-column align-items-center">
