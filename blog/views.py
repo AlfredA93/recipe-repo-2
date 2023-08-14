@@ -1,5 +1,5 @@
 """ Libraries """
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Recipe, Comment
@@ -106,9 +106,16 @@ class RecipeBookmark(View):
 
 class EditComment(View):
     "Edit Comment"
-    def update_comment(self, request, comment_id):
+    def get(self, request, comment_id, *args, **kwargs):
         "set up form on edit_comment page"
-        comment = Comment.objects.get(id=comment_id)
-        form = CommentForm(request.POST or None)
+        comment = get_object_or_404(Comment, id=comment_id)
+        form = CommentForm(request.POST or None, instance=comment)
+        
+        if form.is_valid():
+            form.save()
+            return redirect('')
 
-        return render(request, "edit_comment.html")
+        return render(request, "edit_comment.html", {
+            "comment": comment,
+            "form": form,
+        })
