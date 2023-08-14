@@ -76,3 +76,16 @@ class RecipeLike(View):
         else:
             recipe.likes.add(request.user)
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
+
+
+class RecipeBookmark(View):
+    "Bookmark"
+    def post(self, request, slug):
+        "Post bookmark"
+        recipe = get_object_or_404(Recipe, slug=slug)
+
+        if recipe.bookmarks.filter(id=request.user.id).exists():
+            recipe.bookmarks.remove(request.user)
+        else:
+            recipe.bookmarks.add(request.user)
+        return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
