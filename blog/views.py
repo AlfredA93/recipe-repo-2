@@ -109,13 +109,34 @@ class EditComment(View):
     def get(self, request, comment_id, *args, **kwargs):
         "set up form on edit_comment page"
         comment = get_object_or_404(Comment, id=comment_id)
-        form = CommentForm(request.POST or None, instance=comment)
-        
-        if form.is_valid():
-            form.save()
-            return redirect('')
+        comment_form = CommentForm(request.POST or None, instance=comment)
+        recipe_id = comment.recipe
+        user = comment.user
 
         return render(request, "edit_comment.html", {
             "comment": comment,
-            "form": form,
+            "form": comment_form,
+            "recipe_id": recipe_id,
+            "user": user,
         })
+
+    def post(self, request, comment_id, *args, **kwargs):
+        "post updated comment"
+        updated = False
+        comment = get_object_or_404(Comment, id=comment_id)
+        comment_form = CommentForm(data=request.POST)
+        recipe_id = comment.recipe
+        form = CommentForm()
+
+        if comment_form.is_valid():
+            comment_form.instance.user = request.user
+            comment = comment_form.save(commit=False)
+            comment.recipe = recipe_id
+            comment.save()
+            updated = True
+        else:
+            form = CommentForm
+        return render(request, "edit_comment.html", {
+            "form": form,
+            "updated": updated
+            })
