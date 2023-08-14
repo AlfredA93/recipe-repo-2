@@ -27,7 +27,7 @@ class Recipe(models.Model):
     likes = models.ManyToManyField(
         User, related_name='recipe_like', blank=True)
     bookmarks = models.ManyToManyField(
-        User, related_name='bookmark_recipe', blank=True)
+        User, related_name='recipe_bookmark', blank=True)
 
     class Meta:
         "Organise recipes posts by published in desc order"
