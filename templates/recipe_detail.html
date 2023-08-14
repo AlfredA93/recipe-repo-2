@@ -90,6 +90,9 @@
         <p class="col-12 comment-name m-0">
             <span class="comment-user"><b>{{ comment.user }}</b></span>
             <span class="comment-date">{{ comment.published }}</span>
+            {% if request.user == comment.user %}
+            <span class="ml-auto"><a href="{% url 'edit_comment' comment.id %}"><i class="fa-regular fa-pen-to-square fa-sm"></i></a></span>
+            {% endif %}
         </p>
         <p class="comment-content m-0">{{ comment.content }}</p>
     </div>
