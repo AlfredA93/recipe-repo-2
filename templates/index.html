@@ -87,9 +87,46 @@
                         {% endfor %} -->
                         <p class="card-text">{{ recipe.summary }}</p>
                         <hr class="mt-auto">
+                        <!-- Like and Bookmarks Buttons -->
                         <div class="icons-container">
+                            {% if user.is_authenticated %}
+                            <form action="{% url 'recipe_like' recipe.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if liked %}
+                                <span>
+                                    <button class="btn-like" type="submit" name="recipe_id" value="{{recipe.slug}}">
+                                        <i class="fa-solid fa-heart fa-xl" style="color: #db0000;"></i>
+                                    </button>
+                                    {{ recipe.number_of_likes }}
+                                </span>
+                                {% else %}
+                                <span>
+                                    <button class="btn-like" type="submit" name="recipe_id" value="{{recipe.slug}}">
+                                        <i class="far fa-heart fa-xl"></i>
+                                    </button>
+                                    {{ recipe.number_of_likes }}
+                                </span>
+                                {% endif %}
+                            </form>
+                            <form action="{% url 'recipe_bookmark' recipe.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if bookmarked %}
+                                <span>
+                                    <button class="btn-like" type="submit" name="recipe_id" value="{{recipe.slug}}">
+                                        <i class="fa-solid fa-bookmark fa-xl"></i>
+                                    </button>
+                                </span>
+                                {% else %}
+                                <span>
+                                    <button class="btn-like" type="submit" name="recipe_id" value="{{recipe.slug}}">
+                                        <span><i class="fa-regular fa-bookmark fa-xl"></i></span> 
+                                    </button>
+                                </span>
+                                {% endif %}
+                            </form>
+                        {% else %}
                             <span><i class="far fa-heart fa-xl"></i> {{ recipe.number_of_likes }}</span>
-                            <span><i class="fa-regular fa-bookmark fa-xl"></i></span>
+                        {% endif %}
                         </div>
                         <hr>
                         <div class="card-text text-muted h6 text-center pb-1">{{recipe.published_on}}</div>
