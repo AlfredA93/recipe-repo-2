@@ -2,7 +2,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Recipe
+from .models import Recipe, Comment
 from .forms import CommentForm
 
 
@@ -41,6 +41,7 @@ class RecipeDetail(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
+
         queryset = Recipe.objects.filter(status=1, slug=slug)
         recipe = get_object_or_404(queryset, slug=slug)
         comments = recipe.comments.order_by('published')
@@ -101,3 +102,13 @@ class RecipeBookmark(View):
         else:
             recipe.bookmarks.add(request.user)
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
+
+
+class EditComment(View):
+    "Edit Comment"
+    def update_comment(self, request, comment_id):
+        "set up form on edit_comment page"
+        comment = Comment.objects.get(id=comment_id)
+        form = CommentForm(request.POST or None)
+
+        return render(request, "edit_comment.html")
