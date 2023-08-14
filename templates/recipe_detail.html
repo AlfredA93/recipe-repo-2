@@ -40,8 +40,25 @@
 </div>
 <!-- Like/Bookmark -->
 <div class="icons-container">
-    <span><i class="far fa-heart fa-xl"></i> {{ recipe.number_of_likes }}</span>
-    <span><i class="fa-regular fa-bookmark fa-xl"></i></span>
+    {% if user.is_authenticated %}
+        <form action="{% url 'recipe_like' recipe.slug %}" method="POST">
+            {% csrf_token %}
+            {% if liked %}
+                <button class="btn-like" type="submit" name="recipe_id" value="{{recipe.slug}}">
+                    <span><i class="fa-solid fa-heart fa-xl" style="color: #db0000;"></i>{{ recipe.number_of_likes }}</span>
+                </button>
+            {% else %}
+                <button class="btn-like" type="submit" name="recipe_id" value="{{recipe.slug}}">
+                    <span><i class="far fa-heart fa-xl"></i> {{ recipe.number_of_likes }}</span>
+                </button>
+            {% endif %}
+        </form> 
+    {% else %}
+        <span><i class="far fa-heart fa-xl"></i></span>
+        <span><i class="fa-regular fa-bookmark fa-xl"></i></span> 
+    {% endif %}
+    
+    
 </div>
 <!-- Comments -->
 <div class="col-12 d-flex flex-column align-items-center">

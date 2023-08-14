@@ -33,7 +33,7 @@ class RecipeDetail(View):
                 "comment_form": CommentForm(),
             },
         )
-        
+
     def post(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.filter(status=1, slug=slug)
         recipe = get_object_or_404(queryset, slug=slug)
@@ -67,7 +67,7 @@ class RecipeDetail(View):
 class RecipeLike(View):
     "Add a like to a recipe"
 
-    def recipe(self, request, slug):
+    def post(self, request, slug):
         "Find recipe and toggle liked status"
         recipe = get_object_or_404(Recipe, slug=slug)
 

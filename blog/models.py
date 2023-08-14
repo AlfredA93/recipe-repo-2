@@ -25,7 +25,7 @@ class Recipe(models.Model):
     tags = TaggableManager()
     published_on = models.DateTimeField(auto_now_add=True)
     likes = models.ManyToManyField(
-        User, related_name="recipe_like", blank=True)
+        User, related_name='recipe_like', blank=True)
 
     class Meta:
         "Organise recipes posts by published in desc order"
