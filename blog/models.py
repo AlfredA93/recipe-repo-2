@@ -26,6 +26,8 @@ class Recipe(models.Model):
     published_on = models.DateTimeField(auto_now_add=True)
     likes = models.ManyToManyField(
         User, related_name='recipe_like', blank=True)
+    bookmarks = models.ManyToManyField(
+        User, related_name='bookmark_recipe', blank=True)
 
     class Meta:
         "Organise recipes posts by published in desc order"
@@ -53,18 +55,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.content} by {self.user}"
-
-
-class Bookmark(models.Model):
-    "Bookmarks database Model"
-    recipe = models.ForeignKey(
-        Recipe, on_delete=models.CASCADE, related_name='bookmarks')
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    bookmark_created = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        "order by"
-        ordering = ['-bookmark_created']
-
-    def __str__(self):
-        return f"{self.user} bookmarked {self.recipe}"

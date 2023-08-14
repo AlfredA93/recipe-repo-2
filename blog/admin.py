@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Recipe, Comment, Bookmark
+from .models import Recipe, Comment
 
 @admin.register(Recipe)
 class RecipeAdmin(admin.ModelAdmin):
@@ -16,10 +16,3 @@ class CommentAdmin(admin.ModelAdmin):
     list_filter = ['published']
     list_display = ('user', 'recipe', 'content', 'published')
     search_fields = ['recipe', 'content']
-    
-@admin.register(Bookmark)
-class BookmarkAdmin(admin.ModelAdmin):
-    "Bookmark Admin fields and filtering"
-    list_filter = ('recipe', 'bookmark_created')
-    list_display = ('user', 'recipe', 'bookmark_created')
-    search_fields = ['user', 'recipe']
