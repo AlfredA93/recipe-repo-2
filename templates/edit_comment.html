@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<h1>Edit Comment:</h1>
+
+{{comment}}
+
+{{comment_form | crispy }}
+
+
+{% endblock %}

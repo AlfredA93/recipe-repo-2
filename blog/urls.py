@@ -8,4 +8,6 @@ urlpatterns = [
     path('like/<slug:slug>/', views.RecipeLike.as_view(), name='recipe_like'),
     path('bookmark/<slug:slug>/', views.RecipeBookmark.as_view(),
          name='recipe_bookmark'),
+    path('edit_comment/<comment_id>/', views.EditComment.as_view(),
+         name='edit_comment')
     ]
