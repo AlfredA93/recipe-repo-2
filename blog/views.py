@@ -20,8 +20,13 @@ class RecipeDetail(View):
         recipe = get_object_or_404(queryset, slug=slug)
         comments = recipe.comments.order_by('published')
         liked = False
+        bookmarked = False
+
         if recipe.likes.filter(id=self.request.user.id).exists():
             liked = True
+
+        if recipe.bookmarks.filter(id=self.request.user.id).exists():
+            bookmarked = True
 
         return render(
             request,
@@ -29,6 +34,7 @@ class RecipeDetail(View):
             {
                 "recipe": recipe,
                 "comments": comments,
+                "bookmarked": bookmarked,
                 "liked": liked,
                 "comment_form": CommentForm(),
             },
@@ -39,8 +45,13 @@ class RecipeDetail(View):
         recipe = get_object_or_404(queryset, slug=slug)
         comments = recipe.comments.order_by('published')
         liked = False
+        bookmarked = False
+
         if recipe.likes.filter(id=self.request.user.id).exists():
             liked = True
+
+        if recipe.bookmarks.filter(id=self.request.user.id).exists():
+            bookmarked = True
 
         comment_form = CommentForm(data=request.POST)
 
@@ -59,6 +70,7 @@ class RecipeDetail(View):
                 "recipe": recipe,
                 "comments": comments,
                 "liked": liked,
+                "bookmarked": bookmarked,
                 "comment_form": CommentForm(),
             },
         )
