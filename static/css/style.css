@@ -85,6 +85,15 @@ p.card-text {
     width: 80%;
 }
 
+
+/* Like and Bookmark Buttons */
+
+.btn-like {
+    border: 0;
+    background-color: white;
+}
+
+
 /* Comment Section */
 
 .comment-box {

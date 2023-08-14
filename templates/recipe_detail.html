@@ -44,18 +44,24 @@
         <form action="{% url 'recipe_like' recipe.slug %}" method="POST">
             {% csrf_token %}
             {% if liked %}
+            <span>
                 <button class="btn-like" type="submit" name="recipe_id" value="{{recipe.slug}}">
-                    <span><i class="fa-solid fa-heart fa-xl" style="color: #db0000;"></i>{{ recipe.number_of_likes }}</span>
+                    <i class="fa-solid fa-heart fa-xl" style="color: #db0000;"></i>
                 </button>
+                {{ recipe.number_of_likes }}
+            </span>
             {% else %}
+            <span>
                 <button class="btn-like" type="submit" name="recipe_id" value="{{recipe.slug}}">
-                    <span><i class="far fa-heart fa-xl"></i> {{ recipe.number_of_likes }}</span>
+                    <i class="far fa-heart fa-xl"></i>
                 </button>
+                {{ recipe.number_of_likes }}
+            </span>
             {% endif %}
         </form> 
-    {% else %}
-        <span><i class="far fa-heart fa-xl"></i></span>
         <span><i class="fa-regular fa-bookmark fa-xl"></i></span> 
+    {% else %}
+        <span><i class="far fa-heart fa-xl"></i> {{ recipe.number_of_likes }}</span>
     {% endif %}
     
     
