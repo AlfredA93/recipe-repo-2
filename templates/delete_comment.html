@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-
-<form method="post">
-    {% csrf_token %}
-    <p>Are you sure you want to delete "{{ comment.content }}"?</p>
-    {{ form }}
-    <input type="submit" value="Confirm">
-</form>
+<div class="m-4">
+        <form method="post" class="d-flex col-12 flex-column align-items-center">
+            <h4 class="pb-4">Delete Comment?</h4>
+            {% csrf_token %}
+            <p>Are you sure you want to delete <b>"{{ comment.content }}"?</b></p>
+            {{ form }}
+            <input type="submit" value="Confirm" class="btn btn-outline-danger" aria-label="Confirm Comment Deletion">
+        </form>
+</div>
 
 {% endblock %}
