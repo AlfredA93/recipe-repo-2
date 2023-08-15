@@ -149,7 +149,7 @@ class RecipeBookmark(View):
 class EditComment(UpdateView):
     "edit comment field"
     model = Comment
-    fields = ["content"]
+    form_class = CommentForm
     template_name = "edit_comment.html"
     success_url = reverse_lazy('home')
 
