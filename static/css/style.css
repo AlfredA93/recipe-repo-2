@@ -139,6 +139,21 @@ p.card-text {
     font-weight: 450;
 }
 
+
+/* Edit Comment */
+
+.btn-outline-info {
+    color: black;
+    font-weight: 500;
+}
+
+/* Delete Comment */
+
+.btn-outline-danger {
+    font-weight: 500;
+}
+
+
 /* Account Pages */
 
 .bdr {
