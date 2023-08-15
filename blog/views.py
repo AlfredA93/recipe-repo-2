@@ -2,7 +2,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView, DeleteView
 from django.urls import reverse_lazy
 
 from .models import Recipe, Comment
@@ -152,3 +152,22 @@ class EditComment(UpdateView):
     fields = ["content"]
     template_name = "edit_comment.html"
     success_url = reverse_lazy('home')
+
+    # def get_success_url(self):
+    #     recipe = Comment.recipe
+    #     recipe = get_object_or_404(Recipe, pk=recipe_id)
+    #     recipe_slug = recipe.slug
+    #     return reverse('recipe_detail', kwargs={"slug": recipe_slug})
+
+
+class DeleteComment(DeleteView):
+    "Delete Comment"
+    model = Comment
+    template_name = "delete_comment.html"
+    success_url = reverse_lazy('home')
+
+    # def get_success_url(self):
+    #     recipe = Comment.recipe
+    #     recipe = get_object_or_404(Recipe, pk=recipe_id)
+    #     recipe_slug = recipe.slug
+    #     return reverse('recipe_detail', kwargs={"slug": recipe_slug})
