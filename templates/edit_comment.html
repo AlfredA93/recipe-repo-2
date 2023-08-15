@@ -1,20 +1,22 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-
-<h2>Edit Comment:</h2>
+<div class="container col-12 d-flex justify-content-center">
+    <h2 class="col-4">Edit Comment:</h2>
+</div>
 
 {% if updated %}
-
-<h4>Updated Successfully</h4>
-
+    <h4>Updated Successfully</h4>
 {% else %}
-
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Update">
-</form>
+<div class="container d-flex justify">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="container col-12 d-flex justify-content-end">
+            <input type="submit" class="" value="Update">
+        </div>
+    </form>
+</div>
 
 {% endif %}
 {% endblock %}
