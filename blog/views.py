@@ -1,5 +1,5 @@
 """ Libraries """
-from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.views.generic.edit import UpdateView
@@ -15,6 +15,7 @@ class RecipeList(generic.ListView):
     queryset = Recipe.objects.filter(status=1).order_by('-likes')
     template_name = 'index.html'
     paginate_by = 9
+
 
 class RecipeDetail(View):
     "Full Recipe View, Single Recipe per page"
