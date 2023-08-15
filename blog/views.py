@@ -3,6 +3,8 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.views.generic.edit import UpdateView
+from django.urls import reverse_lazy
+
 from .models import Recipe, Comment
 from .forms import CommentForm
 
@@ -105,44 +107,47 @@ class RecipeBookmark(View):
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
 
-class EditComment(View):
-    "Edit Comment"
-    def get(self, request, comment_id, *args, **kwargs):
-        "set up form on edit_comment page"
-        comment = get_object_or_404(Comment, id=comment_id)
-        comment_form = CommentForm(request.POST or None, instance=comment)
-        recipe_id = comment.recipe
-        user = comment.user
+# class EditComment(View):
+#     "Edit Comment"
+#     def get(self, request, comment_id, *args, **kwargs):
+#         "set up form on edit_comment page"
+#         comment = get_object_or_404(Comment, id=comment_id)
+#         comment_form = CommentForm(request.POST or None, instance=comment)
+#         recipe_id = comment.recipe
+#         user = comment.user
 
-        return render(request, "edit_comment.html", {
-            "comment": comment,
-            "form": comment_form,
-            "recipe_id": recipe_id,
-            "user": user,
-        })
+#         return render(request, "edit_comment.html", {
+#             "comment": comment,
+#             "form": comment_form,
+#             "recipe_id": recipe_id,
+#             "user": user,
+#         })
 
-    def post(self, request, comment_id, *args, **kwargs):
-        "post updated comment"
-        updated = False
-        comment = get_object_or_404(Comment, id=comment_id)
-        comment_form = CommentForm(data=request.POST)
-        recipe_id = comment.recipe
-        form = CommentForm()
+#     def post(self, request, comment_id, *args, **kwargs):
+#         "post updated comment"
+#         updated = False
+#         comment = get_object_or_404(Comment, id=comment_id)
+#         comment_form = CommentForm(data=request.POST)
+#         recipe_id = comment.recipe
+#         form = CommentForm()
 
-        if comment_form.is_valid():
-            comment_form.instance.user = request.user
-            comment = comment_form.save(commit=False)
-            comment.recipe = recipe_id
-            comment.save()
-            updated = True
-        else:
-            form = CommentForm
-        return render(request, "edit_comment.html", {
-            "form": form,
-            "updated": updated
-            })
+#         if comment_form.is_valid():
+#             comment_form.instance.user = request.user
+#             comment = comment_form.save(commit=False)
+#             comment.recipe = recipe_id
+#             comment.save()
+#             updated = True
+#         else:
+#             form = CommentForm
+#         return render(request, "edit_comment.html", {
+#             "form": form,
+#             "updated": updated
+#             })
 
-class EditComment2(UpdateView):
+
+class EditComment(UpdateView):
+    "edit comment field"
     model = Comment
-    fields = ["content",]
-    success_url = "/"
+    fields = ["content"]
+    template_name = "edit_comment.html"
+    success_url = reverse_lazy('home')
