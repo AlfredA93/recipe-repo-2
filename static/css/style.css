@@ -139,6 +139,9 @@ p.card-text {
     font-weight: 450;
 }
 
+.edit-icon {
+    text-decoration: none;
+}
 
 /* Edit Comment */
 

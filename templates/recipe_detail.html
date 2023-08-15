@@ -92,18 +92,22 @@
 <div class="col-12 d-flex flex-column align-items-center">
     {% for comment in comments %}
     <div class="col-10 mb-4 comment-box">
-        <p class="col-12 comment-name m-0">
+        <p class="comment-name m-0">
             <span class="comment-user"><b>{{ comment.user }}</b></span>
             <span class="comment-date">{{ comment.published }}</span>
+            <!-- Edit/Delete Comment icons -->
             {% if request.user == comment.user %}
-            <span class="ml-auto"><a href="{% url 'edit_comment' comment.id %}"><i class="fa-regular fa-pen-to-square fa-sm"></i></a></span>
-            <span class="ml-auto"><a href="{% url 'delete_comment' comment.id %}"><i class="fa-regular fa-trash-can fa-sm" style="color: #ff0000;"></i></a><span>
+            <span class="">
+                <span><a href="{% url 'edit_comment' comment.id %}" class="edit-icon"><i class="fa-regular fa-pen-to-square" style="color: #0050db;"></i></i></a></span>
+                <span><a href="{% url 'delete_comment' comment.id %}" class="delete-icon"><i class="fa-regular fa-trash-can fa-sm" style="color: #ff0000;"></i></a><span>
+            </span>
             {% endif %}
         </p>
         <p class="comment-content m-0">{{ comment.content }}</p>
     </div>
     {% endfor %}
 </div>
+<!-- Add a Comment Section -->
 {% if user.is_authenticated %}
     <div class="col-12 d-flex flex-column align-items-center">
         <h4 class="col-4">Leave a comment:</h4>
