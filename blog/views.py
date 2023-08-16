@@ -13,6 +13,7 @@ class RecipeList(generic.ListView):
     queryset = Recipe.objects.filter(status=1).order_by('-likes')
     template_name = 'index.html'
     paginate_by = 9
+    ordering = ['published_on']
 
 
 class RecipeDetail(View):
