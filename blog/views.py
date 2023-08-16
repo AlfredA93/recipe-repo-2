@@ -108,66 +108,24 @@ class RecipeBookmark(View):
         return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
 
-# class EditComment(View):
-#     "Edit Comment"
-#     def get(self, request, comment_id, *args, **kwargs):
-#         "set up form on edit_comment page"
-#         comment = get_object_or_404(Comment, id=comment_id)
-#         comment_form = CommentForm(request.POST or None, instance=comment)
-#         recipe_id = comment.recipe
-#         user = comment.user
-
-#         return render(request, "edit_comment.html", {
-#             "comment": comment,
-#             "form": comment_form,
-#             "recipe_id": recipe_id,
-#             "user": user,
-#         })
-
-#     def post(self, request, comment_id, *args, **kwargs):
-#         "post updated comment"
-#         updated = False
-#         comment = get_object_or_404(Comment, id=comment_id)
-#         comment_form = CommentForm(data=request.POST)
-#         recipe_id = comment.recipe
-#         form = CommentForm()
-
-#         if comment_form.is_valid():
-#             comment_form.instance.user = request.user
-#             comment = comment_form.save(commit=False)
-#             comment.recipe = recipe_id
-#             comment.save()
-#             updated = True
-#         else:
-#             form = CommentForm
-#         return render(request, "edit_comment.html", {
-#             "form": form,
-#             "updated": updated
-#             })
-
-
 class EditComment(UpdateView):
     "edit comment field"
     model = Comment
     form_class = CommentForm
     template_name = "edit_comment.html"
-    success_url = reverse_lazy('home')
 
-    # def get_success_url(self):
-    #     recipe = Comment.recipe
-    #     recipe = get_object_or_404(Recipe, pk=recipe_id)
-    #     recipe_slug = recipe.slug
-    #     return reverse('recipe_detail', kwargs={"slug": recipe_slug})
+    def get_success_url(self):
+        recipe = self.object.recipe
+        recipe_slug = recipe.slug
+        return reverse('recipe_detail', kwargs={"slug": recipe_slug})
 
 
 class DeleteComment(DeleteView):
     "Delete Comment"
     model = Comment
     template_name = "delete_comment.html"
-    success_url = reverse_lazy('home')
 
-    # def get_success_url(self):
-    #     recipe = Comment.recipe
-    #     recipe = get_object_or_404(Recipe, pk=recipe_id)
-    #     recipe_slug = recipe.slug
-    #     return reverse('recipe_detail', kwargs={"slug": recipe_slug})
+    def get_success_url(self):
+        recipe = self.object.recipe
+        recipe_slug = recipe.slug
+        return reverse('recipe_detail', kwargs={"slug": recipe_slug})
