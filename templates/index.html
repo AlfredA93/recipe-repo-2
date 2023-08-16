@@ -90,7 +90,7 @@
                             {% if user.is_authenticated %}
                             <form action="{% url 'recipe_like' recipe.slug %}" method="POST">
                                 {% csrf_token %}
-                                {% if liked %}
+                                {% if request.user in recipe.likes.all %}
                                 <span>
                                     <button class="btn-like" type="submit" name="recipe_id" value="{{recipe.slug}}">
                                         <i class="fa-solid fa-heart fa-xl" style="color: #db0000;"></i>
@@ -108,7 +108,7 @@
                             </form>
                             <form action="{% url 'recipe_bookmark' recipe.slug %}" method="POST">
                                 {% csrf_token %}
-                                {% if bookmarked %}
+                                {% if request.user in recipe.bookmarks.all %}
                                 <span>
                                     <button class="btn-like" type="submit" name="recipe_id" value="{{recipe.slug}}">
                                         <i class="fa-solid fa-bookmark fa-xl"></i>
