@@ -34,7 +34,7 @@ class Recipe(models.Model):
         ordering = ['-published_on']
 
     def __str__(self):
-        return self.title
+        return str(self.title)
 
     def number_of_likes(self):
         "Count number of likes per post"
