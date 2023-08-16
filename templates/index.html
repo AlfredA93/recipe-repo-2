@@ -65,7 +65,7 @@
 
     <!-- Recipes Section -->
     <div class="col-12 md-4">
-        <div class="row">
+        <div class="row g-0">
             {% for recipe in recipe_list %}
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card">
@@ -76,9 +76,11 @@
                     <div class="image">
                         <img src="{{ recipe.image.url }}" class="img card-img-top" alt="{{recipe.image_alt}}">
                     </div>
+                    </a>
                     {% endif %}
                     <div class="card-body d-flex justify-content-end flex-column">
-                        <h5 class="card-title">{{recipe.title}}</h5>
+                        <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link">
+                            <h5 class="card-title">{{recipe.title}}</h5>
                         </a>
                         <h6 class="card-subtitle mb-2 text-body-secondary">Created by {{recipe.author}}</h6>
                         
@@ -139,7 +141,7 @@
             </div>
             {% if forloop.counter|divisibleby:3 %}
             </div>
-            <div class="row">
+            <div class="row g-0">
             {% endif %}
             {% endfor %}
         </div>
