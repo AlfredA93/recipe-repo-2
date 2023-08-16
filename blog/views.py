@@ -1,5 +1,5 @@
 """ Libraries """
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.views.generic.edit import UpdateView, DeleteView
@@ -87,12 +87,13 @@ class RecipeLike(View):
     def post(self, request, slug):
         "Find recipe and toggle liked status"
         recipe = get_object_or_404(Recipe, slug=slug)
+        origin = request.META.get("HTTP_REFERER")
 
         if recipe.likes.filter(id=request.user.id).exists():
             recipe.likes.remove(request.user)
         else:
             recipe.likes.add(request.user)
-        return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
+        return redirect(origin)
 
 
 class RecipeBookmark(View):
@@ -100,12 +101,13 @@ class RecipeBookmark(View):
     def post(self, request, slug):
         "Post bookmark"
         recipe = get_object_or_404(Recipe, slug=slug)
+        origin = request.META.get("HTTP_REFERER")
 
         if recipe.bookmarks.filter(id=request.user.id).exists():
             recipe.bookmarks.remove(request.user)
         else:
             recipe.bookmarks.add(request.user)
-        return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
+        return redirect(origin)
 
 
 class EditComment(UpdateView):
