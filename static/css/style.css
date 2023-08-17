@@ -2,6 +2,10 @@
 
 /* Base html styles */
 
+.active {
+    font-weight: 700;
+}
+
 footer {
     background-color: #e9ecef;
     padding: 10px;
@@ -209,4 +213,13 @@ p.card-text {
     background-size: cover;
     padding: 20%;
     height: 85vh;
+}
+
+/* Bookmarks Page */
+
+.bookmark-list-item {
+    min-height: 100px;
+    background-position: center;
+    background-size: cover;
+    color: rgba(255, 255, 255, 0.4);
 }
