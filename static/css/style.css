@@ -11,6 +11,10 @@ footer {
     padding: 10px;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* Index > Accordion Styles */
 
 .ul-container {
