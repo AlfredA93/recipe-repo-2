@@ -10,4 +10,14 @@ active
 
 <h4>Bookmarks</h4>
 
+{% for recipe in recipe_list %}
+    {% if request.user in recipe.bookmarks.all %}
+        <div class="row g-0">
+            <span class="col-4">{{recipe.title}} title</span>
+            <span class="col-6 bookmark-list-item" style="background-image: url('{{ recipe.image.url }}')" > </span>
+            <span class="col-2">Bookmarks Icon</span>
+        </div>
+    {% endif %}
+{% endfor %}
+
 {% endblock %}
