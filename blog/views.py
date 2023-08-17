@@ -1,10 +1,10 @@
 """ Libraries """
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
-from django.views.generic.edit import UpdateView, DeleteView
+from django.views.generic.edit import UpdateView, DeleteView, FormView
 
 from .models import Recipe, Comment
-from .forms import CommentForm
+from .forms import CommentForm, RecipeForm
 
 
 class RecipeList(generic.ListView):
@@ -139,3 +139,32 @@ class BookmarkList(generic.ListView):
     template_name = 'bookmarks.html'
     paginate_by = 9
     ordering = ['published_on']
+
+
+class AddRecipe(View):
+    "Add Recipe Form"
+    def get(self, request):
+        """Get Form"""
+
+        return render(
+            request,
+            "add_recipe.html",
+            {'form': RecipeForm()}
+        )
+
+    def post(self, request, *args, **kwargs):
+
+        add_recipe = RecipeForm(data=request.POST)
+
+        if add_recipe.is_valid():
+            add_recipe.instance.author = request.user
+            add_recipe.instance.slug = add_recipe.instance.title.replace(" ", "-")
+            add_recipe.save()
+        else:
+            add_recipe = RecipeForm()
+
+        return render(
+            request,
+            "index.html",
+            {},
+        )
