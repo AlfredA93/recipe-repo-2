@@ -7,29 +7,32 @@ active
 {% endblock %}
 
 {% block content %}
-    <h3>
-        Bookmarks
-    </h3>
-
-    {% for recipe in recipe_list %}
-        {% if request.user in recipe.bookmarks.all %}
-            <div class="row g-0 bookmark-row rounded">
-                <span class="col-4 h5 item-title">{{recipe.title}}</span>
-                {% if 'default' in recipe.image.url %}
-                    <span class="col-6 bookmark-def-img" style="background-image: url('{% static 'images/bookmark-logo.webp' %}');"></span>
-                {% else %}
-                <span class="col-6 bookmark-img" style="background-image: url('{{ recipe.image.url }}')" > </span>
-                {% endif %}
-                <form action="{% url 'recipe_bookmark' recipe.slug %}" method="POST" class="col-2">
-                    {% csrf_token %}
-                    <span> 
-                        <button class="btn-like bookmark-icon" type="submit" name="recipe_id" value="{{recipe.slug}}">
-                            <i class="fa-solid fa-bookmark fa-xl bookmark-icon"></i>
-                        </button>
-                    </span>
-                </form>
-            </span>
-            </div>
-        {% endif %}
-    {% endfor %}
+<div class="col-12 bck-img bck-color" style="background-image: url('{% static 'images/bookmark-bckgrnd.webp' %}');">
+    <div class="bck-color">
+        <h3 class="col-12 text-center bookmark-title">
+            Bookmarks
+        </h3>
+        <!-- Each Bookmark Row Item -->
+        {% for recipe in recipe_list %}
+            {% if request.user in recipe.bookmarks.all %}
+                <div class="row g-0 bookmark-row rounded">
+                    <span class="col-4 h5 item-title">{{recipe.title}}</span>
+                    {% if 'default' in recipe.image.url %}
+                        <span class="col-6 bookmark-def-img" style="background-image: url('{% static 'images/bookmark-logo.webp' %}');"></span>
+                    {% else %}
+                    <span class="col-6 bookmark-img" style="background-image: url('{{ recipe.image.url }}')"></span>
+                    {% endif %}
+                    <form action="{% url 'recipe_bookmark' recipe.slug %}" method="POST" class="col-2">
+                        {% csrf_token %}
+                        <span> 
+                            <button class="btn-like bookmark-icon" type="submit" name="recipe_id" value="{{recipe.slug}}">
+                                <i class="fa-solid fa-bookmark fa-xl bookmark-icon"></i>
+                            </button>
+                        </span>
+                    </form>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div> 
 {% endblock %}
