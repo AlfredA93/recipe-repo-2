@@ -12,10 +12,18 @@ active
 
 {% for recipe in recipe_list %}
     {% if request.user in recipe.bookmarks.all %}
-        <div class="row g-0">
-            <span class="col-4">{{recipe.title}} title</span>
+        <div class="row g-0 bookmark-row rounded">
+            <span class="col-4">{{recipe.title}}</span>
             <span class="col-6 bookmark-list-item" style="background-image: url('{{ recipe.image.url }}')" > </span>
-            <span class="col-2">Bookmarks Icon</span>
+            <form action="{% url 'recipe_bookmark' recipe.slug %}" method="POST" class="col-2">
+                {% csrf_token %}
+                <span> 
+                    <button class="btn-like" type="submit" name="recipe_id" value="{{recipe.slug}}">
+                        <i class="fa-solid fa-bookmark fa-xl"></i>
+                    </button>
+                </span>
+            </form>
+        </span>
         </div>
     {% endif %}
 {% endfor %}
