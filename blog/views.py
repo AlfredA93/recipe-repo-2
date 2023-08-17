@@ -130,3 +130,12 @@ class DeleteComment(DeleteView):
         recipe = self.object.recipe
         recipe_slug = recipe.slug
         return reverse('recipe_detail', kwargs={"slug": recipe_slug})
+
+
+class BookmarkList(generic.ListView):
+    "Recipe List View for homepage"
+    model = Recipe
+    queryset = Recipe.objects.filter(status=1)
+    template_name = 'bookmarks.html'
+    paginate_by = 9
+    ordering = ['published_on']
