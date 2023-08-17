@@ -1,4 +1,4 @@
-from .models import Comment
+from .models import Comment, Recipe
 from django import forms
 
 
@@ -18,3 +18,25 @@ class CommentForm(forms.ModelForm):
                 'rows': '4',
                 'cols': '40'}),
         }
+
+
+class RecipeForm(forms.ModelForm):
+    """User Recipe Entry Form"""
+    class Meta:
+        """User Recipe Entry Form"""
+        model = Recipe
+        fields = (
+            'title',
+            'status',
+            'image',
+            'image_alt',
+            'season',
+            'summary',
+            'ingredients',
+            'instructions',
+            'tags'
+        )
+        labels = {
+            'image_alt': 'Image Description'
+            }
+        widgets = {}
