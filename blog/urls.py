@@ -4,9 +4,10 @@ from django.urls import path
 
 urlpatterns = [
     path('', views.RecipeList.as_view(), name='home'),
+    path('bookmarks/', views.BookmarkList.as_view(), name='bookmarks_list'),
     path('<slug:slug>/', views.RecipeDetail.as_view(), name='recipe_detail'),
     path('like/<slug:slug>/', views.RecipeLike.as_view(), name='recipe_like'),
-    path('bookmark/<slug:slug>/', views.RecipeBookmark.as_view(),
+    path('save/<slug:slug>/', views.RecipeBookmark.as_view(),
          name='recipe_bookmark'),
     path('edit_comment/<pk>/', views.EditComment.as_view(),
          name='edit_comment'),
