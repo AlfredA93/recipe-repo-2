@@ -137,7 +137,7 @@ class BookmarkList(generic.ListView):
     model = Recipe
     queryset = Recipe.objects.filter(status=1)
     template_name = 'bookmarks.html'
-    paginate_by = 9
+    paginate_by = 10
     ordering = ['published_on']
 
 
@@ -174,5 +174,5 @@ class MyRecipeList(generic.ListView):
     model = Recipe
     queryset = Recipe.objects
     template_name = 'my_recipes.html'
-    paginate_by = 25
+    paginate_by = 10
     ordering = ['published_on']
