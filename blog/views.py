@@ -1,14 +1,14 @@
-""" Libraries """
+"""Views for all webpages across website"""
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
-from django.views.generic.edit import UpdateView, DeleteView, FormView
+from django.views.generic.edit import UpdateView, DeleteView
 
 from .models import Recipe, Comment
 from .forms import CommentForm, RecipeForm
 
 
 class RecipeList(generic.ListView):
-    "Recipe List View for homepage"
+    """Recipe List View for homepage"""
     model = Recipe
     queryset = Recipe.objects.filter(status=1).order_by('-likes')
     template_name = 'index.html'
@@ -17,8 +17,9 @@ class RecipeList(generic.ListView):
 
 
 class RecipeDetail(View):
-    "Full Recipe View, Single Recipe per page"
+    """Full Recipe View, Single Recipe per page"""
     def get(self, request, slug, *args, **kwargs):
+        """Get function to obtain all information for recipe detail page"""
         queryset = Recipe.objects.filter(status=1, slug=slug)
         recipe = get_object_or_404(queryset, slug=slug)
         comments = recipe.comments.order_by('published')
@@ -44,7 +45,7 @@ class RecipeDetail(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
-
+        """Post function for comment form on recipe detailed page"""
         queryset = Recipe.objects.filter(status=1, slug=slug)
         recipe = get_object_or_404(queryset, slug=slug)
         comments = recipe.comments.order_by('published')
@@ -81,10 +82,10 @@ class RecipeDetail(View):
 
 
 class RecipeLike(View):
-    "Add a like to a recipe"
+    """Add a like to a recipe"""
 
     def post(self, request, slug):
-        "Find recipe and toggle liked status"
+        """Find recipe and post like (user-id) to model"""
         recipe = get_object_or_404(Recipe, slug=slug)
         origin = request.META.get("HTTP_REFERER")
 
@@ -96,9 +97,9 @@ class RecipeLike(View):
 
 
 class RecipeBookmark(View):
-    "Bookmark"
+    """Saving bookmarks"""
     def post(self, request, slug):
-        "Post bookmark"
+        """Post bookmark to model"""
         recipe = get_object_or_404(Recipe, slug=slug)
         origin = request.META.get("HTTP_REFERER")
 
@@ -110,30 +111,32 @@ class RecipeBookmark(View):
 
 
 class EditComment(UpdateView):
-    "edit comment field"
+    """Edit comment in model"""
     model = Comment
     form_class = CommentForm
     template_name = "edit_comment.html"
 
     def get_success_url(self):
+        """Send the user to this url when edit successful"""
         recipe = self.object.recipe
         recipe_slug = recipe.slug
         return reverse('recipe_detail', kwargs={"slug": recipe_slug})
 
 
 class DeleteComment(DeleteView):
-    "Delete Comment"
+    """Delete comment in model"""
     model = Comment
     template_name = "delete_comment.html"
 
     def get_success_url(self):
+        """Send the user to this url when edit successful"""
         recipe = self.object.recipe
         recipe_slug = recipe.slug
         return reverse('recipe_detail', kwargs={"slug": recipe_slug})
 
 
 class BookmarkList(generic.ListView):
-    "Recipe List View for homepage"
+    """Bookmarked Recipes List for bookmark page"""
     model = Recipe
     queryset = Recipe.objects.filter(status=1)
     template_name = 'bookmarks.html'
@@ -144,7 +147,7 @@ class BookmarkList(generic.ListView):
 class AddRecipe(View):
     "Add Recipe Form"
     def get(self, request):
-        """Get Form"""
+        """Get Form for user"""
 
         return render(
             request,
@@ -153,12 +156,15 @@ class AddRecipe(View):
         )
 
     def post(self, request, *args, **kwargs):
+        """Post the User Recipe Form to the Recipe model"""
 
         add_recipe = RecipeForm(data=request.POST)
 
         if add_recipe.is_valid():
             add_recipe.instance.author = request.user
-            add_recipe.instance.slug = add_recipe.instance.title.replace(" ", "-")
+            add_recipe.instance.slug = add_recipe.instance.title.replace(
+                " ", "-"
+                )
             add_recipe.save()
         else:
             add_recipe = RecipeForm()
@@ -171,7 +177,7 @@ class AddRecipe(View):
 
 
 class MyRecipeList(generic.ListView):
-    "Recipe List View for my recipes"
+    """Recipe List View for user created recipes"""
     model = Recipe
     queryset = Recipe.objects
     template_name = 'my_recipes.html'
@@ -180,21 +186,23 @@ class MyRecipeList(generic.ListView):
 
 
 class EditRecipe(UpdateView):
-    "edit comment field"
+    """Edit User recipes"""
     model = Recipe
     form_class = RecipeForm
     template_name = "edit_recipe.html"
 
     def get_success_url(self):
+        """Send the user to this url when edit successful"""
         recipe_slug = self.object.slug
         return reverse('recipe_detail', kwargs={"slug": recipe_slug})
 
 
 class DeleteRecipe(DeleteView):
-    "Delete Recipe"
+    """Delete User Created Recipe"""
     model = Recipe
     template_name = "delete_recipe.html"
 
     def get_success_url(self):
+        """Send the user to this url when edit successful"""
         recipe_slug = self.object.slug
         return reverse('recipe_detail', kwargs={"slug": recipe_slug})
