@@ -13,11 +13,22 @@
         {% for recipe in recipe_list %}
             {% if request.user == recipe.author %}
                 <div class="row g-0 bookmark-row rounded">
-                    <a href="" class="col-4 h5 item-title">{{recipe.title}}</a>
-                    {% if 'default' in recipe.image.url %}
-                        <a href="" class="col-6 bookmark-def-img" style="background-image: url('{% static 'images/bookmark-logo.webp' %}');"></a>
+                    {% if recipe.status == 0 %}
+                    <a href="#" class="col-4 h5 item-title">{{recipe.title}}</a>
+                        <span class="col-1"> In Draft - Add edit link here </span>
+                        {% if 'default' in recipe.image.url %}
+                            <a href="#" class="col-5 bookmark-def-img" style="background-image: url('{% static 'images/bookmark-logo.webp' %}');"></a>
+                        {% else %}
+                            <a href="#" class="col-5 bookmark-img" style="background-image: url('{{ recipe.image.url }}')"></a>
+                        {% endif %}
                     {% else %}
-                        <a href="" class="col-6 bookmark-img" style="background-image: url('{{ recipe.image.url }}')"></a>
+                        <a href="{% url 'recipe_detail' recipe.slug %}" class="col-4 h5 item-title">{{recipe.title}}</a>
+                        <span class="col-1"> Published </span>
+                        {% if 'default' in recipe.image.url %}
+                            <a href="{% url 'recipe_detail' recipe.slug %}" class="col-5 bookmark-def-img" style="background-image: url('{% static 'images/bookmark-logo.webp' %}');"></a>
+                        {% else %}
+                            <a href="{% url 'recipe_detail' recipe.slug %}" class="col-5 bookmark-img" style="background-image: url('{{ recipe.image.url }}')"></a>
+                        {% endif %}
                     {% endif %}
                     <form action="" method="POST" class="col-2">
                         {% csrf_token %}
