@@ -204,5 +204,4 @@ class DeleteRecipe(DeleteView):
 
     def get_success_url(self):
         """Send the user to this url when edit successful"""
-        recipe_slug = self.object.slug
-        return reverse('recipe_detail', kwargs={"slug": recipe_slug})
+        return reverse('my_recipes')
