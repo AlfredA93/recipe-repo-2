@@ -175,4 +175,4 @@ class MyRecipeList(generic.ListView):
     queryset = Recipe.objects
     template_name = 'my_recipes.html'
     paginate_by = 10
-    ordering = ['published_on']
+    ordering = ['status']
