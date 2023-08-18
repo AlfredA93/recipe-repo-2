@@ -1,3 +1,4 @@
+"""Database Models for Recipe and Comments on the website"""
 from django.db import models
 from django.contrib.auth.models import User
 from django_quill.fields import QuillField
@@ -30,7 +31,7 @@ class Recipe(models.Model):
         User, related_name='recipe_bookmark', blank=True)
 
     class Meta:
-        "Organise recipes posts by published in desc order"
+        """Organise recipes posts by published in desc order"""
         ordering = ['-published_on']
 
     def __str__(self):
@@ -46,7 +47,7 @@ class Recipe(models.Model):
 
 
 class Comment(models.Model):
-    "Comments Database Model"
+    """Comments Database Model"""
     recipe = models.ForeignKey(
         Recipe, on_delete=models.CASCADE, related_name='comments')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -54,7 +55,7 @@ class Comment(models.Model):
     published = models.DateField(auto_now_add=True)
 
     class Meta:
-        "Order by published in desc order"
+        """Order by published in desc order"""
         ordering = ['-published']
 
     def __str__(self):
