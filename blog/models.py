@@ -40,6 +40,10 @@ class Recipe(models.Model):
         "Count number of likes per post"
         return self.likes.count()
 
+    def number_of_bookmarks(self):
+        "Count number of bookmarks per post"
+        return self.bookmarks.count()
+
 
 class Comment(models.Model):
     "Comments Database Model"
