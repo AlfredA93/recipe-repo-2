@@ -91,7 +91,7 @@
                             {{ request.user }}
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item {% block nav_myrecipes %}{% endblock %}" href="#">My Recipes</a></li>
+                            <li><a class="dropdown-item {% block nav_myrecipes %}{% endblock %}" href="{% url 'my_recipes' %}">My Recipes</a></li>
                             <li><a class="dropdown-item {% block nav_bookmarks %}{% endblock %}" href="{% url 'bookmarks_list' %}">Bookmarks</a></li>
                             <li><a class="dropdown-item {% block nav_logout %}{% endblock %}" href="{% url 'account_logout' %}">Log Out</a></li>
                         </ul>
