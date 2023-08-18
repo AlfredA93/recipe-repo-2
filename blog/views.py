@@ -169,6 +169,7 @@ class AddRecipe(View):
             {},
         )
 
+
 class MyRecipeList(generic.ListView):
     "Recipe List View for my recipes"
     model = Recipe
@@ -176,3 +177,24 @@ class MyRecipeList(generic.ListView):
     template_name = 'my_recipes.html'
     paginate_by = 10
     ordering = ['status', '-published_on']
+
+
+class EditRecipe(UpdateView):
+    "edit comment field"
+    model = Recipe
+    form_class = RecipeForm
+    template_name = "edit_recipe.html"
+
+    def get_success_url(self):
+        recipe_slug = self.object.slug
+        return reverse('recipe_detail', kwargs={"slug": recipe_slug})
+
+
+class DeleteRecipe(DeleteView):
+    "Delete Recipe"
+    model = Recipe
+    template_name = "delete_recipe.html"
+
+    def get_success_url(self):
+        recipe_slug = self.object.slug
+        return reverse('recipe_detail', kwargs={"slug": recipe_slug})
