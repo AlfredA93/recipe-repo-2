@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="m-4">
+    <form method="post" class="d-flex col-12 flex-column align-items-center">
+        <h4 class="col-4 text-center">Edit Recipe:</h4>
+        {% csrf_token %}
+        <div class="col-8">
+            {{ form | crispy }}
+        </div>
+        <input type="submit" class="btn btn-outline-info" value="Update">
+    </form>
+</div>
+
+{% endblock %}
