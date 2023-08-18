@@ -1,5 +1,7 @@
 {% extends 'base.html'%}
 
+{% load static %}
+
 {% block content %}
 
 <div class="col-12 bck-img bck-color" style="background-image: url('{% static 'images/bookmark-bckgrnd.webp' %}');">
@@ -9,7 +11,7 @@
         </h3>
         <!-- Each Recipe Row Item -->
         {% for recipe in recipe_list %}
-            {% if request.user in recipe.author.all %}
+            {% if request.user == recipe.author %}
                 <div class="row g-0 bookmark-row rounded">
                     <a href="" class="col-4 h5 item-title">{{recipe.title}}</a>
                     {% if 'default' in recipe.image.url %}
@@ -28,7 +30,6 @@
         {% endfor %}
     </div>
 </div> 
-{% endblock %}
 
 {% endblock content %}
 
