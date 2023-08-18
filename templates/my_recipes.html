@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<div class="col-12 bck-img bck-color" style="background-image: url('{% static 'images/bookmark-bckgrnd.webp' %}');">
+    <div class="bck-color">
+        <h3 class="col-12 text-center bookmark-title">
+            My Recipes
+        </h3>
+        <!-- Each Recipe Row Item -->
+        {% for recipe in recipe_list %}
+            {% if request.user in recipe.author.all %}
+                <div class="row g-0 bookmark-row rounded">
+                    <a href="" class="col-4 h5 item-title">{{recipe.title}}</a>
+                    {% if 'default' in recipe.image.url %}
+                        <a href="" class="col-6 bookmark-def-img" style="background-image: url('{% static 'images/bookmark-logo.webp' %}');"></a>
+                    {% else %}
+                        <a href="" class="col-6 bookmark-img" style="background-image: url('{{ recipe.image.url }}')"></a>
+                    {% endif %}
+                    <form action="" method="POST" class="col-2">
+                        {% csrf_token %}
+                        <span> 
+                            Edit Icon. Delete Icon.
+                        </span>
+                    </form>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div> 
+{% endblock %}
+
+{% endblock content %}
+
+
