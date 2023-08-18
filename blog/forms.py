@@ -1,9 +1,10 @@
-from .models import Comment, Recipe
+"""Forms for creating comments and recipes on the website"""
 from django import forms
+from .models import Comment, Recipe
 
 
 class CommentForm(forms.ModelForm):
-    "Comment input form"
+    """Comment input form"""
     class Meta:
         "Metadata about form"
         model = Comment
