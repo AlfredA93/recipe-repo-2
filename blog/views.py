@@ -168,3 +168,11 @@ class AddRecipe(View):
             "index.html",
             {},
         )
+
+class MyRecipeList(generic.ListView):
+    "Recipe List View for my recipes"
+    model = Recipe
+    queryset = Recipe.objects
+    template_name = 'my_recipes.html'
+    paginate_by = 25
+    ordering = ['published_on']
