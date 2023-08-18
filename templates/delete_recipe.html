@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="m-4">
+        <form method="post" class="d-flex col-12 flex-column align-items-center">
+            <h4 class="pb-4">Delete Recipe?</h4>
+            {% csrf_token %}
+            <p>Are you sure you want to delete the recipe:<b>"{{ recipe.title }}"?</b></p>
+            <p>Once actioned, this cannot be undone.</p>
+            
+            {{ form }}
+            <input type="submit" value="Confirm" class="btn btn-outline-danger" aria-label="Confirm Recipe Deletion">
+        </form>
+</div>
+
+{% endblock %}
