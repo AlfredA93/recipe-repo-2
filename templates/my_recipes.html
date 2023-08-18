@@ -14,7 +14,7 @@
             {% if request.user == recipe.author %}
                 <div class="row g-0 bookmark-row rounded">
                     {% if recipe.status == 0 %}
-                    <a href="#" class="col-4 h5 item-title">{{recipe.title}}</a>
+                        <a href="#" class="col-4 h5 item-title">{{recipe.title}}</a>
                         <span class="col-1"> In Draft - Add edit link here </span>
                         {% if 'default' in recipe.image.url %}
                             <a href="#" class="col-5 bookmark-def-img" style="background-image: url('{% static 'images/bookmark-logo.webp' %}');"></a>
@@ -23,19 +23,20 @@
                         {% endif %}
                     {% else %}
                         <a href="{% url 'recipe_detail' recipe.slug %}" class="col-4 h5 item-title">{{recipe.title}}</a>
-                        <span class="col-1"> Published </span>
+                        <span class="col-1"> 
+                            <i class="fa-solid fa-heart"></i><span> {{ recipe.number_of_likes }}</span>
+                            <i class="fa-solid fa-bookmark"></i><span> {{recipe.number_of_bookmarks}}</span>
+                        </span>
                         {% if 'default' in recipe.image.url %}
                             <a href="{% url 'recipe_detail' recipe.slug %}" class="col-5 bookmark-def-img" style="background-image: url('{% static 'images/bookmark-logo.webp' %}');"></a>
                         {% else %}
                             <a href="{% url 'recipe_detail' recipe.slug %}" class="col-5 bookmark-img" style="background-image: url('{{ recipe.image.url }}')"></a>
                         {% endif %}
                     {% endif %}
-                    <form action="" method="POST" class="col-2">
-                        {% csrf_token %}
-                        <span> 
-                            Edit Icon. Delete Icon.
-                        </span>
-                    </form>
+                    <span class="col-2 d-flex justify-content-around">
+                            <span><a href="#" class="edit-icon"><i class="fa-regular fa-pen-to-square fa-xl" style="color: #0050db;"></i></i></a></span>
+                            <span><a href="#" class="delete-icon"><i class="fa-regular fa-trash-can fa-xl" style="color: #ff0000;"></i></a><span>
+                    </span>
                 </div>
             {% endif %}
         {% endfor %}
