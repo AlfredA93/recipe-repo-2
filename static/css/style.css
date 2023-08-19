@@ -219,7 +219,7 @@ p.card-text {
     height: 85vh;
 }
 
-/* Bookmarks Page */
+/* Bookmarks & Recipe Pages */
 
 .bck-color {
     background-color: rgba(0, 0, 0, 0.5);
@@ -233,7 +233,7 @@ p.card-text {
     background-repeat: no-repeat;
 }
 
-.bookmark-title {
+.main-heading {
     color: white;
     font-size: xx-large;
     min-height: 150px;
@@ -243,7 +243,7 @@ p.card-text {
     margin: 0;
 }
 
-.bookmark-row {
+.item-row {
     margin: 15px;
     border: 3px solid gray;
     display: flex;
@@ -253,14 +253,14 @@ p.card-text {
     background-color: white;
 }
 
-.bookmark-img {
+.item-img {
     min-height: 100px;
     background-position: bottom 40% center;
     background-size: cover;
     color: rgba(255, 255, 255, 0.4);
 }
 
-.bookmark-def-img {
+.item-def-img {
     min-height: 100px;
     background-position: center;
     background-size: 75%;
@@ -270,8 +270,9 @@ p.card-text {
 .item-title {
     font-weight: bold;
     margin: 0;
+    padding: 5px;
 }
 
 .bookmark-icon {
-    background-color: rgba(0, 0, 0, 0);
+    padding: 2px;
 }
