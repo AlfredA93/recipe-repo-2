@@ -183,11 +183,7 @@ class AddRecipe(View):
         else:
             add_recipe = RecipeForm()
 
-        return render(
-            request,
-            "index.html",
-            {},
-        )
+        return redirect(reverse('home'))
 
 
 class EditRecipe(UpdateView):
