@@ -1,5 +1,6 @@
 """Database Models for Recipe and Comments on the website"""
 from django.db import models
+from django.core.validators import RegexValidator
 from django.contrib.auth.models import User
 from django_quill.fields import QuillField
 from cloudinary.models import CloudinaryField
@@ -12,7 +13,13 @@ SEASON = ((0, "All"), (1, "Spring"), (2, "Summer"),
 
 class Recipe(models.Model):
     """Recipe Database Model"""
-    title = models.CharField(max_length=140, unique=True)
+    title = models.CharField(max_length=140, unique=True, validators=[
+        RegexValidator(
+            regex='^[a-z\d\-_\s]+$',
+            message='Title must be Alphanumeric',
+            code='invalid_title'
+        )
+        ])
     slug = models.SlugField(max_length=140, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='recipe_post')
