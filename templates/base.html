@@ -128,7 +128,7 @@
             </div>
         </nav>
         <!-- Message Alerts -->
-        {% if request.get_full_path == '/' %}
+        {% if request.get_full_path == '/' or '<slug:slug>/'%}
             <div class="container row">
                 <div class="col-md-8 offset-md-2">
                     {% for message in messages %}
