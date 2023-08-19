@@ -2,7 +2,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django_quill.fields import QuillField
-from django.core.validators import RegexValidator
 from cloudinary.models import CloudinaryField
 from taggit.managers import TaggableManager
 
@@ -14,10 +13,8 @@ SEASON = ((0, "All"), (1, "Spring"), (2, "Summer"),
 class Recipe(models.Model):
     """Recipe Database Model"""
     # Credit - alphanumeric, see README Credits.
-    alphanumeric = RegexValidator(
-        r'^[0-9a-zA-Z]*$', 'Only alphanumeric characters are allowed.')
-    title = models.CharField(max_length=140, unique=True,
-                             validators=[alphanumeric])
+
+    title = models.CharField(max_length=140, unique=True)
     slug = models.SlugField(max_length=140, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='recipe_post')
