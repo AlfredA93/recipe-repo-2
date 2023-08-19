@@ -276,3 +276,20 @@ p.card-text {
 .bookmark-icon {
     padding: 2px;
 }
+
+/* Responsive Design Styles for Different Screen Sizes */
+
+@media screen and (max-width:440px) {
+    .item-title {
+        font-size:medium;
+    }
+
+    .item-img {
+        min-height: 75px;
+    }
+    
+    .item-def-img {
+        min-height: 75px;
+    }
+
+}
