@@ -14,8 +14,8 @@ class Recipe(models.Model):
     """Recipe Database Model"""
     # Credit - alphanumeric, see README Credits.
 
-    title = models.CharField(max_length=140, unique=True)
-    slug = models.SlugField(max_length=140, unique=True)
+    title = models.SlugField(max_length=140, unique=True, allow_unicode=True)
+    slug = models.SlugField(max_length=140, unique=True, allow_unicode=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='recipe_post')
     status = models.IntegerField(choices=STATUS, default=0)
