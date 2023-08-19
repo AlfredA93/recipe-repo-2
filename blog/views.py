@@ -182,9 +182,10 @@ class AddRecipe(View):
             messages.success(request, 'Recipe Successfully Added')
         else:
             add_recipe = RecipeForm()
-            messages.warning(request,
-                             'Recipe Title not valid - please use Letters,'
-                             'Numbers, Hyphens and Underscores only.')
+            messages.error(
+                request,
+                'Title invalid: Letters, Numbers, Hyphens and Underscores only'
+                )
             return redirect(reverse('add_recipe'))
 
         return redirect(reverse('home'))
