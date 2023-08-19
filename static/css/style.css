@@ -280,6 +280,9 @@ p.card-text {
 /* Responsive Design Styles for Different Screen Sizes */
 
 @media screen and (max-width:440px) {
+
+    /* Bookmark and My Recipe Pages */
+
     .item-title {
         font-size:medium;
     }
@@ -290,6 +293,28 @@ p.card-text {
     
     .item-def-img {
         min-height: 75px;
+    }
+
+}
+
+@media screen and (max-width:374px) {
+
+    /* Bookmark and My Recipe Pages */
+
+    .item-title {
+        font-size:small;
+    }
+
+    .item-img {
+        min-height: 75px;
+    }
+    
+    .item-def-img {
+        min-height: 75px;
+    }
+
+    .item-status {
+        font-size: small;
     }
 
 }
