@@ -1,8 +1,9 @@
-"""Views for all webpages across website"""
+from django.contrib.messages.views import SuccessMessageMixin"""Views for all webpages across website"""
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 
 from .models import Recipe, Comment
 from .forms import CommentForm, RecipeForm
@@ -112,11 +113,12 @@ class RecipeBookmark(View):
         return redirect(origin)
 
 
-class EditComment(UpdateView):
+class EditComment(SuccessMessageMixin, UpdateView):
     """Edit comment in model"""
     model = Comment
     form_class = CommentForm
     template_name = "edit_comment.html"
+    success_message = 'Comment Successfully Updated'
 
     def get_success_url(self):
         """Send the user to this url when edit successful"""
@@ -125,10 +127,11 @@ class EditComment(UpdateView):
         return reverse('recipe_detail', kwargs={"slug": recipe_slug})
 
 
-class DeleteComment(DeleteView):
+class DeleteComment(SuccessMessageMixin, DeleteView):
     """Delete comment in model"""
     model = Comment
     template_name = "delete_comment.html"
+    success_message = 'Comment Successfully Deleted'
 
     def get_success_url(self):
         """Send the user to this url when edit successful"""
@@ -144,6 +147,15 @@ class BookmarkList(generic.ListView):
     template_name = 'bookmarks.html'
     paginate_by = 10
     ordering = ['published_on']
+
+
+class MyRecipeList(generic.ListView):
+    """Recipe List View for user created recipes"""
+    model = Recipe
+    queryset = Recipe.objects
+    template_name = 'my_recipes.html'
+    paginate_by = 10
+    ordering = ['status', '-published_on']
 
 
 class AddRecipe(View):
@@ -179,20 +191,12 @@ class AddRecipe(View):
         )
 
 
-class MyRecipeList(generic.ListView):
-    """Recipe List View for user created recipes"""
-    model = Recipe
-    queryset = Recipe.objects
-    template_name = 'my_recipes.html'
-    paginate_by = 10
-    ordering = ['status', '-published_on']
-
-
-class EditRecipe(UpdateView):
+class EditRecipe(SuccessMessageMixin, UpdateView):
     """Edit User recipes"""
     model = Recipe
     form_class = RecipeForm
     template_name = "edit_recipe.html"
+    success_message = 'Recipe Successfully Updated'
 
     def get_success_url(self):
         """Send the user to this url when edit successful"""
@@ -200,10 +204,11 @@ class EditRecipe(UpdateView):
         return reverse('recipe_detail', kwargs={"slug": recipe_slug})
 
 
-class DeleteRecipe(DeleteView):
+class DeleteRecipe(SuccessMessageMixin, DeleteView):
     """Delete User Created Recipe"""
     model = Recipe
     template_name = "delete_recipe.html"
+    success_message = 'Recipe Successfully Deleted'
 
     def get_success_url(self):
         """Send the user to this url when edit successful"""
