@@ -2,6 +2,7 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.views.generic.edit import UpdateView, DeleteView
+from django.contrib import messages
 
 from .models import Recipe, Comment
 from .forms import CommentForm, RecipeForm
@@ -65,6 +66,7 @@ class RecipeDetail(View):
             comment = comment_form.save(commit=False)
             comment.recipe = recipe
             comment.save()
+            messages.success(request, 'Comment Successfully Added')
         else:
             comment_form = CommentForm()
 
@@ -166,6 +168,7 @@ class AddRecipe(View):
                 " ", "-"
                 )
             add_recipe.save()
+            messages.success(request, 'Recipe Successfully Added')
         else:
             add_recipe = RecipeForm()
 
