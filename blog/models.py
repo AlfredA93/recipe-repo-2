@@ -13,24 +13,41 @@ SEASON = ((0, "All"), (1, "Spring"), (2, "Summer"),
 
 class Recipe(models.Model):
     """Recipe Database Model"""
-    title = models.CharField(max_length=140, unique=True, validators=[
-        RegexValidator(
-            regex='^[a-z\d\-_\s]+$',
-            message='Title must be Alphanumeric',
-            code='invalid_title'
-        )
-        ])
+    title = models.CharField(
+        max_length=140,
+        unique=True,
+        help_text="Format: Letters, Numbers, Hyphens & Underscores only.",
+        validators=[
+            RegexValidator(
+                regex=r'^[\w\-\s]+$',
+                message='Title: Letters, Numbers, Hyphens & Underscores only.',
+                code='invalid_title'
+            )
+        ]
+    )
     slug = models.SlugField(max_length=140, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='recipe_post')
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(
+        choices=STATUS,
+        default=0,
+        help_text="Status: Draft or Published"
+    )
     image = CloudinaryField('image', default='default')
-    image_alt = models.CharField(max_length=140)
+    image_alt = models.CharField(
+        max_length=140,
+        help_text="Max Length 140 Characters"
+    )
     season = models.IntegerField(choices=SEASON, default=0)
-    summary = models.TextField(max_length=240)
+    summary = models.TextField(
+        max_length=240,
+        help_text="Summarise your recipe in 240 Characters"
+    )
     ingredients = QuillField()
     instructions = QuillField()
-    tags = TaggableManager()
+    tags = TaggableManager(
+        help_text="A comma-seperated list of tags. Eg. Pasta, Italian"
+    )
     published_on = models.DateTimeField(auto_now_add=True)
     likes = models.ManyToManyField(
         User, related_name='recipe_like', blank=True)
