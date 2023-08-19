@@ -89,6 +89,18 @@
     <hr class="m-0 col-10 center">
     <h3 class="p-4 m-0">Comments:</h3>
 </div>
+<!-- Comment Alert - Posted/Updated/Deleted -->
+<div class="container row">
+    <div class="col-md-8 offset-md-2">
+        {% for message in messages %}
+            <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                {{ message | safe }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                </button>
+            </div>
+        {% endfor %}
+    </div>
+</div>
 <div class="col-12 d-flex flex-column align-items-center">
     {% for comment in comments %}
     <div class="col-10 mb-4 comment-box">
