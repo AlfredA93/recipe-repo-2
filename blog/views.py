@@ -1,9 +1,8 @@
-from django.contrib.messages.views import SuccessMessageMixin"""Views for all webpages across website"""
+"""Views for all webpages across website"""
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib import messages
-from django.contrib.messages.views import SuccessMessageMixin
 
 from .models import Recipe, Comment
 from .forms import CommentForm, RecipeForm
@@ -113,30 +112,30 @@ class RecipeBookmark(View):
         return redirect(origin)
 
 
-class EditComment(SuccessMessageMixin, UpdateView):
+class EditComment(UpdateView):
     """Edit comment in model"""
     model = Comment
     form_class = CommentForm
     template_name = "edit_comment.html"
-    success_message = 'Comment Successfully Updated'
 
     def get_success_url(self):
         """Send the user to this url when edit successful"""
         recipe = self.object.recipe
         recipe_slug = recipe.slug
+        messages.success(self.request, "Comment Successfully Updated")
         return reverse('recipe_detail', kwargs={"slug": recipe_slug})
 
 
-class DeleteComment(SuccessMessageMixin, DeleteView):
+class DeleteComment(DeleteView):
     """Delete comment in model"""
     model = Comment
     template_name = "delete_comment.html"
-    success_message = 'Comment Successfully Deleted'
 
     def get_success_url(self):
         """Send the user to this url when edit successful"""
         recipe = self.object.recipe
         recipe_slug = recipe.slug
+        messages.success(self.request, "Comment Successfully Deleted")
         return reverse('recipe_detail', kwargs={"slug": recipe_slug})
 
 
@@ -191,7 +190,7 @@ class AddRecipe(View):
         )
 
 
-class EditRecipe(SuccessMessageMixin, UpdateView):
+class EditRecipe(UpdateView):
     """Edit User recipes"""
     model = Recipe
     form_class = RecipeForm
@@ -201,15 +200,16 @@ class EditRecipe(SuccessMessageMixin, UpdateView):
     def get_success_url(self):
         """Send the user to this url when edit successful"""
         recipe_slug = self.object.slug
+        messages.success(self.request, "Recipe Successfully Updated")
         return reverse('recipe_detail', kwargs={"slug": recipe_slug})
 
 
-class DeleteRecipe(SuccessMessageMixin, DeleteView):
+class DeleteRecipe(DeleteView):
     """Delete User Created Recipe"""
     model = Recipe
     template_name = "delete_recipe.html"
-    success_message = 'Recipe Successfully Deleted'
 
     def get_success_url(self):
         """Send the user to this url when edit successful"""
+        messages.success(self.request, "Recipe Successfully Deleted")
         return reverse('my_recipes')
