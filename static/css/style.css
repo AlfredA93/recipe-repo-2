@@ -279,16 +279,27 @@ p.card-text {
 
 /* Seasons Pages */
 
-.seasons-backgrnd {
+.seasons-bckgrnd {
     min-height: 20vh;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
-.seasons-header {
-    background-color: rgba(0, 0, 0, 0.85);
+.vh-20 {
     min-height: 20vh;
+}
+
+.opaque-50 {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.opaque-80 {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.opaque-65 {
+    background-color: rgba(0, 0, 0, 0.65);
 }
 
 .seasons-title {
