@@ -214,3 +214,48 @@ class DeleteRecipe(DeleteView):
         """Send the user to this url when edit successful"""
         messages.success(self.request, "Recipe Successfully Deleted")
         return reverse('my_recipes')
+
+
+class SeasonsAll(generic.ListView):
+    """Recipe List View for Seasons - All Page"""
+    model = Recipe
+    queryset = Recipe.objects.filter(status=1, season=0)
+    template_name = 'season_all.html'
+    paginate_by = 12
+    ordering = ['published_on']
+
+
+class SeasonsSpring(generic.ListView):
+    """Recipe List View for Seasons - Spring Page"""
+    model = Recipe
+    queryset = Recipe.objects.filter(status=1, season=1)
+    template_name = 'season_spring.html'
+    paginate_by = 12
+    ordering = ['published_on']
+
+
+class SeasonsSummer(generic.ListView):
+    """Recipe List View for Seasons - Summer Page"""
+    model = Recipe
+    queryset = Recipe.objects.filter(status=1, season=2)
+    template_name = 'season_summer.html'
+    paginate_by = 12
+    ordering = ['published_on']
+
+
+class SeasonsAutumn(generic.ListView):
+    """Recipe List View for Seasons - Autumn Page"""
+    model = Recipe
+    queryset = Recipe.objects.filter(status=1, season=3)
+    template_name = 'season_autumn.html'
+    paginate_by = 12
+    ordering = ['published_on']
+
+
+class SeasonsWinter(generic.ListView):
+    """Recipe List View for Seasons - Winter Page"""
+    model = Recipe
+    queryset = Recipe.objects.filter(status=1, season=4)
+    template_name = 'season_winter.html'
+    paginate_by = 12
+    ordering = ['published_on']
