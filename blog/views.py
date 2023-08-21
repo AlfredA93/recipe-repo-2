@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib import messages
-
+from taggit.models import Tag
 from .models import Recipe, Comment
 from .forms import CommentForm, RecipeForm
 
@@ -15,6 +15,18 @@ class RecipeList(generic.ListView):
     template_name = 'index.html'
     paginate_by = 9
     ordering = ['published_on']
+
+
+class TagSearch(View):
+    """Tag Search on all Recipes"""
+    def get(self, request, slug, *args, **kwargs):
+        tag = get_object_or_404(Tag, slug=slug)
+        recipes = Recipe.objects.filter(tags=tag)
+        context = {
+            'tag': tag,
+            'recipes': recipes,
+        }
+        return render(request, 'tag_search.html', context)
 
 
 class RecipeDetail(View):
