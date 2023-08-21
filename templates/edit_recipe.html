@@ -5,7 +5,7 @@
 {% load crispy_forms_tags %}
 
 <div class="m-4">
-    <form method="post" class="d-flex col-12 flex-column align-items-center">
+    <form method="post" class="d-flex col-12 flex-column align-items-center" enctype='multipart/form-data'>
         <h4 class="col-4 text-center">Edit Recipe:</h4>
         {% csrf_token %}
         <div class="col-8">
