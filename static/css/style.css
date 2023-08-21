@@ -78,13 +78,16 @@ p.card-text {
 }
 
 .image{
-    position:relative;
-    overflow:hidden;
-    padding-bottom:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
     
 }
 .image img{
-    position:absolute;
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 
