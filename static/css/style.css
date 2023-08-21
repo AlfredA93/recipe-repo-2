@@ -281,11 +281,31 @@ p.card-text {
 
 .seasons-backgrnd {
     min-height: 20vh;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .seasons-header {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.85);
     min-height: 20vh;
+}
+
+.seasons-title {
+    font-weight: bold;
+    color: #e9ecef
+}
+
+.seasons-info-heading {
+    color: #e9ecef;
+}
+
+.seasons-info {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    color:#e9ecef;
+    font-size: larger;
+    
 }
 
 /* Responsive Design Styles for Different Screen Sizes */
