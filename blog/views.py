@@ -142,19 +142,23 @@ class DeleteComment(DeleteView):
 class BookmarkList(generic.ListView):
     """Bookmarked Recipes List for bookmark page"""
     model = Recipe
-    queryset = Recipe.objects.filter(status=1)
     template_name = 'bookmarks.html'
     paginate_by = 10
     ordering = ['published_on']
+
+    def get_queryset(self):
+        return Recipe.objects.filter(bookmarks=self.request.user)
 
 
 class MyRecipeList(generic.ListView):
     """Recipe List View for user created recipes"""
     model = Recipe
-    queryset = Recipe.objects
     template_name = 'my_recipes.html'
     paginate_by = 10
     ordering = ['status', '-published_on']
+
+    def get_queryset(self):
+        return Recipe.objects.filter(author=self.request.user)
 
 
 class AddRecipe(View):
