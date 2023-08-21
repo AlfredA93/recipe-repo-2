@@ -277,6 +277,17 @@ p.card-text {
     padding: 2px;
 }
 
+/* Seasons Pages */
+
+.seasons-backgrnd {
+    min-height: 20vh;
+}
+
+.seasons-header {
+    background-color: rgba(0, 0, 0, 0.5);
+    min-height: 20vh;
+}
+
 /* Responsive Design Styles for Different Screen Sizes */
 
 @media screen and (max-width:440px) {
