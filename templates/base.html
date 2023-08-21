@@ -69,11 +69,11 @@
                             Seasons
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item {% block nav_seasons_all %}{% endblock %}" href="#">All</a></li>
-                            <li><a class="dropdown-item {% block nav_spring %}{% endblock %}" href="#">Spring</a></li>
-                            <li><a class="dropdown-item {% block nav_summer %}{% endblock %}" href="#">Summer</a></li>
-                            <li><a class="dropdown-item {% block nav_autumn %}{% endblock %}" href="#">Autumn</a></li>
-                            <li><a class="dropdown-item {% block nav_winter %}{% endblock %}" href="#">Winter</a></li>
+                            <li><a class="dropdown-item {% block nav_seasons_all %}{% endblock %}" href="{% url 'seasons_all' %}">All</a></li>
+                            <li><a class="dropdown-item {% block nav_spring %}{% endblock %}" href="{% url 'seasons_spring' %}">Spring</a></li>
+                            <li><a class="dropdown-item {% block nav_summer %}{% endblock %}" href="{% url 'seasons_summer' %}">Summer</a></li>
+                            <li><a class="dropdown-item {% block nav_autumn %}{% endblock %}" href="{% url 'seasons_autumn' %}">Autumn</a></li>
+                            <li><a class="dropdown-item {% block nav_winter %}{% endblock %}" href="{% url 'seasons_winter' %}">Winter</a></li>
                         </ul>
                     </li>
                     {% if user.is_authenticated %}
