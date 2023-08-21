@@ -220,7 +220,7 @@ class SeasonsAll(generic.ListView):
     """Recipe List View for Seasons - All Page"""
     model = Recipe
     queryset = Recipe.objects.filter(status=1, season=0)
-    template_name = 'season_all.html'
+    template_name = 'seasons_all.html'
     paginate_by = 12
     ordering = ['published_on']
 
@@ -229,7 +229,7 @@ class SeasonsSpring(generic.ListView):
     """Recipe List View for Seasons - Spring Page"""
     model = Recipe
     queryset = Recipe.objects.filter(status=1, season=1)
-    template_name = 'season_spring.html'
+    template_name = 'seasons_spring.html'
     paginate_by = 12
     ordering = ['published_on']
 
@@ -238,7 +238,7 @@ class SeasonsSummer(generic.ListView):
     """Recipe List View for Seasons - Summer Page"""
     model = Recipe
     queryset = Recipe.objects.filter(status=1, season=2)
-    template_name = 'season_summer.html'
+    template_name = 'seasons_summer.html'
     paginate_by = 12
     ordering = ['published_on']
 
@@ -247,7 +247,7 @@ class SeasonsAutumn(generic.ListView):
     """Recipe List View for Seasons - Autumn Page"""
     model = Recipe
     queryset = Recipe.objects.filter(status=1, season=3)
-    template_name = 'season_autumn.html'
+    template_name = 'seasons_autumn.html'
     paginate_by = 12
     ordering = ['published_on']
 
@@ -256,6 +256,6 @@ class SeasonsWinter(generic.ListView):
     """Recipe List View for Seasons - Winter Page"""
     model = Recipe
     queryset = Recipe.objects.filter(status=1, season=4)
-    template_name = 'season_winter.html'
+    template_name = 'seasons_winter.html'
     paginate_by = 12
     ordering = ['published_on']
