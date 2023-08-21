@@ -38,7 +38,6 @@ active
             {% endif %}
         {% endfor %}
         <!-- Pagination Navigation. Credit: 'I Think Therefore I Blog' walkthrough, Code Institute -->
-        {% if forloop.counter > 10 %}
             {% if is_paginated %}
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-end m-1">
@@ -59,7 +58,6 @@ active
                     </ul>
                 </nav>
             {% endif %}
-        {% endif %}
     </div>
 </div> 
 {% endblock %}
