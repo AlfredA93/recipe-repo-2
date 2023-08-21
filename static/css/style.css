@@ -15,6 +15,16 @@ a {
     text-decoration: none;
 }
 
+.dropdown-item.active {
+    color: black;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0);
+} 
+
+.dropdown-menu {
+    --bs-dropdown-link-active-bg: rgba(0, 0, 0, 0);
+}
+
 /* Index > Accordion Styles */
 
 .ul-container {
