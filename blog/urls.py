@@ -7,7 +7,7 @@ urlpatterns = [
     path('bookmarks/', views.BookmarkList.as_view(), name='bookmarks_list'),
     path('add_recipe/', views.AddRecipe.as_view(), name='add_recipe'),
     path('my_recipes/', views.MyRecipeList.as_view(), name='my_recipes'),
-    path('searched', views.SearchBar.as_view(), name='search'),
+    path('search', views.SearchBar.as_view(), name='search'),
     path('tag/<slug:slug>/', views.TagSearch.as_view(), name='tagged'),
     path('seasons_all/', views.SeasonsAll.as_view(), name='seasons_all'),
     path('seasons_spring/', views.SeasonsSpring.as_view(),
