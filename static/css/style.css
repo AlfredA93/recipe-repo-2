@@ -237,7 +237,7 @@ p.card-text {
     height: 85vh;
 }
 
-/* Bookmarks & Recipe Pages */
+/* Bookmarks, My Recipe and Search Pages */
 
 .bck-color {
     background-color: rgba(0, 0, 0, 0.5);
@@ -259,6 +259,15 @@ p.card-text {
     align-items: center;
     justify-content: center;
     margin: 0;
+}
+
+.txt-blck {
+    color: black;
+}
+
+.img-empty {
+    max-width: 50vw;
+    max-height: 50vh;
 }
 
 .item-row {
