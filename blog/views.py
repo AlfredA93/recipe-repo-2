@@ -29,6 +29,25 @@ class TagSearch(View):
         return render(request, 'tag_search.html', context)
 
 
+class SearchBar(View):
+    """Nav Search Bar View function"""
+
+    def post(self, request, *args, **kwargs):
+        """Post user input to query database"""
+        search = request.POST['search']
+        recipes = Recipe.objects.filter(title__icontains=search)
+
+        return render(
+            request,
+            'search.html',
+            {
+                'searched': search,
+                'recipes': recipes
+            }
+        )
+
+
+
 class RecipeDetail(View):
     """Full Recipe View, Single Recipe per page"""
     def get(self, request, slug, *args, **kwargs):
