@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+{% block content %}
+
+{% if searched == '' %}
+    <h2>You forgot to enter a search value </h2>
+{% else %}
+    <h1> You searched for {{searched}} </h1>
+    {% if not recipes %}
+        <div>Unfortunately nothing matched your search</div>
+    {% else %}
+        {% for recipe in recipes %}
+            <div><span>{{recipe.title}}</span></div>
+        {% endfor %}
+    {% endif %}
+
+{% endif %}
+
+
+
+{% endblock %}
