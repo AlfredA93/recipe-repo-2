@@ -14,7 +14,7 @@ SEASON = ((0, "All"), (1, "Spring"), (2, "Summer"),
 class Recipe(models.Model):
     """Recipe Database Model"""
     title = models.CharField(
-        max_length=140,
+        max_length=100,
         unique=True,
         help_text="Format: Letters, Numbers, Hyphens & Underscores only.",
         validators=[
@@ -25,7 +25,7 @@ class Recipe(models.Model):
             )
         ]
     )
-    slug = models.SlugField(max_length=140, unique=True)
+    slug = models.SlugField(max_length=100, unique=True)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='recipe_post')
     status = models.IntegerField(
@@ -35,12 +35,13 @@ class Recipe(models.Model):
     )
     image = CloudinaryField('image', default='default')
     image_alt = models.CharField(
-        max_length=140,
-        help_text="Max Length 140 Characters"
+        max_length=70,
+        default="Recipe Repo Logo",
+        help_text="If no picture added, leave default text"
     )
     season = models.IntegerField(choices=SEASON, default=0)
     summary = models.TextField(
-        max_length=240,
+        max_length=200,
         help_text="Summarise your recipe in 240 Characters"
     )
     ingredients = QuillField()
