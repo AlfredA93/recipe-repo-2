@@ -357,8 +357,8 @@ label {
 }
 
 .delete-container {
-    margin: 2.5vh;
     padding: 2.5vh;
+    margin-bottom: 24vh;
 }
 
 
