@@ -254,7 +254,7 @@ class DeleteRecipe(DeleteView):
 class SeasonsAll(generic.ListView):
     """Recipe List View for Seasons - All Page"""
     model = Recipe
-    queryset = Recipe.objects.filter(status=1, season=0)
+    queryset = Recipe.objects.filter(status=1)
     template_name = 'seasons_all.html'
     paginate_by = 12
     ordering = ['published_on']
