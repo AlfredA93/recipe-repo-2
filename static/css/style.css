@@ -231,6 +231,10 @@ p.card-text {
 
 /* Bookmarks, My Recipe and Search Pages */
 
+.text-bold {
+    font-weight: bold;
+}
+
 .bck-color {
     background-color: rgba(0, 0, 0, 0.5);
     min-height: 75vh;

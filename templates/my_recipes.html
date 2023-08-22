@@ -23,7 +23,7 @@
                 <div class="row g-0 item-row rounded">
                     {% if recipe.status == 0 %}
                         <a href="{% url 'edit_recipe' recipe.slug %}" class="col-3 h5 item-title">{{recipe.title}}</a>
-                        <span class="col-3 item-status"> In Draft </span>
+                        <span class="col-3 item-status text-bold"> In Draft </span>
                         {% if 'default' in recipe.image.url %}
                             <a href="{% url 'edit_recipe' recipe.slug %}" class="col-4 item-def-img" style="background-image: url('{% static 'images/bookmark-logo.webp' %}');"></a>
                         {% else %}
