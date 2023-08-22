@@ -216,7 +216,6 @@ p.card-text {
     text-decoration: none;
     font-weight: bold;
     color: rgb(193, 139, 0);
-    text-shadow: 1%;
 }
 
 .account-text:hover {
@@ -226,7 +225,7 @@ p.card-text {
 .joinus-img {
     background: url('/static/images/oranges.webp');
     background-size: cover;
-    padding: 20% 5% 20% 5%;
+    padding: 5% 5% 5% 5%;
     height: 85vh;
 }
 
@@ -345,6 +344,26 @@ p.card-text {
     font-size: larger;
     
 }
+
+/* Forms Pages */
+
+label {
+    font-weight: bold;
+    font-size: large;
+    padding-top: 10px;
+}
+
+/* Delete Recipe */
+
+.delete-info {
+    font-size: large;
+}
+
+.delete-container {
+    margin: 2.5vh;
+    padding: 2.5vh;
+}
+
 
 /* Responsive Design Styles for Different Screen Sizes */
 
