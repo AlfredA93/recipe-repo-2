@@ -6,12 +6,14 @@
 
 <div class="m-4">
     <form method="post" class="d-flex col-12 flex-column align-items-center" enctype='multipart/form-data'>
-        <h4 class="col-4 text-center">Edit Recipe:</h4>
+        <h3 class="col-12 text-center main-heading text-black">
+            Edit Recipe:
+        </h3>
         {% csrf_token %}
-        <div class="col-8">
+        <div class="col-10 col-md-8">
             {{ form | crispy }}
         </div>
-        <input type="submit" class="btn btn-outline-info" value="Update">
+        <input type="submit" class="btn btn-outline-info btn-lg mt-2" value="Update">
     </form>
 </div>
 
