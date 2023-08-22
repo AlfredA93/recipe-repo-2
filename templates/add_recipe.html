@@ -8,17 +8,17 @@
 
 {% load crispy_forms_tags %}
 
-<h2>
-    Add a recipe:
-</h2>
+<h3 class="col-12 text-center main-heading text-black">
+    Add a Recipe:
+</h3>
 
 {% if user.is_authenticated %}
-    <div class="col-12 d-flex flex-column align-items-center">
-        <form method="post" class="col-6" enctype='multipart/form-data'>
+    <div class="col-12 d-flex justify-content-center align-items-center">
+        <form method="post" class="col-10 col-md-8" enctype='multipart/form-data'>
             {{ form | crispy }}
             {% csrf_token %}
-            <div class="d-flex justify-content-end">
-                <button type="submit m-1" class="btn btn-login m-2 col-3">Submit</button>
+            <div class="d-flex justify-content-center">
+                <button type="submit m-1" class="btn btn-login btn-lg m-2">Submit</button>
             </div>
         </form>
     </div>
