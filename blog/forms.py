@@ -30,14 +30,13 @@ class RecipeForm(forms.ModelForm):
             'title',
             'status',
             'image',
-            'image_alt',
             'season',
             'summary',
             'ingredients',
             'instructions',
             'tags'
         )
-        labels = {
-            'image_alt': 'Image Description'
-            }
-        widgets = {}
+        widgets = {
+            'summary': forms.TextInput(attrs={
+                'rows': '2'}),
+        }
