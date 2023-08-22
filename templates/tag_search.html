@@ -4,6 +4,12 @@
 
 {% block content %}
 
+<div class="col-12 d-flex text-center main-heading txt-blck">
+    <h3>
+        Recipes with <span class="tag-btn">#{{tag}}</span>
+    </h3>
+</div>
+<!-- Recipe Section -->
 <div class="col-12 md-4">
         <div class="row g-0">
             {% for recipe in recipes %}
