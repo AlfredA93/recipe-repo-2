@@ -235,9 +235,13 @@ class EditRecipe(UpdateView):
 
     def get_success_url(self):
         """Send the user to this url when edit successful"""
-        recipe_slug = self.object.slug
-        messages.success(self.request, "Recipe Successfully Updated")
-        return reverse('recipe_detail', kwargs={"slug": recipe_slug})
+        if self.object.status == 0:
+            messages.success(self.request, "Recipe Successfully Updated")
+            return reverse('my_recipes')
+        else:
+            recipe_slug = self.object.slug
+            messages.success(self.request, "Recipe Successfully Updated")
+            return reverse('recipe_detail', kwargs={"slug": recipe_slug})
 
 
 class DeleteRecipe(DeleteView):
