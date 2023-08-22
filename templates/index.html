@@ -60,10 +60,9 @@
     </div>
 
     <!-- Recipes Section -->
-    <div class="col-12 md-4">
-        <div class="row g-0">
+    <div class="recipe-container" data-masonry='{"percentPosition": true }'>
             {% for recipe in recipe_list %}
-            <div class="col-md-4 d-flex align-items-stretch">
+            <div class="col-4">
                 <div class="card">
                     <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link">
                     {% if 'default' in recipe.image.url %}
@@ -135,12 +134,7 @@
                     </div>
                 </div>
             </div>
-            {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row g-0">
-            {% endif %}
             {% endfor %}
-        </div>
     </div>
 
     <!-- Pagination Navigation. Credit: 'I Think Therefore I Blog' walkthrough, Code Institute -->

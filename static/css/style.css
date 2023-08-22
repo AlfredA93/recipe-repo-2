@@ -57,6 +57,11 @@ a {
 
 /* Index > Recipe Section */
 
+.recipe-container {
+    column-count: 3;
+    column-gap: 3px;
+}
+
 .icons-container {
     display: flex;
     justify-content: space-evenly;
