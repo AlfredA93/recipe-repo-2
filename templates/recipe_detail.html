@@ -12,7 +12,7 @@
             {% if 'default' in recipe.image.url %}
             <img src="{% static 'images/logo1.webp' %}" class="col-md-6 rounded card detail-img" alt="Recipe Repo logo. Recipes plus storage.">
             {% else %}
-            <img src="{{ recipe.image.url }}" class="col-md-6 rounded card detail-img" alt="{{ recipe.image_alt }}">
+            <img src="{{ recipe.image.url }}" class="col-md-6 rounded card detail-img" alt="{{ recipe.title }}">
             {% endif %}
         <div class="col-md-6 card">
             <div class="card-body d-flex justify-content-end flex-column flex-wrap">

@@ -30,7 +30,7 @@
                             <img src="{% static 'images/logo1.webp' %}" class="card-img-top" alt="Recipe Repo logo. Recipes plus storage.">
                         {% else %}
                         <div class="image">
-                            <img src="{{ recipe.image.url }}" class="img card-img-top" alt="{{recipe.image_alt}}">
+                            <img src="{{ recipe.image.url }}" class="img card-img-top" alt="{{recipe.title}}">
                         </div>
                         </a>
                         {% endif %}
