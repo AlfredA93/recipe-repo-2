@@ -77,25 +77,18 @@ p.card-text {
     color: gray;
 }
 
-.image{
+.image {
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     
 }
-.image img{
+.image img {
     flex-shrink: 0;
     min-width: 100%;
     min-height: 100%;
 }
-
-
-/* .image-background{
-    min-height: 200px;
-    min-width: 200px;
-    background-image: url('{{ recipe.image.url }}') fill;
-} */
 
 .tag-btn {
     border: 1px solid rgb(68, 77, 82);
