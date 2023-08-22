@@ -1,0 +1,168 @@
+<!-- Homepage recipe display -->
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block nav_home %}
+    active
+{% endblock %}
+
+{% block content %}
+    <!-- Hero Image -->
+    <img src="{% static 'images/hero-slim-2.webp' %}" class="img-fluid" alt="a plot of land growing corn">
+
+    <!-- Why Sign Up Accordian -->
+    <div class="accordion col-12">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#collapseOne" 
+                aria-expanded="true" 
+                aria-controls="collapseOne"
+                >
+                    <strong class="h5 m-0 col-12 text-center">Why Sign Up?</strong>
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse hide">
+                <div class="accordion-body text-center">
+                    Join our community and be able to comment on recipes, like recipes and interact with 
+                    our community via the comments section. This platform is in its seedling phase and there is so much more to come.
+                    Check out the <strong>Features Coming Soon...</strong> section below to see how we intend to grow, together. 
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed text-center" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#collapseTwo" 
+                aria-expanded="true" 
+                aria-controls="collapseTwo"
+                >
+                    <strong class="h5 m-0 col-12 text-center"><em>Features Coming Soon...</em></strong>
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse hide">
+                <div class="accordion-body ul-container">
+                    <ul class="feature-list">
+                        <li>Submit your own recipes</li>
+                        <li>Have your own profile with picture</li>
+                        <li>Share your favourite recipes</li>
+                        <li>Follow your favourite cooks/chefs</li>
+                        <li>Profile recipe feed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recipes Section -->
+    <div class="col-12 md-4">
+        <div class="row g-0">
+            {% for recipe in recipe_list %}
+            <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card">
+                    <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link">
+                    {% if 'default' in recipe.image.url %}
+                        <img src="{% static 'images/logo1.webp' %}" class="card-img-top" alt="Recipe Repo logo. Recipes plus storage.">
+                    {% else %}
+                    <div class="image">
+                        <img src="{{ recipe.image.url }}" class="img card-img-top" alt="{{recipe.title}}">
+                    </div>
+                    </a>
+                    {% endif %}
+                    <div class="card-body d-flex justify-content-end flex-column">
+                        <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link">
+                            <h5 class="card-title">{{recipe.title}}</h5>
+                        </a>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Created by {{recipe.author}}</h6>
+                        
+                        <!-- Tags -->
+                        <div class="d-flex flex-wrap ">
+                            {% for tag in recipe.tags.all %}
+                            <a href="{% url 'tagged' tag.slug %}" class="tag-btn">#{{ tag }}</a>
+                            {% endfor %}
+                        </div>
+
+                        <p class="card-text">{{ recipe.summary }}</p>
+                        <hr class="mt-auto">
+                        <!-- Like and Bookmarks Buttons -->
+                        <div class="icons-container">
+                            {% if user.is_authenticated %}
+                            <form action="{% url 'recipe_like' recipe.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if request.user in recipe.likes.all %}
+                                <span>
+                                    <button class="btn-like" type="submit" name="recipe_id" value="{{recipe.slug}}">
+                                        <i class="fa-solid fa-heart fa-xl" style="color: #db0000;"></i>
+                                    </button>
+                                    {{ recipe.number_of_likes }}
+                                </span>
+                                {% else %}
+                                <span>
+                                    <button class="btn-like" type="submit" name="recipe_id" value="{{recipe.slug}}">
+                                        <i class="far fa-heart fa-xl"></i>
+                                    </button>
+                                    {{ recipe.number_of_likes }}
+                                </span>
+                                {% endif %}
+                            </form>
+                            <form action="{% url 'recipe_bookmark' recipe.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if request.user in recipe.bookmarks.all %}
+                                <span>
+                                    <button class="btn-like" type="submit" name="recipe_id" value="{{recipe.slug}}">
+                                        <i class="fa-solid fa-bookmark fa-xl"></i>
+                                    </button>
+                                </span>
+                                {% else %}
+                                <span>
+                                    <button class="btn-like" type="submit" name="recipe_id" value="{{recipe.slug}}">
+                                        <span><i class="fa-regular fa-bookmark fa-xl"></i></span> 
+                                    </button>
+                                </span>
+                                {% endif %}
+                            </form>
+                        {% else %}
+                            <span><i class="far fa-heart fa-xl"></i> {{ recipe.number_of_likes }}</span>
+                        {% endif %}
+                        </div>
+                        <hr>
+                        <div class="card-text text-muted h6 text-center pb-1">{{recipe.published_on}}</div>
+                    </div>
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row g-0">
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Pagination Navigation. Credit: 'I Think Therefore I Blog' walkthrough, Code Institute -->
+    {% if is_paginated %}
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-end m-1">
+        {% if page_obj.has_previous %}
+            <li>
+            <a class="rounded btn btn-secondary"
+            href="?page={{ page_obj.previous_page_number }}">
+            &laquo; Previous</a>
+            </li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li>
+        <a class="rounded btn btn-secondary" 
+        href="?page={{ page_obj.next_page_number }}">
+        Next &raquo;</a>
+        </li>
+        {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+
+{% endblock %}
