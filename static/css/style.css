@@ -330,10 +330,6 @@ p.card-text {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.opaque-65 {
-    background-color: rgba(0, 0, 0, 0.65);
-}
-
 .seasons-title {
     font-weight: bold;
     color: #e9ecef
@@ -348,7 +344,7 @@ p.card-text {
     padding-right: 10vw;
     color:#e9ecef;
     font-size: larger;
-    
+    font-weight: 550;
 }
 
 /* Forms Pages */
