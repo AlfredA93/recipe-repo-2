@@ -353,6 +353,14 @@ label {
     padding-top: 10px;
 }
 
+#ingredients {
+    visibility: hidden;
+}
+
+#instructions {
+    visibility: hidden;
+}
+
 /* Delete Recipe */
 
 .delete-info {
