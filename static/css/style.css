@@ -77,6 +77,10 @@ p.card-text {
     color: gray;
 }
 
+.card-padding {
+    padding: 1% 0.5% 0% 0.5%;
+}
+
 .image {
     aspect-ratio: 1/1;
     display: flex;
