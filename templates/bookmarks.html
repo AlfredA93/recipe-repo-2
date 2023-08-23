@@ -20,11 +20,11 @@ active
         {% for recipe in recipe_list %}
             {% if request.user in recipe.bookmarks.all %}
                 <div class="row g-0 item-row rounded">
-                    <a href="" class="col-4 h5 item-title">{{recipe.title}}</a>
+                    <a href="{% url 'recipe_detail' recipe.slug %}" class="col-4 h5 item-title">{{recipe.title}}</a>
                     {% if 'default' in recipe.image.url %}
-                        <a href="" class="col-6 item-def-img" style="background-image: url('{% static 'images/bookmark-logo.webp' %}');"></a>
+                        <a href="{% url 'recipe_detail' recipe.slug %}" class="col-6 item-def-img" style="background-image: url('{% static 'images/bookmark-logo.webp' %}');"></a>
                     {% else %}
-                        <a href="" class="col-6 item-img" style="background-image: url('{{ recipe.image.url }}')"></a>
+                        <a href="{% url 'recipe_detail' recipe.slug %}" class="col-6 item-img" style="background-image: url('{{ recipe.image.url }}')"></a>
                     {% endif %}
                     <form action="{% url 'recipe_bookmark' recipe.slug %}" method="POST" class="col-2">
                         {% csrf_token %}
