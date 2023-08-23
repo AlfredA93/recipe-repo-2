@@ -35,11 +35,6 @@ class Recipe(models.Model):
     )
     image = CloudinaryField('image', default='default',
                             help_text="Images are auto-cropped to 1:1 ratio")
-    image_alt = models.CharField(
-        max_length=70,
-        default="Recipe Repo Logo",
-        help_text="If no picture added, leave default text"
-    )
     season = models.IntegerField(choices=SEASON, default=0)
     summary = models.TextField(
         max_length=200,
