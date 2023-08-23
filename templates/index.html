@@ -85,7 +85,7 @@
                         <!-- Tags -->
                         <div class="d-flex flex-wrap ">
                             {% for tag in recipe.tags.all %}
-                            <a href="{% url 'tagged' tag.slug %}" class="tag-btn">#{{ tag }}</a>
+                            <a href="{% url 'tagged' tag.slug %}" class="tag-btn tag-link">#{{ tag }}</a>
                             {% endfor %}
                         </div>
                         <!-- Summary -->

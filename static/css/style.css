@@ -55,7 +55,7 @@ a {
     box-shadow: none;
 }
 
-/* Index > Recipe Section */
+/* Recipe Section Card Styling*/
 
 .icons-container {
     display: flex;
@@ -97,7 +97,7 @@ p.card-text {
 
 .tag-btn {
     border: 1px solid rgb(68, 77, 82);
-    background-color: rgb(195, 255, 149);
+    background-color: #BEFFA6;
     color: black;
     font-weight: bold;
     text-decoration: none;
@@ -105,6 +105,10 @@ p.card-text {
     margin: 2px;
     padding-left: 4px;
     padding-right: 4px;
+}
+
+.tag-link:hover {
+    background-color: #A6FDFB;
 }
 
 /* Recipe Detail Styling */
