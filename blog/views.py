@@ -223,7 +223,7 @@ class AddRecipe(View):
                 )
             return redirect(reverse('add_recipe'))
 
-        return redirect(reverse('home'))
+        return redirect(reverse('my_recipes'))
 
 
 class EditRecipe(UpdateView):
