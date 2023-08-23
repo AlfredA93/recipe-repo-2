@@ -23,7 +23,7 @@
         <div class="col-12 md-4 pb-2">
             <div class="row g-0">
                 {% for recipe in recipes %}
-                <div class="col-md-4 d-flex align-items-stretch card-padding">
+                <div class="col-md-3 d-flex align-items-stretch card-padding">
                     <div class="card">
                         <!-- Image -->
                         {% if 'default' in recipe.image.url %}
@@ -98,7 +98,7 @@
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
+                {% if forloop.counter|divisibleby:4 %}
                 </div>
                 <div class="row g-0">
                 {% endif %}
