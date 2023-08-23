@@ -187,11 +187,6 @@ p.card-text {
 
 /* Account Pages */
 
-.bdr {
-    border: solid #e9ecef;
-    border-radius: 2.5%;
-}
-
 .bckgrnd {
     background-color: #e9ecef;
 }
@@ -200,7 +195,7 @@ p.card-text {
     background: url('/static/images/lemons.webp');
     background-size: cover;
     padding: 5%;
-    height: 85vh;
+    height: 76vh;
 }
 
 .btn-login {
@@ -228,14 +223,17 @@ p.card-text {
     background: url('/static/images/oranges.webp');
     background-size: cover;
     padding: 5% 5% 5% 5%;
-    height: 85vh;
+    height: 76vh;
+}
+
+.logout-text {
+    font-weight: 550;
 }
 
 .logout-img {
     background: url('/static/images/apples.webp');
     background-size: cover;
-    padding: 20%;
-    height: 85vh;
+    height: 76vh;
 }
 
 /* Bookmarks, My Recipe and Search Pages */
