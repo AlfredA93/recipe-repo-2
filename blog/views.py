@@ -200,7 +200,7 @@ class AddRecipe(View):
         return render(
             request,
             "add_recipe.html",
-            {'form': RecipeForm()}
+            {'form': RecipeForm(auto_id=True)}
         )
 
     def post(self, request, *args, **kwargs):
@@ -216,7 +216,7 @@ class AddRecipe(View):
             add_recipe.save()
             messages.success(request, 'Recipe Successfully Added')
         else:
-            add_recipe = RecipeForm()
+            add_recipe = RecipeForm(auto_id=True)
             messages.error(
                 request,
                 'Title invalid: Letters, Numbers, Hyphens and Underscores only'
