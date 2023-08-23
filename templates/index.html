@@ -63,31 +63,33 @@
     <div class="col-12 md-4">
         <div class="row g-0">
             {% for recipe in recipe_list %}
-            <div class="col-md-4 d-flex align-items-stretch">
+            <div class="col-md-4 d-flex align-items-stretch p-2">
                 <div class="card">
-                    <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link">
+                    <!-- Image -->
                     {% if 'default' in recipe.image.url %}
-                        <img src="{% static 'images/logo1.webp' %}" class="card-img-top" alt="Recipe Repo logo. Recipes plus storage.">
+                        <div class="image">
+                            <a href="{% url 'recipe_detail' recipe.slug %}" class="card-img-top" style="background-image: url('{% static 'images/logo1.webp' %}');"></a>
+                        </div>
                     {% else %}
-                    <div class="image">
-                        <img src="{{ recipe.image.url }}" class="img card-img-top" alt="{{recipe.title}}">
-                    </div>
-                    </a>
+                        <div class="image">
+                            <a href="{% url 'recipe_detail' recipe.slug %}" class="img card-img-top" style="background-image: url('{{ recipe.image.url }}')"></a>
+                        </div>
                     {% endif %}
+                    <!-- Card Body - Text, Tags and Icons -->
                     <div class="card-body d-flex justify-content-end flex-column">
+                        <!-- Title and Author -->
                         <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link">
                             <h5 class="card-title">{{recipe.title}}</h5>
                         </a>
                         <h6 class="card-subtitle mb-2 text-body-secondary">Created by {{recipe.author}}</h6>
-                        
                         <!-- Tags -->
                         <div class="d-flex flex-wrap ">
                             {% for tag in recipe.tags.all %}
                             <a href="{% url 'tagged' tag.slug %}" class="tag-btn">#{{ tag }}</a>
                             {% endfor %}
                         </div>
-
-                        <p class="card-text">{{ recipe.summary }}</p>
+                        <!-- Summary -->
+                        <p class="card-text pt-2">{{ recipe.summary }}</p>
                         <hr class="mt-auto">
                         <!-- Like and Bookmarks Buttons -->
                         <div class="icons-container">
@@ -131,6 +133,7 @@
                         {% endif %}
                         </div>
                         <hr>
+                        <!-- Date Created -->
                         <div class="card-text text-muted h6 text-center pb-1">{{recipe.published_on}}</div>
                     </div>
                 </div>
