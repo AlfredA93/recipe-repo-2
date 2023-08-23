@@ -14,10 +14,8 @@ active
 
 {% block content %}
 
-<div class="logout-img">
-  <div class="container col-md-6 bdr bckgrnd">
-    <div class="container d-flex justify-content-center mt-4 mb-4">
-      <div class="row">
+<div class="logout-img d-flex justify-content-center align-items-center">
+  <div class="rounded col-md-3 bckgrnd p-3">
         <h3>{% trans "Log Out" %}</h3>
         <p class="logout-text">{% trans 'Are you sure you want to log out?' %}</p>
         <form method="post" action="{% url 'account_logout' %}">
@@ -27,8 +25,6 @@ active
           {% endif %}
           <button class="btn btn-login" type="submit">{% trans 'Log Out' %}</button>
         </form>
-      </div>
-    </div>
   </div>
 </div> 
 
