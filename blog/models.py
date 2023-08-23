@@ -33,7 +33,8 @@ class Recipe(models.Model):
         default=0,
         help_text="Status: Draft or Published"
     )
-    image = CloudinaryField('image', default='default')
+    image = CloudinaryField('image', default='default',
+                            help_text="Images are auto-cropped to 1:1 ratio")
     image_alt = models.CharField(
         max_length=70,
         default="Recipe Repo Logo",
@@ -44,8 +45,8 @@ class Recipe(models.Model):
         max_length=200,
         help_text="Summarise your recipe in 240 Characters"
     )
-    ingredients = QuillField()
-    instructions = QuillField()
+    ingredients = QuillField(default="Write your ingredients here")
+    instructions = QuillField(default="Write your instructions here")
     tags = TaggableManager(
         help_text="A comma-seperated list of tags. Eg. Pasta, Italian"
     )
