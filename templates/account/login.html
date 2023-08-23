@@ -10,33 +10,25 @@ active
 {% endblock %}
 
 {% block content %}
-<div class="login-img">
-  <div class="container col-md-6 bdr bckgrnd">
-    <div class="container d-flex justify-content-center mt-4">
-      <div class="row">
-          <h3>{% trans "Log In" %}</h3>
-          <p>{% blocktrans %}Welcome back to <b>RecipeRepo!</b></p>
-          <p>
-            We hope to see you in the comments section very soon. If you haven't 
-            created an account yet and you would like to get involved with our 
-            community, by commenting, liking and bookmarking recipes please 
-            <a href="{{ signup_url }}" class="account-text">sign up</a>.
-          </p> 
-          <p><em>It's free, easy and everyone is welcome.{% endblocktrans %}</em></p>
-      </div>
-    </div>
-    <div class="container d-flex mb-4">
-      <div class="row">
-          <form class="login" method="POST" action="{% url 'account_login' %}">
-            {% csrf_token %}
-            {{ form.as_p }}
-            {% if redirect_field_value %}
-            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-            {% endif %}
-            <button class="btn btn-login" type="submit">{% trans "Log In" %}</button>
-          </form>
-      </div>
-    </div>
+<div class="login-img d-flex justify-content-center align-items-center">
+  <div class="col-md-6 rounded bckgrnd p-4">
+    <h3>{% trans "Log In" %}</h3>
+    <p>{% blocktrans %}Welcome back to <b>RecipeRepo!</b></p>
+    <p>
+      We hope to see you in the comments section very soon. If you haven't 
+      created an account yet and you would like to get involved with our 
+      community, by commenting, liking and bookmarking recipes please 
+      <a href="{{ signup_url }}" class="account-text">sign up</a>.
+    </p> 
+    <p><em>It's free, easy and everyone is welcome.{% endblocktrans %}</em></p>
+    <form class="login" method="POST" action="{% url 'account_login' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+      {% endif %}
+      <button class="btn btn-login" type="submit">{% trans "Log In" %}</button>
+    </form>
   </div>
 </div> 
 
