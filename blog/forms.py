@@ -38,5 +38,5 @@ class RecipeForm(forms.ModelForm):
         )
         widgets = {
             'summary': forms.TextInput(attrs={
-                'rows': '2'}),
-        }
+                'class': 'form-control'})
+            }
