@@ -9,12 +9,10 @@ class RecipeAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     list_filter = ('status', 'season', 'author', 'published_on')
     list_display = ('title', 'author', 'status', 'season', 'published_on')
-    search_fields = ['title', 'instructions', 'tags']
 
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     "Comment Admin fields and filtering"
-    list_filter = ['published']
+    list_filter = ['published', 'user', 'recipe']
     list_display = ('user', 'recipe', 'content', 'published')
-    search_fields = ['recipe', 'content']
