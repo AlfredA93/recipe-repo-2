@@ -12,12 +12,12 @@
     </h3>
 {% elif not recipes %}
     <h3 class="col-12 text-center main-heading txt-blck flex-column m-4">
-        Unfortunately nothing matched your search: {{searched}}
+        Unfortunately nothing matched your search: '<em>{{searched}}</em>'
         <img src="{% static 'images/empty.webp' %}" alt="Empty Notebook" class="img-fluid img-empty m-4 p-4">
     </h3>
     {% else %}
         <h3 class="col-12 text-center main-heading txt-blck">
-            You searched for recipes with {{searched}} in their title...
+            You searched for recipes with '<em>{{searched}}</em>' in their title...
         </h3>
         <!-- Recipe Section -->
         <div class="col-12 md-4 pb-2">
