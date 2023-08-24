@@ -191,7 +191,6 @@ p.card-text {
 }
 
 .login-img {
-    background: url('/static/images/lemons.webp');
     background-size: cover;
     padding: 5%;
     height: 76vh;
@@ -219,7 +218,6 @@ p.card-text {
 }
 
 .joinus-img {
-    background: url('/static/images/oranges.webp');
     background-size: cover;
     padding: 5% 5% 5% 5%;
     height: 76vh;
@@ -230,7 +228,6 @@ p.card-text {
 }
 
 .logout-img {
-    background: url('/static/images/apples.webp');
     background-size: cover;
     height: 76vh;
 }

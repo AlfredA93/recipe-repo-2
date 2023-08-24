@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% load i18n %}
 
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
@@ -14,7 +16,7 @@ active
 
 {% block content %}
 
-<div class="logout-img d-flex justify-content-center align-items-center">
+<div class="logout-img d-flex justify-content-center align-items-center" style="background-image: url('{% static 'images/apples.webp' %}');">
   <div class="rounded col-md-3 bckgrnd p-3">
         <h3>{% trans "Log Out" %}</h3>
         <p class="logout-text">{% trans 'Are you sure you want to log out?' %}</p>

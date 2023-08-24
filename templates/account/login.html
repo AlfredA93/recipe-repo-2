@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% load i18n %}
 {% load account socialaccount %}
 
@@ -10,7 +12,7 @@ active
 {% endblock %}
 
 {% block content %}
-<div class="login-img d-flex justify-content-center align-items-center">
+<div class="login-img d-flex justify-content-center align-items-center" style="background-image: url('{% static 'images/lemons.webp' %}');">
   <div class="col-md-6 rounded bckgrnd p-4">
     <h3>{% trans "Log In" %}</h3>
     <p>{% blocktrans %}Welcome back to <b>RecipeRepo!</b></p>

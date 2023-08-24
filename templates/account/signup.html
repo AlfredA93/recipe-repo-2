@@ -1,6 +1,8 @@
 
 {% extends "base.html" %}
 
+{% load static %}
+
 {% load i18n %}
 
 {% block head_title %}{% trans "Join Us" %}{% endblock %}
@@ -11,7 +13,7 @@ active
 
 {% block content %}
 
-<div class="joinus-img d-flex justify-content-center align-items-center">
+<div class="joinus-img d-flex justify-content-center align-items-center" style="background-image: url('{% static 'images/oranges.webp' %}');">
   <div class="col-md-6 rounded bckgrnd p-4">
         <h3>{% trans "Join Us" %}</h3>
         <p>{% blocktrans %}Do you already have an account? If so, please
