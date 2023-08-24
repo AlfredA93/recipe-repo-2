@@ -27,7 +27,6 @@ a {
 
 .message-nav {
     background-color: #f8f9fa;
-    width: 100vw;
 }
 
 /* Index > Accordion Styles */
@@ -345,7 +344,7 @@ p.card-text {
     font-weight: 550;
 }
 
-/* Forms Pages */
+/* Forms Pages inc. Add/Edit Recipe */
 
 label {
     font-weight: bold;
@@ -353,11 +352,11 @@ label {
     padding-top: 10px;
 }
 
-#ingredients {
+#ingredients, #id_ingredients {
     visibility: hidden;
 }
 
-#instructions {
+#instructions, #id_instructions {
     visibility: hidden;
 }
 
