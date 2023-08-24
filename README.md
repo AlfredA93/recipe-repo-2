@@ -10,6 +10,8 @@ Recipe Repo is a website designed for user's to share their love for cooking and
 
 ## Agile Strategy
 
+![Kanban Boards](/static/readme-img/agile.webp)
+
 ### Project Goals
 
 ### User Stories 
@@ -40,7 +42,15 @@ Recipe Repo is a website designed for user's to share their love for cooking and
 ### Structure
 
 
+### Other Design Aspects
+
+![Color Palette 1](/static/readme-img/color-1.webp)
+![Color Palette 2](/static/readme-img/color-2.webp)
+![Color Palette 3](/static/readme-img/color-3.webp)
+
 ### Wireframes
+
+
 # Features
 
 # Testing
@@ -62,11 +72,18 @@ Please see [TESTING](TESTING.md) page for all manual testing, this is extensivel
 
 **Bug 1**
 - Problem: When entering a recipe title with characters outside of alphanumeric, hyphens and underscores, an error occured when the slug field tried to be pre-populated. This appeared when the form creation for users to add recipes, as the form needed extra validation.
+
+![Bug 1](/static/readme-img/bug-1.webp)
+![Bug 1.2](/static/readme-img/bug-1-2.webp)
+
 - *Solution:* Adding Regex Validation to the Model field, along with adding an `if` statement to the `AddRecipe` view. [This](https://stackoverflow.com/questions/17165147/how-can-i-make-a-django-form-field-contain-only-alphanumeric-characters) webpage helped explain this further, more helpsheets regarding Regex Expression are linked in the Credits Section
 
 **Bug 2**
-- Problem: Forms provided by Django Quill fail HTML W3C Validation for having an `for` attribute of a `hidden` input type. 
-  - *Solution part 1:* Find the corresponding code within the [Django-Quill Repository](https://github.com/LeeHanYeong/django-quill-editor/blob/master/django_quill/templates/django_quill/widget.html) which is causing the error and change the input from `hidden` to `text`. Then in custom css, target the id's and mark the `visibility: hidden` so that this now passes HTML W3C Validation.
+- Problem: Forms provided by Django Quill fail HTML W3C Validation for having a `for` attribute of a `hidden` input type. 
+
+![Bug 2](/static/readme-img/bug-2.webp)
+
+  - *Solution part 1:* Find the corresponding code within the [Django-Quill Repository](https://github.com/LeeHanYeong/django-quill-editor/blob/master/django_quill/templates/django_quill/widget.html) where the source of the error occured. Change the input type from `hidden` to `text`. Then in custom CSS, target the id's and mark the `visibility: hidden` so that this now passes HTML W3C Validation.
   - *Soultion part 2:* add `auto_id=True` to the form within the corresponding view, as shown in [this](https://docs.djangoproject.com/en/4.2/ref/forms/fields/#django.forms.Field.label) Django documentation link
 
 **Bug 3**
@@ -80,10 +97,30 @@ Please see [TESTING](TESTING.md) page for all manual testing, this is extensivel
 
  During the setup of this project, I changed my Model Design from having separate Ingredients and Recipe Models respectively to including the Ingredients Model within the Recipe Model. During the conversion of this I made a mistake where I didn't delete the recipes before removing the Model which caused an error. During my investigation and attempts to recover the database from the error messages, I created deeper errors which I didn't understand fully. At this point, I decided to create a whole new repository and project and start again. 
  
+![Mistake](/static/readme-img/mistake.webp)
+
  The abandoned project is [this repository](https://github.com/AlfredA93/recipe-repo). I copied the code bit by bit (not literal bits I should add), across this current repository (where you're reading this now), so you may see similarities with the foundation code of this project from the original abandoned repository.
 
- # Deployment
+ My mentor Alex later told me that there was a solution to it, which was good to know; although I was already well into the new repository at that point.
 
+ ![Mistake fix](/static/readme-img/mistake-fix.webp)
+
+ # Deployment
+I deployed the app using the website Heroku, which hosts internet applications.
+
+I used ElephantSQL to set up a free cloud database with them. Set up an account with ElephantSQL and then follow these steps.
+- Click Create New Instance to create a new database.
+- Choose your location and name.
+- Finalise setup
+- Copy over your URL and add this to your application.
+
+ Set up an account with Heroku, then follow these steps for deployment -
+- Create an app
+- Name the app
+- Connect the app to GitHub and find the repository which you'd like to connect with.
+- Head over to the settings tab and find the Config Vars. Add the config vars appropriate to the app. In this case, it is PORT, ALLOWED_HOSTS, SECRET_KEY, CLOUDINARY_URL and DATABASE_URL.
+- Go back to the Deploy tab and select automatic deploys, so that whenever a new edit is received by GitHub, Heroku also updates the application. Once this has been clicked. Then click the deploy branch button at the bottom and await for the domain URL to be generated.
+- Switch back to the Deploy tab and half way down the page you can select automatic deploys. When this is active, whenever a new edit is received by GitHub, Heroku also updates the application and builds a new deployment. Once this has been checked, click the deploy branch button at the bottom and await for the domain URL to be generated.
  # Libraries Used and Why?
 - Django Quill Editor
   - This allows the user to create text in a much more flexible format, they can choose to add bold, emphasis and other types of text formatting to display their text in the desired way.
@@ -114,7 +151,7 @@ Many thanks to both Code Institute and my mentor Alex K, I learnt a lot througho
 - [Responsive Squares](https://stackoverflow.com/questions/20456694/grid-of-responsive-squares) - This link helped me keep a 1:1 aspect ratio for the Recipe Cards
 - [Non-Case Sensitive Search](https://stackoverflow.com/questions/12132368/django-queryset-contains-case-sensitive) - This link helped me find the correct syntax for searching without case sensitivity
 - [HTTP Referrer](https://stackoverflow.com/questions/4406377/django-request-to-find-previous-referrer) - Alex my mentor helped me find out the code needed to request the site referrer. This was used in views.py RecipeBookmark so that a user can bookmark a page and it would just reload the current page instead of directing to a set url
-
+- Text within the headings of the Seasons Pages was found at [RHS](https://rhs.org.uk) and [Squires Garden Centre](https://www.squiresgardencentres.co.uk/) which helped my own personal understanding of which veg are in season at which time.
 
  ## Helpsheets, Documentation and Useful Resources
 - [Bootstrap Documentation](https://getbootstrap.com/docs)
@@ -135,7 +172,7 @@ Many thanks to both Code Institute and my mentor Alex K, I learnt a lot througho
 - [Editing a success url](https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown) - This webpage helped me understand `get_success_url`
 - [Add & Delete Comments in Django YouTube Video](https://www.youtube.com/watch?v=MmLRE2fCcec)
 - [Attributes of TextArea](https://www.w3docs.com/snippets/html/how-to-set-the-size-of-the-textarea-element.html) in forms
-- Text within the headings of the Seasons Pages was found at [RHS](rhs.org.uk) and [Squires Garden Centre](https://www.squiresgardencentres.co.uk/)
+
  ## Technology
  - [Tiny-img](https://tiny-img.com/webp/) - webp image convertion
  - [Canva](canva.com) - Logo design
@@ -145,6 +182,7 @@ Many thanks to both Code Institute and my mentor Alex K, I learnt a lot througho
  - [Colour Palettes](https://mycolor.space/?hex=%23E9ECEF&sub=1) - UX Design
  - [Dopely Colors](https://colors.dopely.top/inside-colors/40-elegant-color-palettes-with-their-gradients/) - UX Design
  - [Django Key Generator](https://djecrety.ir/)
+ - [ElephantSQL](https://elephantsql.com)
 
  ## Media
  - All pictures were sourced from [Unsplash](https://unsplash.com/) under their free license.
