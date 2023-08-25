@@ -83,7 +83,10 @@ Bookmarks
 - This is the webpage where users can find all the recipes they've bookmarked for future use.
 - They can click on the bookmark icon to un-bookmark it if they no longer wish it saved in the list
 
+## Future Features
 
+- Email Notifications
+- Profile Pages with Updated 
 
 # Design
 ## Agile Strategy
@@ -169,57 +172,7 @@ The color schemes for the user interface were inspired by these palettes. Button
 ![Wireframe 2](/static/readme-img/wireframe2.webp)
 
 # Testing
-
-## Manual Testing
-Please see [TESTING](TESTING.md) page for all manual testing, this is extensively screenshotted and shown.
-
-## Validation
-
-### PEP8 Compliant
-
-### HTML W3C Validator
-
-### Jigsaw CSS Validator
-
-### Lighthouse Validation
-
-## Bugs
-
-**Bug 1**
-- Problem: When entering a recipe title with characters outside of alphanumeric, hyphens and underscores, an error occured when the slug field tried to be pre-populated. This appeared when the form creation for users to add recipes, as the form needed extra validation.
-
-![Bug 1](/static/readme-img/bug-1.webp)
-![Bug 1.2](/static/readme-img/bug-1-2.webp)
-
-- *Solution:* Adding Regex Validation to the Model field, along with adding an `if` statement to the `AddRecipe` view. [This](https://stackoverflow.com/questions/17165147/how-can-i-make-a-django-form-field-contain-only-alphanumeric-characters) webpage helped explain this further, more helpsheets regarding Regex Expression are linked in the Credits Section
-
-**Bug 2**
-- Problem: Forms provided by Django Quill fail HTML W3C Validation for having a `for` attribute of a `hidden` input type. 
-
-![Bug 2](/static/readme-img/bug-2.webp)
-
-  - *Solution part 1:* Find the corresponding code within the [Django-Quill Repository](https://github.com/LeeHanYeong/django-quill-editor/blob/master/django_quill/templates/django_quill/widget.html) where the source of the error occured. Change the input type from `hidden` to `text`. Then in custom CSS, target the id's and mark the `visibility: hidden` so that this now passes HTML W3C Validation.
-  - *Soultion part 2:* add `auto_id=True` to the form within the corresponding view, as shown in [this](https://docs.djangoproject.com/en/4.2/ref/forms/fields/#django.forms.Field.label) Django documentation link
-
-**Bug 3**
-- Problem: Images not saving when added via the user form in add_recipe.html
-- *Fix:* add `enctype='multipart/form-data'` to the form tags
-
-## Unfixed Bugs
-- None
-
- # Mistakes
-
- During the setup of this project, I changed my Model Design from having separate Ingredients and Recipe Models respectively to including the Ingredients Model within the Recipe Model. During the conversion of this I made a mistake where I didn't delete the recipes before removing the Model which caused an error. During my investigation and attempts to recover the database from the error messages, I created deeper errors which I didn't understand fully. At this point, I decided to create a whole new repository and project and start again. 
- 
-![Mistake](/static/readme-img/mistake.webp)
-
- The abandoned project is [this repository](https://github.com/AlfredA93/recipe-repo). I copied the code bit by bit (not literal bits I should add), across this current repository (where you're reading this now), so you may see similarities with the foundation code of this project from the original abandoned repository.
-
- My mentor Alex later told me that there was a solution to it, which was good to know; although I was already well into the new repository at that point.
-
- ![Mistake fix](/static/readme-img/mistake-fix.webp)
-
+### Please see [TESTING](TESTING.md) page for all testing and validation.
  # Deployment
 I deployed the app using the website Heroku, which hosts internet applications.
 
