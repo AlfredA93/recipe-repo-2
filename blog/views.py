@@ -205,7 +205,7 @@ class AddRecipe(View):
     def post(self, request, *args, **kwargs):
         """Post the User Recipe Form to the Recipe model"""
 
-        add_recipe = RecipeForm(data=request.POST)
+        add_recipe = RecipeForm(request.POST, request.FILES)
 
         if add_recipe.is_valid():
             add_recipe.instance.author = request.user
