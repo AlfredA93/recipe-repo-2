@@ -141,11 +141,11 @@ Once these objectives have been accomplished, we could work on expanding towards
 
 The plan for the structure of this was as follows -
 
-At Minimum
+**At Minimum**
 - Home Page, 5 Seasons Pages, 3 Account Pages - Login, Logout, Sign Up/Join Our Community
 - Bookmarks Page visible only to logged in users
 
-Ideally (minimum plus...)
+**Ideally (minimum plus...)**
 - User dropdown menu
   - My Recipes
   - Bookmarks
@@ -156,7 +156,7 @@ Ideally (minimum plus...)
 
 ### Other Design Aspects
 
-The color schemes for the user interface were inspired by these palettes.
+The color schemes for the user interface were inspired by these palettes. Buttons, Nav bar, footer colours all come from these.
 
 ![Color Palette 1](/static/readme-img/color-1.webp)
 ![Color Palette 2](/static/readme-img/color-2.webp)
@@ -164,7 +164,9 @@ The color schemes for the user interface were inspired by these palettes.
 
 ### Wireframes
 
-
+![Database Model Designing](/static/readme-img/db-models.webp)
+![Wireframe 1](/static/readme-img/wireframe1.webp)
+![Wireframe 2](/static/readme-img/wireframe2.webp)
 
 # Testing
 
