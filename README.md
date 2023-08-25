@@ -5,14 +5,66 @@
 
 Recipe Repo is a website designed for user's to share their love for cooking and baking. You can see the live website [insert link here]()
 
+# Features
+
+Nav Bar
+- The Navigation Bar is responsive and changes between an inline list to a burger icon depending on screen size
+- Home - This takes us to the home screen
+- Seasons Pages - This takes us to a page for each season, where the recipes are filtered
+  - All Seasons - for all recipes on the website
+  - Spring - Recipes for Spring
+  - Summer - Recipes for Summer
+  - Autumn - Recipes for Autumn
+  - Winter - Recipes for Winter
+- Login - This is where users who already have an account can sign in.
+- Join Our Community - This is where users who are new to the website can sign up for an account.
+- Search Bar - This is where the user can search through all the recipe titles for a specific recipe.
+
+![Add Picture Here]()
+
+Nav Bar (when signed in)
+- User Dropdown Menu
+  - Bookmarks - Here the user can find all the recipes they have bookmarked
+  - My Recipes - This is where the user can find all the recipes that they have created themselves.
+  - Log out - This is where the User can log out of their account
+
+Home Page
+- This is the landing page for the website. Users are encouraged to sign up with the drop-down accordion bars on the page.
+- The users also see a list of the most recent recipes submitted to the website
+
+
+
+Season Pages
+- These show a filtered set of recipes corresponding with the appropriate season they are assigned during the recipe upload process. The All Seasons page is only filtered by published recipes, so this page includes the entire collection of the site's recipes.
+
+![Add Picture Here]()
+![Add Picture Here]()
+![Add Picture Here]()
+![Add Picture Here]()
+![Add Picture Here]()
+
+Join Our Community
+- This is the sign up form for new users
+
+Log In
+- This is the form where users can sign into their account
+
+Log Out
+- This is the form where users can sign out of their account
+
+Add A Recipe
+- This is where the users can add their own recipes
+
 # Design
-
-
 ## Agile Strategy
+The Agile methodology was used to plan and create this project. I used the Projects tool within GitHub to manage the different processes needed for this project to be completed.
+
+- User Stories were created through GitHub Issues to highlight features for possible implementation.
+- These User Stories were then assigned a label from these options - 'Could Have', 'Should Have' and 'Must Have'. These labels helped to prioritise which features needed to be implemented first.
+
+After completing this project I saw the capability to use Epics (GitHub Milestones). These can give User Stories an overall theme to a group of User Stories - this is a feature within GitHub that I will research and use in future projects as I wasn't aware of this until after completing this project.
 
 ![Kanban Boards](/static/readme-img/agile.webp)
-
-### Project Goals
 
 ### User Stories 
 
@@ -37,12 +89,44 @@ Recipe Repo is a website designed for user's to share their love for cooking and
 | USER STORY: Add a user recipe | [#17](https://github.com/AlfredA93/recipe-repo-2/issues/17) | As a user I can create a recipe to submit on the website so that I can share my recipes with the community | [x] | Should Have |
 | USER STORY: Edit/Delete User Recipe | [#18](https://github.com/AlfredA93/recipe-repo-2/issues/18) | As a user I can edit or delete recipes that I have created so that I can correct any errors or remove recipes I don't want anymore | [x] | Should Have |
 
-### Scope
+### Project Goals
+The goal of this project is to create a website for the cooking and baking community to come together and interact over online recipes. I am a keen cook and baker and have always wanted to share my recipes with friends and family alike, this website is the perfect opportunity to do this. This website is to meet a minimum of admin recipe creation and user comment/bookmark and like functionality. Further development goals are for users to submit their recipes.
 
+### Scope
+The scope of this project was large at the beginning. Due to having a final deadline, certain features were assigned different priorities, to make sure that this project was finished in time with the user having the ability to interact with the site in a fully functional CRUD (Create, Read, Update & Delete) way.
+So the plan for this project minimum (Must-Have) was as follows -
+- Admin created recipes with full CRUD functionality from the backend
+- Recipe List and Detailed Recipe webpages
+- User account creation 
+- User comments with full front-end CRUD functionality
+- User likes with full front-end CRUD functionality
+- User bookmarks with full front-end CRUD functionality
+
+Once these objectives have been accomplished, we could work on expanding towards the 'Should Have' and 'Could Have' User Stories.
+- User Recipes in full front-end CRUD functionality
+- User 'My Recipes' webpages, where users can see, edit, delete their recipes in one simple easy place.
+- Add Search Bar functionality
+- Add Search by hashtag functionality
 ### Structure
 
+The plan for the structure of this was as follows -
+
+At Minimum
+- Home Page, 5 Seasons Pages, 3 Account Pages - Login, Logout, Sign Up/Join Our Community
+- Bookmarks Page visible only to logged in users
+
+Ideally (minimum plus...)
+- User dropdown menu
+  - My Recipes
+  - Bookmarks
+  - Logout
+- Add A Recipe page
+- Search Bar
+- Search by hashtag
 
 ### Other Design Aspects
+
+The color schemes for the user interface were inspired by these palettes.
 
 ![Color Palette 1](/static/readme-img/color-1.webp)
 ![Color Palette 2](/static/readme-img/color-2.webp)
@@ -51,7 +135,6 @@ Recipe Repo is a website designed for user's to share their love for cooking and
 ### Wireframes
 
 
-# Features
 
 # Testing
 
@@ -151,7 +234,7 @@ Many thanks to both Code Institute and my mentor Alex K, I learnt a lot througho
 - [Responsive Squares](https://stackoverflow.com/questions/20456694/grid-of-responsive-squares) - This link helped me keep a 1:1 aspect ratio for the Recipe Cards
 - [Non-Case Sensitive Search](https://stackoverflow.com/questions/12132368/django-queryset-contains-case-sensitive) - This link helped me find the correct syntax for searching without case sensitivity
 - [HTTP Referrer](https://stackoverflow.com/questions/4406377/django-request-to-find-previous-referrer) - Alex my mentor helped me find out the code needed to request the site referrer. This was used in views.py RecipeBookmark so that a user can bookmark a page and it would just reload the current page instead of directing to a set url
-- Text within the headings of the Seasons Pages was found at [RHS](https://rhs.org.uk) and [Squires Garden Centre](https://www.squiresgardencentres.co.uk/) which helped my own personal understanding of which veg are in season at which time.
+- Text within the headings of the Seasons Pages was found at [RHS](https://rhs.org.uk) and [Squires Garden Centre](https://www.squiresgardencentres.co.uk/) which was adding to by my own personal knowledge of which veg are in season at which time.
 
  ## Helpsheets, Documentation and Useful Resources
 - [Bootstrap Documentation](https://getbootstrap.com/docs)
