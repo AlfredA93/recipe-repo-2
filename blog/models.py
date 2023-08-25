@@ -16,7 +16,7 @@ class Recipe(models.Model):
     title = models.CharField(
         max_length=100,
         unique=True,
-        help_text="Format: Letters, Numbers, Hyphens & Underscores only.",
+        help_text="Format: Letters, Numbers, Hyphens & Underscores only",
         validators=[
             RegexValidator(
                 regex=r'^[\w\-\s]+$',
@@ -40,8 +40,6 @@ class Recipe(models.Model):
         max_length=200,
         help_text="Summarise your recipe in 240 Characters"
     )
-    zutaten = models.TextField(default="Zutaten")
-    directions = models.TextField(default="Directions")
     ingredients = QuillField(default="Write your ingredients here")
     instructions = QuillField(default="Write your instructions here")
     tags = TaggableManager(
