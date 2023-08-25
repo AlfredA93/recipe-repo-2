@@ -18,7 +18,6 @@ active
         </h3>
         <!-- Each Bookmark Row Item -->
         {% for recipe in recipe_list %}
-            {% if request.user in recipe.bookmarks.all %}
                 <div class="row g-0 item-row rounded">
                     <a href="{% url 'recipe_detail' recipe.slug %}" class="col-4 h5 item-title">{{recipe.title}}</a>
                     {% if 'default' in recipe.image.url %}
@@ -35,7 +34,6 @@ active
                         </span>
                     </form>
                 </div>
-            {% endif %}
         {% endfor %}
         <!-- Pagination Navigation. Credit: 'I Think Therefore I Blog' walkthrough, Code Institute -->
             {% if is_paginated %}
