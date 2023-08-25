@@ -11,10 +11,10 @@ from .forms import CommentForm, RecipeForm
 class RecipeList(generic.ListView):
     """Recipe List View for homepage"""
     model = Recipe
-    queryset = Recipe.objects.filter(status=1).order_by('-likes')
+    queryset = Recipe.objects.filter(status=1)
     template_name = 'index.html'
     paginate_by = 12
-    ordering = ['published_on']
+    ordering = ['-published_on']
 
 
 class TagSearch(View):
@@ -45,7 +45,6 @@ class SearchBar(View):
                 'recipes': recipes
             }
         )
-
 
 
 class RecipeDetail(View):
