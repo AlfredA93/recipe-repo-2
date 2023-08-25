@@ -32,7 +32,10 @@ Home Page
 - This is the landing page for the website. Users are encouraged to sign up with the drop-down accordion bars on the page.
 - The users also see a list of the most recent recipes submitted to the website
 
-
+Recipe Detail Page
+- This is where the users can see the full recipe breakdown.
+- Users can comment, like and bookmark the recipe.
+- Users can edit or delete their comments, but not those from other users (only the admin has that capability)
 
 Season Pages
 - These show a filtered set of recipes corresponding with the appropriate season they are assigned during the recipe upload process. The All Seasons page is only filtered by published recipes, so this page includes the entire collection of the site's recipes.
@@ -44,16 +47,43 @@ Season Pages
 ![Add Picture Here]()
 
 Join Our Community
-- This is the sign up form for new users
+- This is the signup form for new users
+- It has built-in password validation from Django AllAuth library 
+
+Search Bar
+- This search bar searches through all of the recipe titles and displays matching results in a separate webpage.
+- From here they can access the same functionality as on the recipe cards as in the Seasons and Home page.
+
+Hashtag search
+- If users click on a hashtag, they are taken to a separate webpage that displays a list of all the recipes with the same tag.
+- From here they can access the same functionality as on the recipe cards as in the Seasons and Home page.
 
 Log In
 - This is the form where users can sign into their account
+
+Custom Error Pages
+- 404 Error Page for when the user accidentally types in an url path that doesn't exist on our website.
+- 505 Error Page for when there is a server error on the website.
+
+### Once the User has signed up they can now view these pages below -
 
 Log Out
 - This is the form where users can sign out of their account
 
 Add A Recipe
-- This is where the users can add their own recipes
+- This is where the users can add their recipes
+
+My Recipes
+- This is where users can see the recipes they have created
+- They can see the amount of bookmarks and likes each recipe has
+- Whether it is in Draft or Published - if published, it shows the likes/bookmarks
+- They can edit or delete each recipe
+
+Bookmarks
+- This is the webpage where users can find all the recipes they've bookmarked for future use.
+- They can click on the bookmark icon to un-bookmark it if they no longer wish it saved in the list
+
+
 
 # Design
 ## Agile Strategy
