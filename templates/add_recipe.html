@@ -4,6 +4,8 @@
     active
 {% endblock %}
 
+
+
 {% block content %}
 
 {% load crispy_forms_tags %}
@@ -25,3 +27,12 @@
 {% endif %}
 
 {% endblock content %}
+{% block extra_js %}
+<script>
+    let inputField = document.querySelector("input[type=hidden]");
+    if (inputField !== null) {
+    inputField.setAttribute("type", "text");
+    inputField.style.visibility = "hidden";
+    }
+</script>
+{% endblock %}
