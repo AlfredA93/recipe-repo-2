@@ -218,7 +218,7 @@ class AddRecipe(View):
             add_recipe = RecipeForm(auto_id=True)
             messages.error(
                 request,
-                'Title invalid: Letters, Numbers, Hyphens and Underscores only'
+                'Error: Title must be Unique. See help text for more info.'
                 )
             return redirect(reverse('add_recipe'))
 
