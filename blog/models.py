@@ -40,6 +40,8 @@ class Recipe(models.Model):
         max_length=200,
         help_text="Summarise your recipe in 240 Characters"
     )
+    zutaten = models.TextField(default="Zutaten")
+    directions = models.TextField(default="Directions")
     ingredients = QuillField(default="Write your ingredients here")
     instructions = QuillField(default="Write your instructions here")
     tags = TaggableManager(
