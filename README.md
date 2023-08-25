@@ -172,8 +172,8 @@ The color schemes for the user interface were inspired by these palettes. Button
 ![Wireframe 2](/static/readme-img/wireframe2.webp)
 
 # Testing
-### Please see [TESTING](TESTING.md) page for all testing and validation.
- # Deployment
+### Please see [TESTING](TESTING.md) page for all details on testing and validation.
+# Deployment
 I deployed the app using the website Heroku, which hosts internet applications.
 
 I used ElephantSQL to set up a free cloud database with them. Set up an account with ElephantSQL and then follow these steps.

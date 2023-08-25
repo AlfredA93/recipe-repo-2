@@ -7,6 +7,8 @@ All code is written by myself, excluding the injected code from DjangoQuill, All
 
 ### PEP8 Compliant
 
+All custom Python code is valid and complient to PEP8 standards as per [CI Python Linter](https://pep8ci.herokuapp.com/)
+
 ### HTML W3C Validator
 
 **2 Errors on all Django-Quill forms which appear on the Admin Add Recipe Page, the Front-End User Add Recipe page and the Front-End User Edit Recipe Page **
@@ -16,6 +18,10 @@ All code is written by myself, excluding the injected code from DjangoQuill, All
 - ***Fix*** - No fix required. I spent a full mentor call and many hours before/after trying to fix this issue however it is still present. I spoke with both my cohort lead, peers within the CodeInstitute community and to the tutor team at Code Institute for support on this matter and they all advised me that this is a common issue and should be noted within the README but not necessary to take action over. This is something which I will continue to look at if and when future development of this website happens; as I continue to learn more and increase my skills as a developer I hope that I can overcome these bugs.
 
 ### Jigsaw CSS Validator
+
+All custom CSS code is Valid
+
+![CSS Valid]()
 
 ### Lighthouse Validation
 
@@ -34,7 +40,7 @@ All code is written by myself, excluding the injected code from DjangoQuill, All
 - *Fix:* add `enctype='multipart/form-data'` to the form tags
 
 ## Unfixed Bugs
-- As in HTML W3C Validator
+- As above in ***HTML W3C Validator*** section
 
  # Mistakes
 
