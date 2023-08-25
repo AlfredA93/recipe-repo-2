@@ -6,15 +6,17 @@
 {% block content %}
 <!-- Page Headings -->
 {% if searched == '' %}
-    <h3 class="col-12 text-center main-heading txt-blck flex-column m-4">
+    <h3 class="col-1 text-center main-heading txt-blck flex-column m-4 g-0">
         Oops... you forgot to enter a search value...
     <img src="{% static 'images/empty.webp' %}" alt="Empty Notebook" class="img-fluid img-empty m-4 p-4">
     </h3>
 {% elif not recipes %}
-    <h3 class="col-12 text-center main-heading txt-blck flex-column m-4">
-        Unfortunately nothing matched your search: '<em>{{searched}}</em>'
+    <div class="d-flex flex-column align-items-center justify-content-center">
+        <h3 class="col-12 text-center main-heading txt-blck m-4">
+            Unfortunately nothing matched your search: '<em>{{searched}}</em>'
+        </h3>
         <img src="{% static 'images/empty.webp' %}" alt="Empty Notebook" class="img-fluid img-empty m-4 p-4">
-    </h3>
+    </div>
     {% else %}
         <h3 class="col-12 text-center main-heading txt-blck">
             You searched for recipes with '<em>{{searched}}</em>' in their title...
@@ -24,7 +26,7 @@
             <div class="row g-0">
                 {% for recipe in recipes %}
                 <div class="col-md-3 d-flex align-items-stretch card-padding">
-                    <div class="card">
+                    <div class="card col-12">
                         <!-- Image -->
                         {% if 'default' in recipe.image.url %}
                             <div class="image">
