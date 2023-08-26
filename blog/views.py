@@ -222,7 +222,7 @@ class AddRecipe(View):
             add_recipe = RecipeForm(auto_id=True)
             messages.error(
                 request,
-                'Error: Title must be Unique. See help text for more info.'
+                'Error: See format text by input. Title must be unique'
                 )
             return redirect(reverse('add_recipe'))
 
