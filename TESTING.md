@@ -1,6 +1,47 @@
 # Testing
 ## Manual Testing
 
+When carrying out manual tests, I went through each of the user and admin processes for adding, editting and deleting to test if any errors can occur in the process.
+
+### Admin Panel
+
+In the admin panel we need to test editting comments and recipes as this is where errors can be introduced.
+
+- Possible error - the wrong format of title is used. This would through an error as the slug field only accepts Letters, Numbers, Hyphens and Underscores. As the slug field is automatically populated from the Title field, this is very important that we validate the title field. We did this through Regex Validation directly on the model. If a user or admin tries to use a format not accepted by the model, then this error is thrown.
+
+![Recipe Title Error](/documentation/readme-img/manual-tests/admin-testing.webp)
+
+- When choosing to add a comment, the admin must choose a recipe and user to comment as. Otherwise the error below is thrown.
+
+![](/documentation/readme-img/manual-tests/admin-comment-test.webp)
+![](/documentation/readme-img/manual-tests/admin-test3.webp)
+
+- Below shows the message that is thrown when a recipe is deleted successfully, the same type of message is thrown whenever a successful edit is made to comments or recipes across the admin panel.
+
+![](/documentation/readme-img/manual-tests/admin-testing2.webp)
+
+
+#### Add Recipe
+
+![Recipe Test Title]()
+![]()
+![]()
+![]()
+
+
+
+#### Search Bar
+![]()
+![]()
+![]()
+![]()
+
+
+#### Account Section - Login/Logout/Signup
+![]()
+![]()
+![]()
+![]()
 
 
 ## Validation
