@@ -10,16 +10,18 @@ In the admin panel, we need to test editing comments and recipes as this is wher
 
 - Possible error - the wrong format for Title is used. This would through an error as the slug field only accepts Letters, Numbers, Hyphens and Underscores. As the slug field is automatically populated from the Title field, this is very important that we validate the title field. We did this through Regex Validation directly on the model. If a user or admin tries to use a format not accepted by the model, then this error is thrown.
 
+![Regex](/documentation/readme-img/manual-tests/regex.webp)
+
 ![Recipe Title Error](/documentation/readme-img/manual-tests/admin-testing.webp)
 
 - When choosing to add a comment, the admin must choose a recipe and user to comment as, otherwise the error below is thrown.
 
-![](/documentation/readme-img/manual-tests/admin-comment-test.webp)
-![](/documentation/readme-img/manual-tests/admin-test3.webp)
+![Admin Test](/documentation/readme-img/manual-tests/admin-comment-test.webp)
+![Admin Test 3](/documentation/readme-img/manual-tests/admin-test3.webp)
 
 - The image below shows the message that is thrown when a recipe is deleted successfully, the same type of message is thrown whenever a successful edit is made to comments or recipes across the admin panel.
 
-![](/documentation/readme-img/manual-tests/admin-testing2.webp)
+![Admin Test 2](/documentation/readme-img/manual-tests/admin-testing2.webp)
 
 ### Add/Edit Recipe
 
@@ -32,10 +34,10 @@ For the fields required to be filled - Title, Status, Summary and Tags, the 'Ple
 
 ### Search Bar
 
-For the search bar, we needed to check whether there is data coming back within the search query. If not, then this is what is shown.
+For the search bar, we need to check whether an empty dataset is coming back within the search query. If not, then this is what is shown.
 
-![](/documentation/readme-img/manual-tests/searchbar-test1.webp)
-![](/documentation/readme-img/manual-tests/searchbar-test2.webp)
+![Search bar test](/documentation/readme-img/manual-tests/searchbar-test1.webp)
+![Search bar test](/documentation/readme-img/manual-tests/searchbar-test2.webp)
 
 ### Account Section - Login/Signup
 
@@ -63,17 +65,17 @@ Here is the 404 Error Page -
 The website is built and tested to be responsive to small screens to desktop computer screens. This was adjusted through Bootstrap classes and through custom css.
 
 Below we have screenshots of the responsive design to an iPhone SE Screen - the smallest main stream screen on the market at the moment.
-![](/documentation/readme-img/responsive/responsive-iphone-se-1.webp)
-![](/documentation/readme-img/responsive/responsive-iphone-se-2.webp)
-![](/documentation/readme-img/responsive/responsive-iphone-se-3.webp)
-![](/documentation/readme-img/responsive/responsive-iphone-se-4.webp)
-![](/documentation/readme-img/responsive/responsive-iphone-se-5.webp)
+![Phone 1](/documentation/readme-img/responsive/responsive-iphone-se-1.webp)
+![Phone 2](/documentation/readme-img/responsive/responsive-iphone-se-2.webp)
+![Phone 3](/documentation/readme-img/responsive/responsive-iphone-se-3.webp)
+![Phone 4](/documentation/readme-img/responsive/responsive-iphone-se-4.webp)
+![Phone 5](/documentation/readme-img/responsive/responsive-iphone-se-5.webp)
 
 Below is now the screen at the size of a Medium Screen iPad Air
 
-![](/documentation/readme-img/responsive/responsive-tablet-1.webp)
-![](/documentation/readme-img/responsive/responsive-tablet-2.webp)
-![](/documentation/readme-img/responsive/responsive-tablet-3.webp)
+![Tablet 1](/documentation/readme-img/responsive/responsive-tablet-1.webp)
+![Tablet 2](/documentation/readme-img/responsive/responsive-tablet-2.webp)
+![Tablet 3](/documentation/readme-img/responsive/responsive-tablet-3.webp)
 
 
 ## Validation
