@@ -62,18 +62,19 @@ Here is the 404 Error Page -
 
 Originally I also included a 500 Error Page, however, I searched extensively online for how to test or generate a server handler error and couldn't find an understandable way of doing this within my current setup. So I chose to remove this feature and use the Generic Django Server Error which is pre-tested upon release instead as I wasn't able to test mine. This is an area I need to do more research on.
 
-### Responsive Design
+## Responsive Design
 
-The website is built and tested to be responsive to small screens to desktop computer screens. This was adjusted through Bootstrap classes and through custom css.
+### The website is built and tested to be responsive to small screens to desktop computer screens. This was adjusted through Bootstrap classes and through custom css.
 
-Below we have screenshots of the responsive design to an iPhone SE Screen - the smallest main stream screen on the market at the moment.
+### Below we have screenshots of the responsive design to an iPhone SE Screen - the smallest main stream screen on the market at the moment.
+
 ![Phone 1](/documentation/readme-img/responsive/responsive-iphone-se-1.webp)
 ![Phone 2](/documentation/readme-img/responsive/responsive-iphone-se-2.webp)
 ![Phone 3](/documentation/readme-img/responsive/responsive-iphone-se-3.webp)
 ![Phone 4](/documentation/readme-img/responsive/responsive-iphone-se-4.webp)
 ![Phone 5](/documentation/readme-img/responsive/responsive-iphone-se-5.webp)
 
-Below is now the screen at the size of a Medium Screen iPad Air
+### Below is now the screen at the size of a Medium Screen iPad Air
 
 ![Tablet 1](/documentation/readme-img/responsive/responsive-tablet-1.webp)
 ![Tablet 2](/documentation/readme-img/responsive/responsive-tablet-2.webp)
@@ -95,7 +96,7 @@ All custom-written HTML code is valid.
 ![HTML Valid](/documentation/readme-img/html-valid.webp)
 
 
-**The 2 Errors listed above appear on front-end pages - Add A Recipe, Edit Recipe and under Admin panel - Add Recipe. This error comes directly from the Django-Quill injected code - this is further explained in the fix attempts section below**
+**The 2 Errors listed below appear on front-end pages - Add A Recipe, Edit Recipe and under Admin panel - Add Recipe. This error comes directly from the Django-Quill injected code - this is further explained in the fix attempts section below**
 
 - **Problem**: Forms code provided by Django Quill failed HTML W3C Validation for having a `for` attribute referencing a `hidden` input type.
 
@@ -154,4 +155,4 @@ My mentor Alex later told me that there was a solution to it, which was good to 
 
 
 # Learning Outcomes
-I have learned so much throughout this project. The amount of features and the flexibility that the Django Framework offers is both exciting and was a little overwhelming initially. However, the CodeInstitute, Stack Overflow, YouTube and online communities were brilliant at explaining some of the features. I conducted this project in a short amount of time, only 3 weeks and I am excited to continue learning with Django more in the future, as this project is a thimble of features within a sea of possibilities that is Django.  
+I have learned so much throughout this project. The amount of features and the flexibility that the Django Framework offers is exciting and was a little overwhelming initially. However, the CodeInstitute, Stack Overflow, YouTube and online communities were brilliant at explaining some of the features. I conducted this project in a short amount of time, only 3 weeks and I am excited to continue learning with Django more in the future, as this project is a thimble of features within a sea of possibilities that is Django. Further development on this project is something I would like to do in the future, as I think I am only at the tip of the iceberg.   
