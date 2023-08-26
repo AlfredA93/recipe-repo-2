@@ -3,90 +3,149 @@
 
 # Introduction
 
-Recipe Repo is a website designed for user's to share their love for cooking and baking. You can see the live website [insert link here]()
+Recipe Repo is a website designed for user's to share their love for cooking and baking. You can see the live website [here](https://recipe-repo-2-e23f0ecfdc52.herokuapp.com/)
 
 # Features
 
 Nav Bar
 - The Navigation Bar is responsive and changes between an inline list to a burger icon depending on screen size
+![NavBar](/documentation/readme-img/features/nav-newuser.webp)
 - Home - This takes us to the home screen
 - Seasons Pages - This takes us to a page for each season, where the recipes are filtered
+![Seasons Menu](/documentation/readme-img/features/seasons-menu.webp)
   - All Seasons - for all recipes on the website
   - Spring - Recipes for Spring
   - Summer - Recipes for Summer
   - Autumn - Recipes for Autumn
   - Winter - Recipes for Winter
+
 - Login - This is where users who already have an account can sign in.
 - Join Our Community - This is where users who are new to the website can sign up for an account.
 - Search Bar - This is where the user can search through all the recipe titles for a specific recipe.
 
-![Add Picture Here]()
+- Responsive Burger Icon - the Nav Bar changes into a burger menu when on smaller screens as you can see in this iPad Air simulated display.
+![Burger Menu](/documentation/readme-img/responsive/responsive-tablet-2.webp)
 
-Nav Bar (when signed in)
+**Nav Bar (when signed in)**
+![Nav logged in](/documentation/readme-img/features/nav-logged-in.webp)
+
 - User Dropdown Menu
   - Bookmarks - Here the user can find all the recipes they have bookmarked
   - My Recipes - This is where the user can find all the recipes that they have created themselves.
   - Log out - This is where the User can log out of their account
+![User dropdown](/documentation/readme-img/features/user-menu.webp)
 
 Home Page
 - This is the landing page for the website. Users are encouraged to sign up with the drop-down accordion bars on the page.
 - The users also see a list of the most recent recipes submitted to the website
+![Homepage](/documentation/readme-img/features/homepage.webp)
+![Accordian](/documentation/readme-img/features/accordian.webp)
 
 Recipe Detail Page
 - This is where the users can see the full recipe breakdown.
 - Users can comment, like and bookmark the recipe.
 - Users can edit or delete their comments, but not those from other users (only the admin has that capability)
+![Recipe Detail](/documentation/readme-img/features/recipe-detail.webp)
+![Comment](/documentation/readme-img/features/comment.webp)
+![Edit Comment](/documentation/readme-img/features/edit-comment.webp)
+![Delete Comment](/documentation/readme-img/features/delete-comment.webp)
 
 Season Pages
 - These show a filtered set of recipes corresponding with the appropriate season they are assigned during the recipe upload process. The All Seasons page is only filtered by published recipes, so this page includes the entire collection of the site's recipes.
 
-![Add Picture Here]()
-![Add Picture Here]()
-![Add Picture Here]()
-![Add Picture Here]()
-![Add Picture Here]()
+![All](/documentation/readme-img/features/seasons.webp)
+![Spring](/documentation/readme-img/features/spring.webp)
+![Summer](/documentation/readme-img/features/summer.webp)
+![Winter](/documentation/readme-img/features/winter.webp)
 
 Join Our Community
 - This is the signup form for new users
 - It has built-in password validation from Django AllAuth library 
+![Join](/documentation/readme-img/features/signup.webp)
 
 Search Bar
 - This search bar searches through all of the recipe titles and displays matching results in a separate webpage.
 - From here they can access the same functionality as on the recipe cards as in the Seasons and Home page.
+![Search Bar](/documentation/readme-img/features/searchbar.webp)
 
 Hashtag search
 - If users click on a hashtag, they are taken to a separate webpage that displays a list of all the recipes with the same tag.
 - From here they can access the same functionality as on the recipe cards as in the Seasons and Home page.
+![Tag Search](/documentation/readme-img/features/tag-search.webp)
 
 Log In
 - This is the form where users can sign into their account
+![login](/documentation/readme-img/features/login.webp)
 
-Custom Error Pages
+Custom Error Page (also referenced in [TESTING](TESTING.md))
 - 404 Error Page for when the user accidentally types in an url path that doesn't exist on our website.
-- 505 Error Page for when there is a server error on the website.
 
 ### Once the User has signed up they can now view these pages below -
 
 Log Out
 - This is the form where users can sign out of their account
+![Logout](/documentation/readme-img/features/logout.webp)
 
 Add A Recipe
 - This is where the users can add their recipes
+![Add A Recipe](/documentation/readme-img/features/add-recipe.webp)
 
 My Recipes
 - This is where users can see the recipes they have created
 - They can see the amount of bookmarks and likes each recipe has
 - Whether it is in Draft or Published - if published, it shows the likes/bookmarks
-- They can edit or delete each recipe
+- They can edit or delete each recipe by clicking on the icons
+
+![My Recipes](/documentation/readme-img/features/my-recipes.webp)
+![Edit Recipe](/documentation/readme-img/features/edit-recipe.webp)
+![Delete Recipe](/documentation/readme-img/features/delete-recipe.webp)
 
 Bookmarks
 - This is the webpage where users can find all the recipes they've bookmarked for future use.
 - They can click on the bookmark icon to un-bookmark it if they no longer wish it saved in the list
+![Bookmarks](/documentation/readme-img/features/bookmarks.webp)
+
+Pagination
+- Users can go through pages of recipes on the home screen and through their bookmarks.
+
+![Pagination](/documentation/readme-img/features/pagination.webp)
+![Pagination](/documentation/readme-img/features/pagination-bk.webp)
+### Message Alerts
+Message alerts are present throughout all user interactions with the website. They appear as below and also when errors occur, the error messages are listed in [TESTING](TESTING.md) 
+
+- Bookmark Add
+![Bookmark Add](/documentation/readme-img/message-alerts/bookmark-add.webp)
+- Bookmark Remove
+![Bookmark Remove](/documentation/readme-img/message-alerts/bookmark-remove.webp)
+- Comment Add
+![Comment Add](/documentation/readme-img/message-alerts/comment-add.webp)
+- Comment Delete
+![Comment Delete](/documentation/readme-img/message-alerts/comment-delete.webp)
+- Comment Update
+![Comment Update](/documentation/readme-img/message-alerts/comment-updated.webp)
+- Like Add
+![Like Add](/documentation/readme-img/message-alerts/like-add.webp)
+- Like Remove
+![Like Remove](/documentation/readme-img/message-alerts/like-remove.webp)
+- Recipe Add
+![Recipe Add](/documentation/readme-img/message-alerts/recipe-add-alert.webp)
+- Recipe Delete
+![Recipe Delete](/documentation/readme-img/message-alerts/recipe-delete.webp)
+- Recipe Update
+![Recipe Update](/documentation/readme-img/message-alerts/recipe-update.webp)
+- User Log in
+![Sign-in](/documentation/readme-img/message-alerts/sign-in.webp)
+- User Log out
+![Sign-out](/documentation/readme-img/message-alerts/signout.webp)
+
+
 
 ## Future Features
 
-- Email Notifications
-- Profile Pages with Updated 
+- Email Notifications for new recipes/comments/email verification
+- Profile Pages with pictures
+- Personal User Profile feeds, updating in realtime
+
 
 # Design
 ## Agile Strategy
