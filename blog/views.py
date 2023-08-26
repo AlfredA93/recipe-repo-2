@@ -30,7 +30,10 @@ class TagSearch(View):
 
 
 class SearchBar(View):
-    """Nav Search Bar View function"""
+    """
+    Nav Search Bar View function
+    Credit icontains - see README credit 8.
+    """
 
     def post(self, request, *args, **kwargs):
         """Post user input to query database"""
@@ -117,7 +120,10 @@ class RecipeLike(View):
     """Add a like to a recipe"""
 
     def post(self, request, slug):
-        """Find recipe and post like (user-id) to model"""
+        """
+        Find recipe and post like (user-id) to model
+        See Credit 9. in README
+        """
         recipe = get_object_or_404(Recipe, slug=slug)
         origin = request.META.get("HTTP_REFERER")
 

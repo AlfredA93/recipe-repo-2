@@ -5,11 +5,13 @@
 
 {% block content %}
 <!-- Page Headings -->
-{% if searched == '' %}
+
+{% if searched == '' %} 
     <h3 class="col-1 text-center main-heading txt-blck flex-column m-4 g-0">
         Oops... you forgot to enter a search value...
     <img src="{% static 'images/empty.webp' %}" alt="Empty Notebook" class="img-fluid img-empty m-4 p-4">
     </h3>
+<!-- Credit 'not recipes' - See Credit 5 section in README -->
 {% elif not recipes %}
     <div class="d-flex flex-column align-items-center justify-content-center">
         <h3 class="col-12 text-center main-heading txt-blck m-4">

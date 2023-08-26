@@ -12,7 +12,10 @@ SEASON = ((0, "All"), (1, "Spring"), (2, "Summer"),
 
 
 class Recipe(models.Model):
-    """Recipe Database Model"""
+    """
+    Recipe Database Model
+    Credit - Regex Expression, see README Credit 4.
+    """
     title = models.CharField(
         max_length=100,
         unique=True,

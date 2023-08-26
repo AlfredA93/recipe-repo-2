@@ -79,7 +79,7 @@ p.card-text {
 .card-padding {
     padding: 1% 0.5% 0% 0.5%;
 }
-
+/* Credit on aspect ratio - See Credit 7 in README */
 .image {
     aspect-ratio: 1/1;
     display: flex;
