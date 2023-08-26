@@ -25,7 +25,7 @@ active
           {% if redirect_field_value %}
           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
           {% endif %}
-          <button class="btn btn-login" type="submit">{% trans 'Log Out' %}</button>
+          <button class="btn btn-login" type="submit" aria-label="Log Out">{% trans 'Log Out' %}</button>
         </form>
   </div>
 </div> 
