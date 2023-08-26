@@ -10,7 +10,8 @@ Recipe Repo is a website designed for user's to share their love for cooking and
 Nav Bar
 - The Navigation Bar is responsive and changes between an inline list to a burger icon depending on screen size
 ![NavBar](/documentation/readme-img/features/nav-newuser.webp)
-![NavBar Burger]()
+![NavBar Burger Closed](/documentation/readme-img/features/burger-closed.webp)
+![NavBar Burger Open](/documentation/readme-img/features/burger-open.webp)
 - RecipeRepo Logo - This takes us to the home screen
 - Seasons Pages - This takes us to a page for each season, where the recipes are filtered
 ![Seasons Menu](/documentation/readme-img/features/seasons-menu.webp)
