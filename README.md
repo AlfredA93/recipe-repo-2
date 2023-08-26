@@ -8,11 +8,12 @@ Recipe Repo is a website designed for user's to share their love for cooking and
 # Design
 ## Agile Strategy
 The Agile methodology was used to plan and create this project. I used the Projects tool within GitHub to manage the different processes needed for this project to be completed.
+You can see the project created [here](https://github.com/users/AlfredA93/projects/5)
 
 - User Stories were created through GitHub Issues to highlight features for possible implementation.
 - These User Stories were then assigned a label from these options - 'Could Have', 'Should Have' and 'Must Have'. These labels helped to prioritise which features needed to be implemented first.
 
-After completing this project I saw the capability to use Epics (GitHub Milestones). These can give User Stories an overall theme to a group of User Stories - this is a feature within GitHub that I will research and use in future projects as I wasn't aware of this until after completing this project.
+After completing this project I saw the capability to use Epics (GitHub Milestones). These can give User Stories an overall theme to a group of User Stories - this is a feature within GitHub that I will research and use in future projects as I wasn't aware of this until after completing this project. The picture below is the Kanban board in progress.
 
 ![Kanban Boards](/documentation/readme-img/agile.webp)
 ### Project Goals
@@ -83,7 +84,9 @@ The color schemes for the user interface were inspired by these palettes. Button
 
 ### Wireframes
 
-![Database Model Designing](/documentation/readme-img/db-models.webp)
+When Designing my Models I originally wanted to have bookmarks and ingredients as seperate Models, however this didn't make much sense the further into the project I went, so I decided to add these as fields in Recipe Model.
+
+![Database Model Designing](/documentation/readme-img/model.webp)
 ![Wireframe 1](/documentation/readme-img/wireframe1.webp)
 ![Wireframe 2](/documentation/readme-img/wireframe2.webp)
 
@@ -203,7 +206,6 @@ The color schemes for the user interface were inspired by these palettes. Button
 
 ## Message Alerts
 Message alerts are present throughout all user interactions with the website. They appear as below and also when errors occur, the error messages are listed in [TESTING](TESTING.md) 
-
 - Bookmark Add
 ![Bookmark Add](/documentation/readme-img/message-alerts/bookmark-add.webp)
 - Bookmark Remove
