@@ -5,157 +5,6 @@
 
 Recipe Repo is a website designed for user's to share their love for cooking and baking. You can see the live website [here](https://recipe-repo-2-e23f0ecfdc52.herokuapp.com/)
 
-# Features
-
-Nav Bar
-- The Navigation Bar is responsive and changes between an inline list to a burger icon depending on screen size
-![NavBar](/documentation/readme-img/features/nav-newuser.webp)
-![NavBar Burger Closed](/documentation/readme-img/features/burger-closed.webp)
-![NavBar Burger Open](/documentation/readme-img/features/burger-open.webp)
-- RecipeRepo Logo - This takes us to the home screen
-- Seasons Pages - This takes us to a page for each season, where the recipes are filtered
-![Seasons Menu](/documentation/readme-img/features/seasons-menu.webp)
-  - All Seasons - for all recipes on the website
-  - Spring - Recipes for Spring
-  - Summer - Recipes for Summer
-  - Autumn - Recipes for Autumn
-  - Winter - Recipes for Winter
-
-- Login - This is where users who already have an account can sign in.
-- Join Our Community - This is where users who are new to the website can sign up for an account.
-- Search Bar - This is where the user can search through all the recipe titles for a specific recipe.
-
-**Nav Bar (when signed in)**
-![Nav logged in](/documentation/readme-img/features/nav-logged-in.webp)
-
-- User Dropdown Menu
-  - Bookmarks - Here the user can find all the recipes they have bookmarked
-  - My Recipes - This is where the user can find all the recipes that they have created themselves.
-  - Log out - This is where the User can log out of their account
-![User dropdown](/documentation/readme-img/features/user-menu.webp)
-
-Home Page
-- This is the landing page for the website. Users are encouraged to sign up with the drop-down accordion bars on the page.
-![Accordian](/documentation/readme-img/features/accordian.webp)
-- The users also see a list of the most recent recipes submitted to the website
-![Homepage](/documentation/readme-img/features/homepage.webp)
-
-
-Recipe Detail Page
-- This is where the users can see the full recipe breakdown.
-- Users can comment, like and bookmark the recipe.
-- Users can edit or delete their comments, but not those from other users (only the admin has that capability)
-![Recipe Detail](/documentation/readme-img/features/recipe-detail.webp)
-- Comment
-![Comment](/documentation/readme-img/features/comment.webp)
-- Edit Comment
-![Edit Comment](/documentation/readme-img/features/edit-comment.webp)
-- Delete Comment
-![Delete Comment](/documentation/readme-img/features/delete-comment.webp)
-
-Season Pages
-- These show a filtered set of recipes corresponding with the appropriate season they are assigned during the recipe upload process. The All Seasons page is only filtered by published recipes, so this page includes the entire collection of the site's recipes.
-- All Seasons
-![All](/documentation/readme-img/features/seasons.webp)
-- Spring Season
-![Spring](/documentation/readme-img/features/spring.webp)
-- Summer Season
-![Summer](/documentation/readme-img/features/summer.webp)
-- Autumn Season (shown in responsive design section)
-- Winter Season
-![Winter](/documentation/readme-img/features/winter.webp)
-
-Join Our Community
-- This is the signup form for new users
-- It has built-in password validation from Django AllAuth library 
-![Join](/documentation/readme-img/features/signup.webp)
-
-Search Bar
-- This search bar searches through all of the recipe titles and displays matching results in a separate webpage.
-- From here they can access the same functionality as on the recipe cards as in the Seasons and Home page.
-![Search Bar](/documentation/readme-img/features/searchbar.webp)
-
-Hashtag search
-- If users click on a hashtag, they are taken to a separate webpage that displays a list of all the recipes with the same tag.
-- From here they can access the same functionality as on the recipe cards as in the Seasons and Home page.
-![Tag Search](/documentation/readme-img/features/tag-search.webp)
-
-Log In
-- This is the form where users can sign into their account
-![login](/documentation/readme-img/features/login.webp)
-
-Custom Error Page (also referenced in [TESTING](TESTING.md))
-- 404 Error Page for when the user accidentally types in an url path that doesn't exist on our website.
-
-### Once the User has signed up they can now view these pages below -
-
-Log Out
-- This is the form where users can sign out of their account
-![Logout](/documentation/readme-img/features/logout.webp)
-
-Add A Recipe
-- This is where the users can add their recipes
-![Add A Recipe](/documentation/readme-img/features/add-recipe.webp)
-
-My Recipes
-- This is where users can see the recipes they have created
-- They can see the amount of bookmarks and likes each recipe has
-- Whether it is in Draft or Published - if published, it shows the likes/bookmarks
-- They can edit or delete each recipe by clicking on the icons
-![My Recipes](/documentation/readme-img/features/my-recipes.webp)
-- Edit Recipe
-![Edit Recipe](/documentation/readme-img/features/edit-recipe.webp)
-- Delete Recipe
-![Delete Recipe](/documentation/readme-img/features/delete-recipe.webp)
-
-Bookmarks
-- This is the webpage where users can find all the recipes they've bookmarked for future use.
-- They can click on the bookmark icon to un-bookmark it if they no longer wish it saved in the list
-![Bookmarks](/documentation/readme-img/features/bookmarks.webp)
-
-Pagination
-- Users can go through pages of recipes on the home screen and through their bookmarks. The page button appears in the button right of the screen.
-![Pagination](/documentation/readme-img/features/pagination.webp)
-- Bookmarks page pagination
-![Pagination](/documentation/readme-img/features/pagination-bk.webp)
-
-### Message Alerts
-Message alerts are present throughout all user interactions with the website. They appear as below and also when errors occur, the error messages are listed in [TESTING](TESTING.md) 
-
-- Bookmark Add
-![Bookmark Add](/documentation/readme-img/message-alerts/bookmark-add.webp)
-- Bookmark Remove
-![Bookmark Remove](/documentation/readme-img/message-alerts/bookmark-remove.webp)
-- Comment Add
-![Comment Add](/documentation/readme-img/message-alerts/comment-add.webp)
-- Comment Delete
-![Comment Delete](/documentation/readme-img/message-alerts/comment-delete.webp)
-- Comment Update
-![Comment Update](/documentation/readme-img/message-alerts/comment-updated.webp)
-- Like Add
-![Like Add](/documentation/readme-img/message-alerts/like-add.webp)
-- Like Remove
-![Like Remove](/documentation/readme-img/message-alerts/like-remove.webp)
-- Recipe Add
-![Recipe Add](/documentation/readme-img/message-alerts/recipe-add-alert.webp)
-- Recipe Delete
-![Recipe Delete](/documentation/readme-img/message-alerts/recipe-delete.webp)
-- Recipe Update
-![Recipe Update](/documentation/readme-img/message-alerts/recipe-update.webp)
-- User Log in
-![Sign-in](/documentation/readme-img/message-alerts/sign-in.webp)
-- User Log out
-![Sign-out](/documentation/readme-img/message-alerts/signout.webp)
-
-
-
-## Future Features
-
-- Email Notifications for new recipes/comments/email verification
-- Profile Pages with pictures
-- Personal User Profile feeds, updating in realtime
-
-
 # Design
 ## Agile Strategy
 The Agile methodology was used to plan and create this project. I used the Projects tool within GitHub to manage the different processes needed for this project to be completed.
@@ -166,35 +15,11 @@ The Agile methodology was used to plan and create this project. I used the Proje
 After completing this project I saw the capability to use Epics (GitHub Milestones). These can give User Stories an overall theme to a group of User Stories - this is a feature within GitHub that I will research and use in future projects as I wasn't aware of this until after completing this project.
 
 ![Kanban Boards](/documentation/readme-img/agile.webp)
-
-### User Stories 
-
-| Title | Number | Definition | Completed? | Label |
-|-------|--------|------------|------------|-------|
-| USER STORY: Create Landing Page | [#1](https://github.com/AlfredA93/recipe-repo-2/issues/1) | As a new site visitor I can easily identify website's aim so that decide whether to can stay or go | [x] | Must Have |
-| USER STORY: Sign Up Form | [#2](https://github.com/AlfredA93/recipe-repo-2/issues/2) | As a new site visitor I can simply sign up to the website so that I can interact with the content | [x] | Must Have |
-| USER STORY: Paginate Recipes | [#3](https://github.com/AlfredA93/recipe-repo-2/issues/3) | As a new site visitor I can clearly see paginated content so that I can click on the content I want | [x] | Must Have |
-| USER STORY: Add bookmark functionality | [#4](https://github.com/AlfredA93/recipe-repo-2/issues/4) | As a authorised site visitor I can bookmark recipes so that I can view them in the future | [x] | Must Have |
-| USER STORY: Add comment functionality | [#5](https://github.com/AlfredA93/recipe-repo-2/issues/5) | As an authorised site visitor I can comment on recipes so that I can interact with the community | [x] | Must Have |
-| USER STORY: Add like functionality | [#6](https://github.com/AlfredA93/recipe-repo-2/issues/6) | As an authorised site visitor I can like recipes so that the author knows this is a recipe I like | [x] | Must Have |
-| USER STORY: Manage Recipe Posts | [#7](https://github.com/AlfredA93/recipe-repo-2/issues/7) | As an admin I can create, read, edit/update and delete recipes so that I can manage my content | [x] | Must Have |
-| USER STORY: Add tags to recipes | [#8](https://github.com/AlfredA93/recipe-repo-2/issues/8) | As a site user I can see tags on recipes so that I can associate the recipes with a category or theme | [x] | Could Have |
-| USER STORY: View Likes | [#9](https://github.com/AlfredA93/recipe-repo-2/issues/9) | As an admin/site user I can see likes so that I can see how popular a recipe is  | [x] | Must Have |
-| USER STORY: View Comments | [#10](https://github.com/AlfredA93/recipe-repo-2/issues/10) | As an admin/site user I can read comments so that I can see what the community thinks about recipes | [x] | Must Have |
-| USER STORY: Season Pages | [#11](https://github.com/AlfredA93/recipe-repo-2/issues/11) | As a user I can click on different pages in the navigation so that I can see the recipes organised by season | [x] | Could Have |
-| USER STORY: Recipe Detailed Page | [#12](https://github.com/AlfredA93/recipe-repo-2/issues/12) | As a user I can click on the recipe card to open a detailed page of the recipe so that I can see the full recipe | [x] | Must Have |
-| USER STORY: View Tags and Search via Tag | [#13](https://github.com/AlfredA93/recipe-repo-2/issues/13) | As a user I can see and click on a tag/hashtag so that see similar recipes with the same tag | [x] | Could Have |
-| USER STORY: Edit and Delete Comments | [#14](https://github.com/AlfredA93/recipe-repo-2/issues/14) | As a user I can edit or delete my comments so that I can update my comments if I need to | [x] | Must Have |
-| USER STORY: Bookmarks Page | [#15](https://github.com/AlfredA93/recipe-repo-2/issues/15) | As a user with an account I can see a page where my bookmarks are stored so that I can easily find the recipes I save | [x] | Must Have |
-| USER STORY: User Dropdown Nav Menu | [#16](https://github.com/AlfredA93/recipe-repo-2/issues/16) | As a user I can click on my name in the navbar so that access recipes related to my user data | [x] | Should Have |
-| USER STORY: Add a user recipe | [#17](https://github.com/AlfredA93/recipe-repo-2/issues/17) | As a user I can create a recipe to submit on the website so that I can share my recipes with the community | [x] | Should Have |
-| USER STORY: Edit/Delete User Recipe | [#18](https://github.com/AlfredA93/recipe-repo-2/issues/18) | As a user I can edit or delete recipes that I have created so that I can correct any errors or remove recipes I don't want anymore | [x] | Should Have |
-
 ### Project Goals
 The goal of this project is to create a website for the cooking and baking community to come together and interact over online recipes. I am a keen cook and baker and have always wanted to share my recipes with friends and family alike, this website is the perfect opportunity to do this. This website is to meet a minimum of admin recipe creation and user comment/bookmark and like functionality. Further development goals are for users to submit their recipes.
 
 ### Scope
-The scope of this project was large at the beginning. Due to having a final deadline, certain features were assigned different priorities, to make sure that this project was finished in time with the user having the ability to interact with the site in a fully functional CRUD (Create, Read, Update & Delete) way.
+The scope of this project was large at the beginning. Due to having a deadline, certain features were assigned different priorities, to make sure that this project was finished in time with the user having the ability to interact with the site in a fully functional CRUD (Create, Read, Update & Delete) way.
 So the plan for this project minimum (Must-Have) was as follows -
 - Admin created recipes with full CRUD functionality from the backend
 - Recipe List and Detailed Recipe webpages
@@ -225,6 +50,29 @@ The plan for the structure of this was as follows -
 - Search Bar
 - Search by hashtag
 
+### User Stories 
+
+| Title | Number | Definition | Completed? | Label |
+|-------|--------|------------|------------|-------|
+| USER STORY: Create Landing Page | [#1](https://github.com/AlfredA93/recipe-repo-2/issues/1) | As a new site visitor I can easily identify website's aim so that decide whether to can stay or go | [x] | Must Have |
+| USER STORY: Sign Up Form | [#2](https://github.com/AlfredA93/recipe-repo-2/issues/2) | As a new site visitor I can simply sign up to the website so that I can interact with the content | [x] | Must Have |
+| USER STORY: Paginate Recipes | [#3](https://github.com/AlfredA93/recipe-repo-2/issues/3) | As a new site visitor I can clearly see paginated content so that I can click on the content I want | [x] | Must Have |
+| USER STORY: Add bookmark functionality | [#4](https://github.com/AlfredA93/recipe-repo-2/issues/4) | As a authorised site visitor I can bookmark recipes so that I can view them in the future | [x] | Must Have |
+| USER STORY: Add comment functionality | [#5](https://github.com/AlfredA93/recipe-repo-2/issues/5) | As an authorised site visitor I can comment on recipes so that I can interact with the community | [x] | Must Have |
+| USER STORY: Add like functionality | [#6](https://github.com/AlfredA93/recipe-repo-2/issues/6) | As an authorised site visitor I can like recipes so that the author knows this is a recipe I like | [x] | Must Have |
+| USER STORY: Manage Recipe Posts | [#7](https://github.com/AlfredA93/recipe-repo-2/issues/7) | As an admin I can create, read, edit/update and delete recipes so that I can manage my content | [x] | Must Have |
+| USER STORY: Add tags to recipes | [#8](https://github.com/AlfredA93/recipe-repo-2/issues/8) | As a site user I can see tags on recipes so that I can associate the recipes with a category or theme | [x] | Could Have |
+| USER STORY: View Likes | [#9](https://github.com/AlfredA93/recipe-repo-2/issues/9) | As an admin/site user I can see likes so that I can see how popular a recipe is  | [x] | Must Have |
+| USER STORY: View Comments | [#10](https://github.com/AlfredA93/recipe-repo-2/issues/10) | As an admin/site user I can read comments so that I can see what the community thinks about recipes | [x] | Must Have |
+| USER STORY: Season Pages | [#11](https://github.com/AlfredA93/recipe-repo-2/issues/11) | As a user I can click on different pages in the navigation so that I can see the recipes organised by season | [x] | Could Have |
+| USER STORY: Recipe Detailed Page | [#12](https://github.com/AlfredA93/recipe-repo-2/issues/12) | As a user I can click on the recipe card to open a detailed page of the recipe so that I can see the full recipe | [x] | Must Have |
+| USER STORY: View Tags and Search via Tag | [#13](https://github.com/AlfredA93/recipe-repo-2/issues/13) | As a user I can see and click on a tag/hashtag so that see similar recipes with the same tag | [x] | Could Have |
+| USER STORY: Edit and Delete Comments | [#14](https://github.com/AlfredA93/recipe-repo-2/issues/14) | As a user I can edit or delete my comments so that I can update my comments if I need to | [x] | Must Have |
+| USER STORY: Bookmarks Page | [#15](https://github.com/AlfredA93/recipe-repo-2/issues/15) | As a user with an account I can see a page where my bookmarks are stored so that I can easily find the recipes I save | [x] | Must Have |
+| USER STORY: User Dropdown Nav Menu | [#16](https://github.com/AlfredA93/recipe-repo-2/issues/16) | As a user I can click on my name in the navbar so that access recipes related to my user data | [x] | Should Have |
+| USER STORY: Add a user recipe | [#17](https://github.com/AlfredA93/recipe-repo-2/issues/17) | As a user I can create a recipe to submit on the website so that I can share my recipes with the community | [x] | Should Have |
+| USER STORY: Edit/Delete User Recipe | [#18](https://github.com/AlfredA93/recipe-repo-2/issues/18) | As a user I can edit or delete recipes that I have created so that I can correct any errors or remove recipes I don't want anymore | [x] | Should Have |
+
 ### Other Design Aspects
 
 The color schemes for the user interface were inspired by these palettes. Buttons, Nav bar, footer colours all come from these.
@@ -239,6 +87,154 @@ The color schemes for the user interface were inspired by these palettes. Button
 ![Wireframe 1](/documentation/readme-img/wireframe1.webp)
 ![Wireframe 2](/documentation/readme-img/wireframe2.webp)
 
+# Features
+#### Nav Bar
+- The Navigation Bar is responsive and changes between an inline list to a burger icon depending on screen size
+![NavBar](/documentation/readme-img/features/nav-newuser.webp)
+![NavBar Burger Closed](/documentation/readme-img/features/burger-closed.webp)
+![NavBar Burger Open](/documentation/readme-img/features/burger-open.webp)
+- RecipeRepo Logo - This takes us to the home screen
+- Seasons Pages - This takes us to a page for each season, where the recipes are filtered
+![Seasons Menu](/documentation/readme-img/features/seasons-menu.webp)
+  - All Seasons - for all recipes on the website
+  - Spring - Recipes for Spring
+  - Summer - Recipes for Summer
+  - Autumn - Recipes for Autumn
+  - Winter - Recipes for Winter
+
+- Login - This is where users who already have an account can sign in.
+- Join Our Community - This is where users who are new to the website can sign up for an account.
+- Search Bar - This is where the user can search through all the recipe titles for a specific recipe.
+
+#### **Nav Bar (when signed in)**
+![Nav logged in](/documentation/readme-img/features/nav-logged-in.webp)
+
+- User Dropdown Menu
+  - Bookmarks - Here the user can find all the recipes they have bookmarked
+  - My Recipes - This is where the user can find all the recipes that they have created themselves.
+  - Log out - This is where the User can log out of their account
+![User dropdown](/documentation/readme-img/features/user-menu.webp)
+
+#### Home Page
+- This is the landing page for the website. Users are encouraged to sign up with the drop-down accordion bars on the page.
+![Accordian](/documentation/readme-img/features/accordian.webp)
+- The users also see a list of the most recent recipes submitted to the website
+![Homepage](/documentation/readme-img/features/homepage.webp)
+
+
+#### Recipe Detail Page
+- This is where the users can see the full recipe breakdown.
+- Users can comment, like and bookmark the recipe.
+- Users can edit or delete their comments, but not those from other users (only the admin has that capability)
+![Recipe Detail](/documentation/readme-img/features/recipe-detail.webp)
+- Comment
+![Comment](/documentation/readme-img/features/comment.webp)
+- Edit Comment
+![Edit Comment](/documentation/readme-img/features/edit-comment.webp)
+- Delete Comment
+![Delete Comment](/documentation/readme-img/features/delete-comment.webp)
+
+#### Season Pages
+- These show a filtered set of recipes corresponding with the appropriate season they are assigned during the recipe upload process. The All Seasons page is only filtered by published recipes, so this page includes the entire collection of the site's recipes.
+- All Seasons
+![All](/documentation/readme-img/features/seasons.webp)
+- Spring Season
+![Spring](/documentation/readme-img/features/spring.webp)
+- Summer Season
+![Summer](/documentation/readme-img/features/summer.webp)
+- Autumn Season (shown in responsive design section)
+- Winter Season
+![Winter](/documentation/readme-img/features/winter.webp)
+
+#### Join Our Community
+- This is the signup form for new users
+- It has built-in password validation from Django AllAuth library 
+![Join](/documentation/readme-img/features/signup.webp)
+
+#### Search Bar
+- This search bar searches through all of the recipe titles and displays matching results in a separate webpage.
+- From here they can access the same functionality as on the recipe cards as in the Seasons and Home page.
+![Search Bar](/documentation/readme-img/features/searchbar.webp)
+
+#### Hashtag search
+- If users click on a hashtag, they are taken to a separate webpage that displays a list of all the recipes with the same tag.
+- From here they can access the same functionality as on the recipe cards as in the Seasons and Home page.
+![Tag Search](/documentation/readme-img/features/tag-search.webp)
+
+#### Log In
+- This is the form where users can sign into their account
+![login](/documentation/readme-img/features/login.webp)
+
+#### Custom Error Page (also referenced in [TESTING](TESTING.md))
+- 404 Error Page for when the user accidentally types in an url path that doesn't exist on our website.
+
+#### Pagination
+- Users can go through pages of recipes on the home screen and through their bookmarks. The page button appears in the button right of the screen.
+![Pagination](/documentation/readme-img/features/pagination.webp)
+- Bookmarks page pagination
+![Pagination](/documentation/readme-img/features/pagination-bk.webp)
+
+
+### Once the User has signed up they can now view these pages below -
+
+#### Log Out
+- This is the form where users can sign out of their account
+![Logout](/documentation/readme-img/features/logout.webp)
+
+#### Add A Recipe
+- This is where the users can add their recipes
+![Add A Recipe](/documentation/readme-img/features/add-recipe.webp)
+
+#### My Recipes
+- This is where users can see the recipes they have created
+- They can see the amount of bookmarks and likes each recipe has
+- Whether it is in Draft or Published - if published, it shows the likes/bookmarks
+- They can edit or delete each recipe by clicking on the icons
+![My Recipes](/documentation/readme-img/features/my-recipes.webp)
+- Edit Recipe
+![Edit Recipe](/documentation/readme-img/features/edit-recipe.webp)
+- Delete Recipe
+![Delete Recipe](/documentation/readme-img/features/delete-recipe.webp)
+
+#### Bookmarks
+- This is the webpage where users can find all the recipes they've bookmarked for future use.
+- They can click on the bookmark icon to un-bookmark it if they no longer wish it saved in the list
+![Bookmarks](/documentation/readme-img/features/bookmarks.webp)
+
+## Message Alerts
+Message alerts are present throughout all user interactions with the website. They appear as below and also when errors occur, the error messages are listed in [TESTING](TESTING.md) 
+
+- Bookmark Add
+![Bookmark Add](/documentation/readme-img/message-alerts/bookmark-add.webp)
+- Bookmark Remove
+![Bookmark Remove](/documentation/readme-img/message-alerts/bookmark-remove.webp)
+- Comment Add
+![Comment Add](/documentation/readme-img/message-alerts/comment-add.webp)
+- Comment Delete
+![Comment Delete](/documentation/readme-img/message-alerts/comment-delete.webp)
+- Comment Update
+![Comment Update](/documentation/readme-img/message-alerts/comment-updated.webp)
+- Like Add
+![Like Add](/documentation/readme-img/message-alerts/like-add.webp)
+- Like Remove
+![Like Remove](/documentation/readme-img/message-alerts/like-remove.webp)
+- Recipe Add
+![Recipe Add](/documentation/readme-img/message-alerts/recipe-add-alert.webp)
+- Recipe Delete
+![Recipe Delete](/documentation/readme-img/message-alerts/recipe-delete.webp)
+- Recipe Update
+![Recipe Update](/documentation/readme-img/message-alerts/recipe-update.webp)
+- User Log in
+![Sign-in](/documentation/readme-img/message-alerts/sign-in.webp)
+- User Log out
+![Sign-out](/documentation/readme-img/message-alerts/signout.webp)
+
+## Future Features
+
+- Email Notifications for new recipes/comments/email verification
+- Profile Pages with pictures
+- Personal User Profile feeds, updating in realtime
+
 # Testing
 ### Please see [TESTING](TESTING.md) page for all details on testing and validation.
 # Deployment
@@ -248,15 +244,21 @@ I used ElephantSQL to set up a free cloud database with them. Set up an account 
 - Click Create New Instance to create a new database.
 - Choose your location and name.
 - Finalise setup
-- Copy over your URL and add this to your application IDE.
+- Copy over your URL and add this to your application IDE in your env.py, remember to keep this secret.
+![Deployment ElephantSQL](/documentation/readme-img/deploy-ele.webp)
+![Deployment ElephantSQL 2](/documentation/readme-img/deploy-ele-2.webp)
+![Deployment ElephantSQL 3](/documentation/readme-img/deploy-url.webp)
 
  Set up an account with Heroku, then follow these steps for deployment -
 - Create an app
 - Name the app
 - Connect the app to GitHub and find the repository which you'd like to connect with.
 - Head over to the settings tab and find the Config Vars. Add the config vars appropriate to the app. In this case, it is PORT, ALLOWED_HOSTS, SECRET_KEY, CLOUDINARY_URL and DATABASE_URL.
-- Go back to the Deploy tab and select automatic deploys, so that whenever a new edit is received by GitHub, Heroku also updates the application. Once this has been clicked. Then click the deploy branch button at the bottom and await for the domain URL to be generated.
+![Deployment Heroku](/documentation/readme-img/deploy.webp)
+- **Before your final deployment you must set DEBUG = False within your IDE, so to make sure that your code is safe and the site works as intended with any 404 pages working correctly.**
 - Switch back to the Deploy tab and half way down the page you can select automatic deploys. When this is active, whenever a new edit is received by GitHub, Heroku also updates the application and builds a new deployment. Once this has been checked, click the deploy branch button at the bottom and await for the domain URL to be generated.
+
+![Deployment Heroku 2](/documentation/readme-img/deploy-heroku.webp)
  # Libraries Used and Why?
 - Django Quill Editor
   - This allows the user to create text in a much more flexible format, they can choose to add bold, emphasis and other types of text formatting to display their text in the desired way.
