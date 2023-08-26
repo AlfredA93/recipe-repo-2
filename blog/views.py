@@ -123,8 +123,10 @@ class RecipeLike(View):
 
         if recipe.likes.filter(id=request.user.id).exists():
             recipe.likes.remove(request.user)
+            messages.success(request, 'Like successfully removed')
         else:
             recipe.likes.add(request.user)
+            messages.success(request, 'Like successfully added')
         return redirect(origin)
 
 
@@ -137,8 +139,10 @@ class RecipeBookmark(View):
 
         if recipe.bookmarks.filter(id=request.user.id).exists():
             recipe.bookmarks.remove(request.user)
+            messages.success(request, 'Bookmark successfully removed')
         else:
             recipe.bookmarks.add(request.user)
+            messages.success(request, 'Bookmark successfully added')
         return redirect(origin)
 
 
