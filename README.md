@@ -326,3 +326,13 @@ Many thanks to both Code Institute and my mentor Alex K, I learnt a lot througho
 
  ## Media
  - All pictures were sourced from [Unsplash](https://unsplash.com/) under their free license.
+
+ ## Recipes
+
+ All recipes submitted by authors Alfred and Harry were written by myself, Alfred Ayre and images from unsplash.
+
+ # Acknowledgements
+ Thank you so much to the following people who have all played a part of making this project possible.
+ - My Wife Sabrina for her continual support
+ - Alex K, my mentor for his brilliant support, wisdom, patience and dedication to the coding community.
+ - Matt Rudge and the whole Team at CodeInstitute, they've been brilliant at teaching and offering support through their slack community
