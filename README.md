@@ -97,7 +97,7 @@ The Agile methodology was used to plan and create this project. I used the Proje
 
 After completing this project I saw the capability to use Epics (GitHub Milestones). These can give User Stories an overall theme to a group of User Stories - this is a feature within GitHub that I will research and use in future projects as I wasn't aware of this until after completing this project.
 
-![Kanban Boards](/static/readme-img/agile.webp)
+![Kanban Boards](/documentation/readme-img/agile.webp)
 
 ### User Stories 
 
@@ -161,15 +161,15 @@ The plan for the structure of this was as follows -
 
 The color schemes for the user interface were inspired by these palettes. Buttons, Nav bar, footer colours all come from these.
 
-![Color Palette 1](/static/readme-img/color-1.webp)
-![Color Palette 2](/static/readme-img/color-2.webp)
-![Color Palette 3](/static/readme-img/color-3.webp)
+![Color Palette 1](/documentation/readme-img/color-1.webp)
+![Color Palette 2](/documentation/readme-img/color-2.webp)
+![Color Palette 3](/documentation/readme-img/color-3.webp)
 
 ### Wireframes
 
-![Database Model Designing](/static/readme-img/db-models.webp)
-![Wireframe 1](/static/readme-img/wireframe1.webp)
-![Wireframe 2](/static/readme-img/wireframe2.webp)
+![Database Model Designing](/documentation/readme-img/db-models.webp)
+![Wireframe 1](/documentation/readme-img/wireframe1.webp)
+![Wireframe 2](/documentation/readme-img/wireframe2.webp)
 
 # Testing
 ### Please see [TESTING](TESTING.md) page for all details on testing and validation.
