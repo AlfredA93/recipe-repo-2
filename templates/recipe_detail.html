@@ -97,9 +97,9 @@
             <span class="comment-date">{{ comment.published }}</span>
             <!-- Edit/Delete Comment icons -->
             {% if request.user == comment.user %}
-            <span class="">
-                <span><a href="{% url 'edit_comment' comment.id %}" class="edit-icon"><i class="fa-regular fa-pen-to-square" style="color: #0050db;"></i></i></a></span>
-                <span><a href="{% url 'delete_comment' comment.id %}" class="delete-icon"><i class="fa-regular fa-trash-can fa-sm" style="color: #ff0000;"></i></a><span>
+            <span>
+                <span><a href="{% url 'edit_comment' comment.id %}" class="edit-icon"><i class="fa-regular fa-pen-to-square" style="color: #0050db;"></i></a></span>
+                <span><a href="{% url 'delete_comment' comment.id %}" class="delete-icon"><i class="fa-regular fa-trash-can fa-sm" style="color: #ff0000;"></i></a></span>
             </span>
             {% endif %}
         </p>
@@ -116,7 +116,7 @@
             {{comment_form | crispy }}
             {% csrf_token %}
             <div class="d-flex justify-content-end">
-                <button type="submit m-1" class="btn btn-login m-2 col-3">Submit</button>
+                <button type="submit" class="btn btn-login m-2 col-3">Submit</button>
             </div>
         </form>
     </div>
