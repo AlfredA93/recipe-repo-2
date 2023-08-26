@@ -170,19 +170,6 @@ p.card-text {
     text-decoration: none;
 }
 
-/* Edit Comment */
-
-.btn-outline-info {
-    color: black;
-    font-weight: 500;
-}
-
-/* Delete Comment */
-
-.btn-outline-danger {
-    font-weight: 500;
-}
-
 
 /* Account Pages */
 
@@ -372,16 +359,26 @@ label {
     visibility: hidden;
 }
 
-/* Delete Recipe */
+/* Delete Recipe/Edit Comment/ Delete Comment */
 
 .delete-info {
     font-size: large;
 }
 
-.delete-container {
+.check-container {
     padding: 2.5vh;
-    margin-bottom: 24vh;
+    margin-bottom: 20vh;
 }
+
+.btn-outline-info {
+    color: black;
+    font-weight: 500;
+}
+
+.btn-outline-danger {
+    font-weight: 500;
+}
+
 
 
 /* Responsive Design Styles for Different Screen Sizes */
