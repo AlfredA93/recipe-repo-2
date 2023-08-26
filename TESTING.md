@@ -54,11 +54,13 @@ For the account registration and login, we need to test numerous scenarios.
 
 ### 404 Error Page
 
-Originally I also included a 500 Error Page, however, I searched extensively online for how to test or generate a server handler error and couldn't find an understandable way of doing this within my current setup. So I chose to remove this feature and use the Generic Django Server Error which is pre-tested upon release instead as I wasn't able to test mine.
+This is used for when a user enters an URL that isn't a valid extension from the root.
 
 Here is the 404 Error Page -
 
 ![404 Error Page](/documentation/readme-img/manual-tests/error-404-test.webp)
+
+Originally I also included a 500 Error Page, however, I searched extensively online for how to test or generate a server handler error and couldn't find an understandable way of doing this within my current setup. So I chose to remove this feature and use the Generic Django Server Error which is pre-tested upon release instead as I wasn't able to test mine. This is an area I need to do more research on.
 
 ### Responsive Design
 
@@ -92,13 +94,15 @@ All custom-written HTML code is valid.
 
 ![HTML Valid](/documentation/readme-img/html-valid.webp)
 
-![Bug 2](/documentation/readme-img/bug-2.webp)
 
 **The 2 Errors listed above appear on front-end pages - Add A Recipe, Edit Recipe and under Admin panel - Add Recipe. This error comes directly from the Django-Quill injected code - this is further explained in the fix attempts section below**
 
 - **Problem**: Forms code provided by Django Quill failed HTML W3C Validation for having a `for` attribute referencing a `hidden` input type.
 
 - **_Fix Attempts_** - No fix required. I spent a full mentor call and many hours before/after trying to fix this issue however it is still present. I spoke with both my cohort lead, peers within the CodeInstitute community and the tutor team at Code Institute for support on this matter. They all advised me that this is a common issue, that should be noted within the README but it is not necessary to take action over. This is something that I will continue to look at if and when future development of this website happens; as I continue to learn more and increase my skills as a developer I hope that I can overcome these bugs.
+
+
+![Bug 2](/documentation/readme-img/bug-2.webp)
 
 - **Problem**: 2 Errors on injected HTML from the ingredients and instructions QuillFields within Recipe Model on Recipe Detail pages.
 - **_Fix_**: No fix required. As mentioned above in the previous error, tutors, my mentor and support team at CodeInstitute advised me that this a common occurance. I have detailed the errors that are here in the images below, which highlight a potential overuse of the `<p>` element when looking at things with semantic markup. For further clarity errors pictured below occurred on [this webpage](https://recipe-repo-2-e23f0ecfdc52.herokuapp.com/Scrambled-Eggs/) which is for all recipe detailed views.
@@ -147,3 +151,7 @@ The abandoned project is [this repository](https://github.com/AlfredA93/recipe-r
 My mentor Alex later told me that there was a solution to it, which was good to know; although I was already well into the new repository at that point.
 
 ![Mistake fix](/documentation/readme-img/mistake-fix.webp)
+
+
+# Learning Outcomes
+I have learned so much throughout this project. The amount of features and the flexibility that the Django Framework offers is both exciting and was a little overwhelming initially. However, the CodeInstitute, Stack Overflow, YouTube and online communities were brilliant at explaining some of the features. I conducted this project in a short amount of time, only 3 weeks and I am excited to continue learning with Django more in the future, as this project is a thimble of features within a sea of possibilities that is Django.  
