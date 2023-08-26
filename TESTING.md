@@ -2,7 +2,7 @@
 
 ## Manual Testing
 
-When carrying out manual tests, I went through each of the user and admin processes for adding, editing and deleting to test if any errors can occur in the process.
+When carrying out manual tests, I went through each of the user and admin processes for adding, editing and deleting to test if any errors can occur in the process. This would be applicable for comments and recipes especially. 
 
 ### Admin Panel
 
