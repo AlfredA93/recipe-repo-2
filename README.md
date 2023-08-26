@@ -145,7 +145,7 @@ When Designing my Models I originally wanted to have bookmarks and ingredients a
 ![Spring](/documentation/readme-img/features/spring.webp)
 - Summer Season
 ![Summer](/documentation/readme-img/features/summer.webp)
-- Autumn Season (shown in responsive design section)
+- Autumn Season (shown in responsive design section within [TESTING](TESTING.md))
 - Winter Season
 ![Winter](/documentation/readme-img/features/winter.webp)
 
