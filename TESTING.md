@@ -2,8 +2,9 @@
 ## Manual Testing
 
 
+
 ## Validation
-All code is written by myself, excluding the injected code from DjangoQuill, AllAuth, Bootstrap and Django Framesworks and Libraries. For more detailed look at which code was written by myself, see this GitHub repository as this was all written by me, all page source material may have injected pieces of code, specifically from Django-Quill on all forms pages.
+All code is written by myself, excluding the injected code from DjangoQuill, AllAuth, Bootstrap and Django Framesworks and Libraries. For more detailed look at which code was written by myself, see this GitHub repository as this was all written by me, all page source material may have injected pieces of code, specifically from Django-Quill on all forms pages and recipe detailed pages.
 
 ### PEP8 Compliant
 
@@ -13,6 +14,8 @@ All custom Python code is valid and complient to PEP8 standards as per [CI Pytho
 
 All custom written HTML code is valid.
 
+![HTML Valid](/documentation/readme-img/html-valid.webp)
+
 ![Bug 2](/static/readme-img/bug-2.webp)
 
 **The 2 Errors listed above appear on front-end pages - Add A Recipe, Edit Recipe and under Admin panel - Add Recipe. This error comes directly from the Django-Quill injected code - this is further explained in the fix attempts section below**
@@ -21,13 +24,21 @@ All custom written HTML code is valid.
 
 - ***Fix Attempts*** - No fix required. I spent a full mentor call and many hours before/after trying to fix this issue however it is still present. I spoke with both my cohort lead, peers within the CodeInstitute community and to the tutor team at Code Institute for support on this matter and they all advised me that this is a common issue and should be noted within the README but not necessary to take action over. This is something which I will continue to look at if and when future development of this website happens; as I continue to learn more and increase my skills as a developer I hope that I can overcome these bugs.
 
+- **Problem**: 2 Errors on injected html from QuillField within Recipe Model on Recipe Detail pages.
+- ***Fix***: No fix required. As mentioned above in the previous error, tutors, my mentor and support team at CodeInstitute advised me that this a common occurance. I have detailed the errors that are here in the images below, which highlight a potential overuse of the <p> element when looking at things with semantic markup. For further clarity errors pictured below occured on [this webpage](https://recipe-repo-2-e23f0ecfdc52.herokuapp.com/Scrambled-Eggs/) which is for all recipe detailed views.
+
+![Recipe Detail HTML Errors](/documentation/readme-img/recipe-detail-html.webp)
+![Recipe Detail HTML Error in Depth](/documentation/readme-img/recipe-detail-html-depth.webp)
+
 ### Jigsaw CSS Validator
 
 All custom CSS code is Valid
-
-![CSS Valid]()
+![CSS Valid](/documentation/readme-img/css-valid.webp)
 
 ### Lighthouse Validation
+
+Lighthouse marked this site with a 90 on Performance, 95 on Accessibility and 100 on Best Practices
+![Lighthouse](/documentation/readme-img/lighthouse.webp)
 
 ## Bugs
 
