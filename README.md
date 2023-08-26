@@ -10,7 +10,8 @@ Recipe Repo is a website designed for user's to share their love for cooking and
 Nav Bar
 - The Navigation Bar is responsive and changes between an inline list to a burger icon depending on screen size
 ![NavBar](/documentation/readme-img/features/nav-newuser.webp)
-- Home - This takes us to the home screen
+![NavBar Burger]()
+- RecipeRepo Logo - This takes us to the home screen
 - Seasons Pages - This takes us to a page for each season, where the recipes are filtered
 ![Seasons Menu](/documentation/readme-img/features/seasons-menu.webp)
   - All Seasons - for all recipes on the website
@@ -23,9 +24,6 @@ Nav Bar
 - Join Our Community - This is where users who are new to the website can sign up for an account.
 - Search Bar - This is where the user can search through all the recipe titles for a specific recipe.
 
-- Responsive Burger Icon - the Nav Bar changes into a burger menu when on smaller screens as you can see in this iPad Air simulated display.
-![Burger Menu](/documentation/readme-img/responsive/responsive-tablet-2.webp)
-
 **Nav Bar (when signed in)**
 ![Nav logged in](/documentation/readme-img/features/nav-logged-in.webp)
 
@@ -37,25 +35,33 @@ Nav Bar
 
 Home Page
 - This is the landing page for the website. Users are encouraged to sign up with the drop-down accordion bars on the page.
+![Accordian](/documentation/readme-img/features/accordian.webp)
 - The users also see a list of the most recent recipes submitted to the website
 ![Homepage](/documentation/readme-img/features/homepage.webp)
-![Accordian](/documentation/readme-img/features/accordian.webp)
+
 
 Recipe Detail Page
 - This is where the users can see the full recipe breakdown.
 - Users can comment, like and bookmark the recipe.
 - Users can edit or delete their comments, but not those from other users (only the admin has that capability)
 ![Recipe Detail](/documentation/readme-img/features/recipe-detail.webp)
+- Comment
 ![Comment](/documentation/readme-img/features/comment.webp)
+- Edit Comment
 ![Edit Comment](/documentation/readme-img/features/edit-comment.webp)
+- Delete Comment
 ![Delete Comment](/documentation/readme-img/features/delete-comment.webp)
 
 Season Pages
 - These show a filtered set of recipes corresponding with the appropriate season they are assigned during the recipe upload process. The All Seasons page is only filtered by published recipes, so this page includes the entire collection of the site's recipes.
-
+- All Seasons
 ![All](/documentation/readme-img/features/seasons.webp)
+- Spring Season
 ![Spring](/documentation/readme-img/features/spring.webp)
+- Summer Season
 ![Summer](/documentation/readme-img/features/summer.webp)
+- Autumn Season (shown in responsive design section)
+- Winter Season
 ![Winter](/documentation/readme-img/features/winter.webp)
 
 Join Our Community
@@ -95,9 +101,10 @@ My Recipes
 - They can see the amount of bookmarks and likes each recipe has
 - Whether it is in Draft or Published - if published, it shows the likes/bookmarks
 - They can edit or delete each recipe by clicking on the icons
-
 ![My Recipes](/documentation/readme-img/features/my-recipes.webp)
+- Edit Recipe
 ![Edit Recipe](/documentation/readme-img/features/edit-recipe.webp)
+- Delete Recipe
 ![Delete Recipe](/documentation/readme-img/features/delete-recipe.webp)
 
 Bookmarks
@@ -106,10 +113,11 @@ Bookmarks
 ![Bookmarks](/documentation/readme-img/features/bookmarks.webp)
 
 Pagination
-- Users can go through pages of recipes on the home screen and through their bookmarks.
-
+- Users can go through pages of recipes on the home screen and through their bookmarks. The page button appears in the button right of the screen.
 ![Pagination](/documentation/readme-img/features/pagination.webp)
+- Bookmarks page pagination
 ![Pagination](/documentation/readme-img/features/pagination-bk.webp)
+
 ### Message Alerts
 Message alerts are present throughout all user interactions with the website. They appear as below and also when errors occur, the error messages are listed in [TESTING](TESTING.md) 
 
@@ -239,7 +247,7 @@ I used ElephantSQL to set up a free cloud database with them. Set up an account 
 - Click Create New Instance to create a new database.
 - Choose your location and name.
 - Finalise setup
-- Copy over your URL and add this to your application.
+- Copy over your URL and add this to your application IDE.
 
  Set up an account with Heroku, then follow these steps for deployment -
 - Create an app
@@ -268,17 +276,17 @@ I used ElephantSQL to set up a free cloud database with them. Set up an account 
 Many thanks to both Code Institute and my mentor Alex K, I learnt a lot throughout this project and understand that this is just the tip of the iceberg. I used Stack Overflow a lot in this project to help understand some of the errors I was making, along with discovering whether certain ideas were possible.
  ## Code
 
- - [Nav Bar Styling](https://stackoverflow.com/questions/39639264/django-highlight-current-page-in-navbar) - Using template tags to implement the active bootstrap class.
- - [Saving form images to DB field](https://stackoverflow.com/questions/29171077/imagefield-not-saving-images-in-modelform-django-python) - Add 
+ 1. [Nav Bar Styling](https://stackoverflow.com/questions/39639264/django-highlight-current-page-in-navbar) - Using template tags to implement the active bootstrap class.
+ 2. [Saving form images to DB field](https://stackoverflow.com/questions/29171077/imagefield-not-saving-images-in-modelform-django-python) - Add 
 `enctype='multipart/form-data'` to the form attributes
-- [Accessing user whilst in ListView](https://stackoverflow.com/questions/33809345/how-to-access-current-user-in-django-class-based-view) - how to access a queryset within a class-based view - `ListView`
-- [Regex Validation Expression](https://stackoverflow.com/questions/13283470/regex-for-allowing-alphanumeric-and-space) - This expression was used to help validate the title field in the `RecipeModel` in Models.py file, to make for easy pre-population of the slug field - `regex=r'^[\w\-\s]+$',`
-- [If Queryset Empty](https://stackoverflow.com/questions/1387727/checking-for-empty-queryset-in-django) - used in search.html if statement
-- [Django Taggit Tutorial](https://dev.to/thepylot/how-to-add-tags-to-your-models-in-django-django-packages-series-1-3704) - This tutorial helped me to set up Django Taggit for Models and the tag search feature
-- [Responsive Squares](https://stackoverflow.com/questions/20456694/grid-of-responsive-squares) - This link helped me keep a 1:1 aspect ratio for the Recipe Cards
-- [Non-Case Sensitive Search](https://stackoverflow.com/questions/12132368/django-queryset-contains-case-sensitive) - This link helped me find the correct syntax for searching without case sensitivity
-- [HTTP Referrer](https://stackoverflow.com/questions/4406377/django-request-to-find-previous-referrer) - Alex my mentor helped me find out the code needed to request the site referrer. This was used in views.py RecipeBookmark so that a user can bookmark a page and it would just reload the current page instead of directing to a set url
-- Text within the headings of the Seasons Pages was found at [RHS](https://rhs.org.uk) and [Squires Garden Centre](https://www.squiresgardencentres.co.uk/) which was adding to by my own personal knowledge of which veg are in season at which time.
+3. [Accessing user whilst in ListView](https://stackoverflow.com/questions/33809345/how-to-access-current-user-in-django-class-based-view) - how to access a queryset within a class-based view - `ListView`
+4. [Regex Validation Expression](https://stackoverflow.com/questions/13283470/regex-for-allowing-alphanumeric-and-space) - This expression was used to help validate the title field in the `RecipeModel` in Models.py file, to make for easy pre-population of the slug field - `regex=r'^[\w\-\s]+$',`
+5. [If Queryset Empty](https://stackoverflow.com/questions/1387727/checking-for-empty-queryset-in-django) - used in search.html if statement
+6. [Django Taggit Tutorial](https://dev.to/thepylot/how-to-add-tags-to-your-models-in-django-django-packages-series-1-3704) - This tutorial helped me to set up Django Taggit for Models and the tag search feature
+7. [Responsive Squares](https://stackoverflow.com/questions/20456694/grid-of-responsive-squares) - This link helped me keep a 1:1 aspect ratio for the Recipe Cards
+8. [Non-Case Sensitive Search](https://stackoverflow.com/questions/12132368/django-queryset-contains-case-sensitive) - This link helped me find the correct syntax for searching without case sensitivity
+9. [HTTP Referrer](https://stackoverflow.com/questions/4406377/django-request-to-find-previous-referrer) - Alex my mentor helped me find out the code needed to request the site referrer. This was used in views.py RecipeBookmark so that a user can bookmark a page and it would just reload the current page instead of directing to a set url
+10. Text within the headings of the Seasons Pages was found at [RHS](https://rhs.org.uk) and [Squires Garden Centre](https://www.squiresgardencentres.co.uk/) which was adding to by my own personal knowledge of which veg are in season at which time.
 
  ## Helpsheets, Documentation and Useful Resources
 - [Bootstrap Documentation](https://getbootstrap.com/docs)
