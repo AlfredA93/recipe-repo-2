@@ -2,7 +2,9 @@
 
 ## Manual Testing
 
-When carrying out manual tests, I went through each of the user and admin processes for adding, editing and deleting to test if any errors can occur in the process. This would be applicable for comments and recipes especially. 
+When carrying out manual tests, I went through each of the user and admin processes for adding, editing and deleting to test if any errors can occur in the process. This would be applicable for comments and recipes especially.
+
+The main custom validation I implemented was Regex Validation on the Title Field within my RecipeModel. This needed validation to stop URL pathway errors along with other errors when the Title Field would be automatically converted into the slug field. You can see the extent of the validation and error messages thrown in the sections below. I added if statements for more minor validation regarding search bars which is also shown in the example screenshots below. The validation for the accounts pages is built into the AllAuth library, however, this will still need testing, as I have shown below.
 
 ### Admin Panel
 
