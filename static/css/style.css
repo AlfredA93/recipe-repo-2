@@ -303,6 +303,21 @@ p.card-text {
     padding: 2px;
 }
 
+/* Error Pages */
+
+.error-bckgrnd {
+    padding: 20%;
+    background-color: white;
+}
+
+.error-container {
+    background-color: #e9ecef;
+}
+
+.error-info {
+    font-size: large;
+}
+
 /* Seasons Pages */
 
 .seasons-bckgrnd {
