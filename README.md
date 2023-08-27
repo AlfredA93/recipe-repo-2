@@ -331,8 +331,11 @@ Many thanks to both Code Institute and my mentor Alex K, I learnt a lot througho
 
  All recipes submitted by authors Alfred and Harry were written by myself, Alfred Ayre and images from unsplash.
 
+ # Learning Outcomes
+I have learned so much throughout this project. The amount of features and the flexibility that the Django Framework offers is exciting and a little overwhelming as a new developer. However, the CodeInstitute, Stack Overflow, YouTube and online communities were brilliant at explaining some of the features. I conducted this project in a short amount of time, only 3 weeks and I am excited to continue learning with Django in the future, as this project has only a thimble of features within a sea of possibilities that Django offers. Further development on this project is something I would like to do in the future. I felt personally upset that I wasn't able to fix the errors introduced by the external libraries, however, I am understanding that this is part of a developer's career and all part of the journey in learning and improving. These errors are good to humble me and steadily improve myself as a developer.
+
  # Acknowledgements
  Thank you so much to the following people who have all played a part of making this project possible.
- - My Wife Sabrina for her continual support
- - Alex K, my mentor for his brilliant support, wisdom, patience and dedication to the coding community.
- - Matt Rudge and the whole Team at CodeInstitute, they've been brilliant at teaching and offering support through their slack community
+ - My Wife, Sabrina for her continual support and encouragement.
+ - Alex K, my mentor for his brilliant and consistent support. His knowledge, patience and dedication to the coding community is commendable and he deserves every success in his life.
+ - Matt Rudge and the whole Team at CodeInstitute, they've been brilliant at teaching and offering support through their slack community, they teach the materials in a fun and interesting way.
