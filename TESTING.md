@@ -98,16 +98,19 @@ All custom-written HTML code is valid.
 ![HTML Valid](/documentation/readme-img/html-valid.webp)
 
 
-**The 2 Errors listed below appear on front-end pages - Add A Recipe, Edit Recipe and under Admin panel - Add Recipe. This error comes directly from the Django-Quill injected code - this is further explained in the fix attempts section below**
+**The 2 Errors listed below appear on front-end pages - Add A Recipe, Edit Recipe and under Admin panel - Add Recipe/Recipe when in detailed view. This error comes directly from the Django-Quill injected code - this is further explained in the fix attempts section below**
 
 - **Problem**: Forms code provided by Django Quill failed HTML W3C Validation for having a `for` attribute referencing a `hidden` input type.
 
-- **_Fix Attempts_** - No fix required. I spent a full mentor call and many hours before/after trying to fix this issue however it is still present. I spoke with both my cohort lead, peers within the CodeInstitute community and the tutor team at Code Institute for support on this matter. They all advised me that this is a common issue, that should be noted within the README but it is not necessary to take action over. This is something that I will continue to look at if and when future development of this website happens; as I continue to learn more and increase my skills as a developer I hope that I can overcome these bugs.
+- **_Fix Attempts_** - No fix required. I spent a full mentor call and many hours before/after trying to fix this issue however it is still present. I looked at swapping the Quill Editor field for using Summernote, which was another python library which would keep the UX design consistent. However Summernote had markedly more HTML errors in the code than Quill (see second screenshot of summernote errors below), so I decided to stay with Quill. I spoke with both my cohort lead, peers within the CodeInstitute community and the tutor team at Code Institute for support on this matter. They all advised me that this is a common issue, that should be noted within the README but it is not necessary to take action over. This is something that I will continue to look at if and when future development of this website happens; as I continue to learn more and increase my skills as a developer I hope that I can overcome these bugs.
 
+- Quill Errors
+  - ![Quill Errors](/documentation/readme-img/bug-2.webp)
 
-![Bug 2](/documentation/readme-img/bug-2.webp)
+- Summernote 
+  - ![Summernote Errors](/documentation/readme-img/summernote.webp)
 
-- **Problem**: 2 Errors on injected HTML from the ingredients and instructions QuillFields within Recipe Model on Recipe Detail pages.
+- **Problem**: 2 Errors on injected HTML from the ingredients and instructions QuillFields within Recipe Model on Recipe Detail pages (example URL - https://recipe-repo-2-e23f0ecfdc52.herokuapp.com/Scrambled-Eggs/ ).
 - **_Fix_**: No fix required. As mentioned above in the previous error, tutors, my mentor and support team at CodeInstitute advised me that this a common occurance. I have detailed the errors that are here in the images below, which highlight a potential overuse of the `<p>` element when looking at things with semantic markup. For further clarity errors pictured below occurred on [this webpage](https://recipe-repo-2-e23f0ecfdc52.herokuapp.com/Scrambled-Eggs/) which is for all recipe detailed views.
 
 ![Recipe Detail HTML Errors](/documentation/readme-img/recipe-detail-html.webp)
@@ -154,7 +157,3 @@ The abandoned project is [this repository](https://github.com/AlfredA93/recipe-r
 My mentor Alex later told me that there was a solution to it, which was good to know; although I was already well into the new repository at that point.
 
 ![Mistake fix](/documentation/readme-img/mistake-fix.webp)
-
-
-# Learning Outcomes
-I have learned so much throughout this project. The amount of features and the flexibility that the Django Framework offers is exciting and was a little overwhelming initially. However, the CodeInstitute, Stack Overflow, YouTube and online communities were brilliant at explaining some of the features. I conducted this project in a short amount of time, only 3 weeks and I am excited to continue learning with Django more in the future, as this project is a thimble of features within a sea of possibilities that is Django. Further development on this project is something I would like to do in the future, as I think I am only at the tip of the iceberg.   
