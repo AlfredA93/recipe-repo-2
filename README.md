@@ -244,11 +244,11 @@ I deployed the app using the website Heroku, which hosts internet applications.
 
 I used ElephantSQL to set up a free cloud database with them. Set up an account with ElephantSQL and then follow these steps.
 - Click Create New Instance to create a new database.
+![Deployment ElephantSQL](/documentation/readme-img/deploy-ele.webp)
 - Choose your location and name.
+![Deployment ElephantSQL 2](/documentation/readme-img/deploy-ele-2.webp)
 - Finalise setup
 - Copy over your URL and add this to your application IDE in your env.py, remember to keep this secret.
-![Deployment ElephantSQL](/documentation/readme-img/deploy-ele.webp)
-![Deployment ElephantSQL 2](/documentation/readme-img/deploy-ele-2.webp)
 ![Deployment ElephantSQL 3](/documentation/readme-img/deploy-url.webp)
 
  Set up an account with Heroku, then follow these steps for deployment -
@@ -257,7 +257,7 @@ I used ElephantSQL to set up a free cloud database with them. Set up an account 
 - Connect the app to GitHub and find the repository which you'd like to connect with.
 - Head over to the settings tab and find the Config Vars. Add the config vars appropriate to the app. In this case, it is PORT, ALLOWED_HOSTS, SECRET_KEY, CLOUDINARY_URL and DATABASE_URL.
 ![Deployment Heroku](/documentation/readme-img/deploy.webp)
-- **Before your final deployment you must set DEBUG = False within your IDE, so to make sure that your code is safe and the site works as intended with any 404 pages working correctly.**
+- **Before your final deployment you must set DEBUG = False within your IDE, so to make sure that your code is safe and the site works as intended with any 404 pages working correctly. Once this has been make, you can make your final `push` to your GitHub Repository**
 - Switch back to the Deploy tab and half way down the page you can select automatic deploys. When this is active, whenever a new edit is received by GitHub, Heroku also updates the application and builds a new deployment. Once this has been checked, click the deploy branch button at the bottom and await for the domain URL to be generated.
 
 ![Deployment Heroku 2](/documentation/readme-img/deploy-heroku.webp)
@@ -273,9 +273,7 @@ I used ElephantSQL to set up a free cloud database with them. Set up an account 
 - Django Taggit
   - This allows users to create tags for posts, in this case, recipes, which can then be searched/queried.
 - Cloudinary
-  - Media storage
-- WhiteNoise
-  - Static files management
+  - Media and Static storage
 
  # Credits
 Many thanks to both Code Institute and my mentor Alex K, I learnt a lot throughout this project and understand that this is just the tip of the iceberg. I used Stack Overflow a lot in this project to help understand some of the errors I was making, along with discovering whether certain ideas were possible.
