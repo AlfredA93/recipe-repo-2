@@ -102,7 +102,7 @@ All custom-written HTML code is valid. However a some small errors came up for c
 ![HTML Valid](/documentation/readme-img/html-valid.webp)
 
 
-**The 2 Errors listed below appear on front-end pages - Add A Recipe, Edit Recipe and under Admin panel - Add Recipe/Recipe when in detailed view. This error comes directly from the Django-Quill injected code - this is further explained in the fix attempts section below**
+**The 2 Errors listed below appear on front-end pages - Add A Recipe, Edit Recipe and under Admin panel - Add Recipe/Recipe when in detailed view. This error comes directly from the Django-Quill injected code - this is further explained in the section below**
 
 - **Problem**: Forms code provided by Django Quill failed HTML W3C Validation for having a `for` attribute referencing a `hidden` input type.
 
