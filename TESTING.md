@@ -10,36 +10,40 @@ The main custom validation I implemented was Regex Validation on the Title Field
 
 In the admin panel, we need to test editing comments and recipes as this is where errors can be introduced.
 
-- Possible error - the wrong format for Title is used. This would through an error as the slug field only accepts Letters, Numbers, Hyphens and Underscores. As the slug field is automatically populated from the Title field, this is very important that we validate the title field. We did this through Regex Validation directly on the model. If a user or admin tries to use a format not accepted by the model, then this error is thrown.
-
-![Regex](/documentation/readme-img/manual-tests/regex.webp)
-
-![Recipe Title Error](/documentation/readme-img/manual-tests/admin-testing.webp)
+- Possible error - the wrong format for Title is used. This would through an error as the slug field only accepts Letters, Numbers, Hyphens and Underscores. As the slug field is automatically populated from the Title field, this is very important that we validate the title field. We did this through Regex Validation directly on the model. If a user or admin tries to use a format not accepted by the model, then this error is thrown. 
+- Regex Validation directly on the Model
+  - ![Regex](/documentation/readme-img/manual-tests/regex.webp)
+- Error Thrown
+  - ![Recipe Title Error](/documentation/readme-img/manual-tests/admin-testing.webp)
 
 - When choosing to add a comment, the admin must choose a recipe and user to comment as, otherwise the error below is thrown.
 
-![Admin Test](/documentation/readme-img/manual-tests/admin-comment-test.webp)
-![Admin Test 3](/documentation/readme-img/manual-tests/admin-test3.webp)
+  - ![Admin Test](/documentation/readme-img/manual-tests/admin-comment-test.webp)
+  - ![Admin Test 3](/documentation/readme-img/manual-tests/admin-test3.webp)
 
 - The image below shows the message that is thrown when a recipe is deleted successfully, the same type of message is thrown whenever a successful edit is made to comments or recipes across the admin panel.
 
-![Admin Test 2](/documentation/readme-img/manual-tests/admin-testing2.webp)
+  - ![Admin Test 2](/documentation/readme-img/manual-tests/admin-testing2.webp)
 
 ### Add/Edit Recipe
 
 The errors that can occur within the add/edit recipe are the same as the Admin Panel Add Recipe, so we needed to add some validation within the views.py file to check whether the data entered was indeed valid, if not, then the error is thrown above and on the Edit Recipe Page this is thrown under the title.
 
-![Recipe Test Title](/documentation/readme-img/manual-tests/add-recipe-test.webp)
+- Views.py Code if statement
+  - ![if statement](/documentation/readme-img/manual-tests/if-statement.webp)
+- Errors Thrown
+  - ![Recipe Test Title](/documentation/readme-img/manual-tests/add-recipe-test.webp)
+- Regex Validation Error note which comes directly from RecipeModel through the generic - UpdateView.
 ![Title Regex Validation](/documentation/readme-img/manual-tests/title-regex-validator.webp)
-For the fields required to be filled - Title, Status, Summary and Tags, the 'Please fill out this field' validation is placed, requiring the user to add information into this field.
-![Fields Filled](/documentation/readme-img/manual-tests/fields-filled.webp)
+- For the fields required to be filled - Title, Status, Summary and Tags, the 'Please fill out this field' validation is placed, requiring the user to add information into this field.
+  - ![Fields Filled](/documentation/readme-img/manual-tests/fields-filled.webp)
 
 ### Search Bar
 
 For the search bar, we need to check whether an empty dataset is coming back within the search query. If not, then this is what is shown.
 
-![Search bar test](/documentation/readme-img/manual-tests/searchbar-test1.webp)
-![Search bar test](/documentation/readme-img/manual-tests/searchbar-test2.webp)
+  - ![Search bar test](/documentation/readme-img/manual-tests/searchbar-test1.webp)
+  - ![Search bar test](/documentation/readme-img/manual-tests/searchbar-test2.webp)
 
 ### Account Section - Login/Signup
 
@@ -60,7 +64,7 @@ This is used for when a user enters an URL that isn't a valid extension from the
 
 Here is the 404 Error Page -
 
-![404 Error Page](/documentation/readme-img/manual-tests/error-404-test.webp)
+  - ![404 Error Page](/documentation/readme-img/manual-tests/error-404-test.webp)
 
 Originally I also included a 500 Error Page, however, I searched extensively online for how to test or generate a server handler error and couldn't find an understandable way of doing this within my current setup. So I chose to remove this feature and use the Generic Django Server Error which is pre-tested upon release instead as I wasn't able to test mine. This is an area I need to do more research on.
 
