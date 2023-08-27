@@ -231,6 +231,24 @@ Message alerts are present throughout all user interactions with the website. Th
 - User Log out
 ![Sign-out](/documentation/readme-img/message-alerts/signout.webp)
 
+#### Admin Panel
+The admin panel has full CRUD functionality to access all user data, admin's can be set directly in the app terminal within the IDE. Admin's are the only users that can access this panel, and would normally be employees or developers of Recipe Repo.
+
+  - ![Admin Login](/documentation/readme-img/features/admin1.webp)
+- Only Admin's can log in
+  - ![Admin Login](/documentation/readme-img/features/admin7.webp)
+- You can see the data stored in the side panel
+  - ![Admin](/documentation/readme-img/features/admin2.webp)
+- Access all recipes created and filter them with the side panel
+  - ![Admin](/documentation/readme-img/features/admin3.webp)
+- Edit or Delete recipes
+  - ![Admin](/documentation/readme-img/features/admin4.webp)
+- Access all comments
+  - ![Admin](/documentation/readme-img/features/admin5.webp)
+- Edit or Delete comments too
+  - ![Admin](/documentation/readme-img/features/admin6.webp)
+
+
 ## Future Features
 
 - Email Notifications for new recipes/comments/email verification
