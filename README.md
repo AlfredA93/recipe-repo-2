@@ -323,11 +323,11 @@ Many thanks to both Code Institute and my mentor Alex K, I learnt a lot througho
  - [ElephantSQL](https://elephantsql.com)
 
  ## Media
- - All pictures were sourced from [Unsplash](https://unsplash.com/) under their free license.
+ - All pictures submitted from users Alfred and Harry were sourced from [Unsplash](https://unsplash.com/) under their free license.
 
  ## Recipes
 
- All recipes submitted by authors Alfred and Harry were written by myself, Alfred Ayre and images from unsplash.
+ All recipes submitted by authors Alfred and Harry were written by myself, Alfred Ayre with recipe images from unsplash.
 
  # Learning Outcomes
 I have learned so much throughout this project. The amount of features and the flexibility that the Django Framework offers is exciting and a little overwhelming as a new developer. However, the CodeInstitute, Stack Overflow, YouTube and online communities were brilliant at explaining some of the features. I conducted this project in a short amount of time, only 3 weeks and I am excited to continue learning with Django in the future, as this project has only a thimble of features within a sea of possibilities that Django offers. Further development on this project is something I would like to do in the future. I felt personally upset that I wasn't able to fix the errors introduced by the external libraries, however, I am understanding that this is part of a developer's career and all part of the journey in learning and improving. These errors are good to humble me and steadily improve myself as a developer.
