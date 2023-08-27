@@ -97,7 +97,7 @@ All custom Python code is valid and compliant to PEP8 standards as per [CI Pytho
 
 ### HTML W3C Validator
 
-All custom-written HTML code is valid.
+All custom-written HTML code is valid. However a some small errors came up for code injected from Django-Quill-Editor, these are listed below.
 
 ![HTML Valid](/documentation/readme-img/html-valid.webp)
 
@@ -106,7 +106,7 @@ All custom-written HTML code is valid.
 
 - **Problem**: Forms code provided by Django Quill failed HTML W3C Validation for having a `for` attribute referencing a `hidden` input type.
 
-- **_Fix Attempts_** - No fix required. I spent a full mentor call and many hours before/after trying to fix this issue however it is still present. I looked at swapping the Quill Editor field for using Summernote, which was another python library which would keep the UX design consistent. However Summernote had markedly more HTML errors in the code than Quill (see second screenshot of summernote errors below), so I decided to stay with Quill. I spoke with both my cohort lead, peers within the CodeInstitute community and the tutor team at Code Institute for support on this matter. They all advised me that this is a common issue, that should be noted within the README but it is not necessary to take action over. This is something that I will continue to look at if and when future development of this website happens; as I continue to learn more and increase my skills as a developer I hope that I can overcome these bugs.
+- **_Fix Attempts_** - No fix required. I spent a full mentor call and many hours before/after trying to fix this issue however it is still present. I looked at swapping the Quill Editor field for using Summernote, which was another python library which would keep the UX design consistent. However Summernote had markedly more HTML errors in the code than Quill (see second screenshot of summernote errors below), so I decided to stay with Quill. I spoke with my mentor, my cohort lead, peers within the CodeInstitute community and the tutor team at Code Institute for support on this matter. They all advised me that this is a common issue, that should be noted within the README but it is not necessary to take action over. This is something that I will continue to look at if and when future development of this website happens; as I continue to learn more and increase my skills as a developer I hope that I can overcome these bugs.
 
 - Quill Errors
   - ![Quill Errors](/documentation/readme-img/bug-2.webp)
